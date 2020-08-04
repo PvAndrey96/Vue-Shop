@@ -2,7 +2,7 @@
   <div class="hidden lg:flex">
     <button
       class="flex items-center px-2"
-      @click="toggleSearchFocus"
+      @click="toggleSearchMobFocus"
     >
       <VSvg
         class="w-7 h-7 text-black-50 lg:w-6 lg:h-6"
@@ -10,7 +10,7 @@
       />
     </button>
     <div
-      v-if="searchFocus"
+      v-if="searchMobFocus"
       class="absolute left-0 w-full px-4 py-3 bg-white border-b mt-14"
     >
       <input
@@ -40,7 +40,7 @@ import { mapGetters, mapMutations } from 'vuex';
 
 export default {
   name: 'TheHeaderSearchMobile',
-  computed: mapGetters(['searchFocus', 'searchResult']),
-  methods: mapMutations(['toggleSearchFocus']),
+  computed: mapGetters(['searchMobFocus', 'searchResult']),
+  methods: mapMutations(['toggleSearchMobFocus']),
 };
 </script>
