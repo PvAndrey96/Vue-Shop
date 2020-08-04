@@ -15,13 +15,13 @@ module.exports = {
       .rule('svg-sprite')
       .test(/\.(svg)(\?.*)?$/)
       .include
-      .add(path.resolve(__dirname, 'src/assets/icons'))
+      .add(path.resolve(__dirname, 'src/assets/svg'))
       .end()
       .use('svg-sprite-loader')
       .loader('svg-sprite-loader')
       .options({
         extract: true,
-        spriteFilename: 'img/icons.[hash:8].svg',
+        spriteFilename: 'img/svg.[hash:8].svg',
       });
 
     config
@@ -31,7 +31,7 @@ module.exports = {
     config.module
       .rule('svg')
       .exclude
-      .add(path.resolve(__dirname, 'src/assets/icons'));
+      .add(path.resolve(__dirname, 'src/assets/svg'));
 
     config.module
       .rule('svg-sprite')

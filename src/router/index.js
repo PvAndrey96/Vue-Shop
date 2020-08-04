@@ -1,21 +1,29 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Home from '../views/Home.vue';
+// import api from '@/api';
 
 Vue.use(VueRouter);
-
-const routes = [
-  {
-    path: '/',
-    name: 'Home',
-    component: Home,
-  },
-];
 
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
-  routes,
+  routes: [
+    {
+      path: '/',
+      meta: { layout: 'TheMainLayout' },
+      component: () => import('@/views/Home.vue'),
+    },
+  ],
 });
+
+// router.beforeEach((to, from, next) => {
+//   const currentUser = api.currentUser();
+//   const requireAuth = to.matched.some((record) => record.meta.auth);
+//   if (requireAuth && !currentUser) {
+//     next('/login?message=login');
+//   } else {
+//     next();
+//   }
+// });
 
 export default router;

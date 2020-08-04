@@ -5,7 +5,8 @@ import App from './App.vue';
 import router from './router';
 import store from './store';
 import './assets/tailwind.css';
-import VSvg from './components/VSvg.vue';
+import VSvg from './components/base/VSvg.vue';
+import VContainer from './components/base/VContainer.vue';
 import 'firebase/auth';
 import 'firebase/database';
 
@@ -14,6 +15,7 @@ Vue.config.productionTip = false;
 Vue.use(Vuelidate);
 
 Vue.component('VSvg', VSvg);
+Vue.component('VContainer', VContainer);
 
 firebase.initializeApp({
   apiKey: 'AIzaSyBFcmq-lr7xQX-oeo6iaFfS-hohh0xPIoI',
