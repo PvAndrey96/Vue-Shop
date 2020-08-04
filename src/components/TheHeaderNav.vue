@@ -1,12 +1,9 @@
 <template>
   <nav
     class="flex mr-8 duration-200 transition-grow lg:hidden"
-    :class="[!searchFocus ? 'flex-grow' : 'flex-grow-0']"
+    :class="{'flex-grow': !searchFocus}"
   >
-    <ul
-      v-if="!searchFocus"
-      class="flex"
-    >
+    <ul class="flex">
       <li
         v-for="category in categories"
         :key="category.name"

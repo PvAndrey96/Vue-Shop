@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex mr-8 duration-200 transition-grow lg:hidden"
+    class="relative flex mr-8 duration-200 transition-grow lg:hidden"
     :class="{'flex-grow': searchFocus}"
   >
     <div class="flex w-full h-10 my-auto">
@@ -16,7 +16,7 @@
         @blur="toggleSearchFocus"
       >
     </div>
-    <div class="absolute pt-2 mt-18">
+    <div class="absolute hidden w-full pt-2 mt-18">
       <ul class='px-3 pt-3 bg-white border'>
         <li
           v-for="result in searchResult"
