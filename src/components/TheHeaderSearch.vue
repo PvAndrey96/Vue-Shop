@@ -17,16 +17,26 @@
       >
     </div>
     <div class="absolute pt-2 mt-18">
-      <ul class="py-2 bg-white border">
+      <ul class='px-3 pt-3 bg-white border'>
         <li
           v-for="result in searchResult"
           :key="result.title"
+          class="mb-3"
         >
           <router-link
             to="#"
-            class="flex items-center h-10 px-5 font-medium transition-colors duration-200 text-4 hover:text-black text-black-70"
+            class="flex h-12 group"
           >
-            {{result.title}}
+            <img
+              :src="result.img"
+              class="h-full"
+            >
+            <div class="flex items-center flex-grow px-4 font-medium transition-colors duration-200 text-4 group-hover:text-black text-black-70">
+              {{result.title}}
+            </div>
+            <div class="flex items-center font-medium uppercase text-black-70">
+              {{result.price}} rub
+            </div>
           </router-link>
         </li>
       </ul>

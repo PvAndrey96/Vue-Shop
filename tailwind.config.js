@@ -108,5 +108,6 @@ module.exports = {
   variants: {
     width: ['responsive', 'group-hover'],
     display: ['responsive', 'group-hover'],
+    textColor: ['hover', 'focus', 'group-hover'],
   },
 };

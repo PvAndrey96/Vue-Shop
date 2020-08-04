@@ -14,20 +14,30 @@
       class="absolute left-0 w-full px-4 py-3 bg-white border-b mt-14"
     >
       <input
-        class="w-full h-10 px-4 mb-3 font-medium transition-colors duration-200 border-r-4 border-transparent focus:border-theme bg-theme-7 text-5 placeholder-black-50"
+        class="w-full h-10 px-4 font-medium transition-colors duration-200 border-r-4 border-transparent focus:border-theme bg-theme-7 text-5 placeholder-black-50"
         placeholder="Поиск"
         type="text"
       >
-      <ul>
+      <ul class='mt-3 -mb-3'>
         <li
           v-for="result in searchResult"
           :key="result.title"
+          class="mb-3"
         >
           <router-link
             to="#"
-            class="flex items-center h-10 px-4 font-medium transition-colors duration-200 text-4 hover:text-black text-black-70"
+            class="flex h-12 group"
           >
-            {{result.title}}
+            <img
+              :src="result.img"
+              class="h-full"
+            >
+            <div class="flex items-center flex-grow px-4 font-medium transition-colors duration-200 text-4 group-hover:text-black text-black-70">
+              {{result.title}}
+            </div>
+            <div class="flex items-center font-medium uppercase text-black-70">
+              {{result.price}} rub
+            </div>
           </router-link>
         </li>
       </ul>
