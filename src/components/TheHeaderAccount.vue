@@ -2,10 +2,10 @@
   <div class="flex lg:hidden">
     <router-link
       to="#"
-      class="flex items-center h-10 px-2 my-auto"
+      class="flex items-center h-10 px-2 my-auto transition-colors duration-200 text-black-50 hover:text-black-70"
     >
       <VSvg
-        class="w-7 h-7 text-black-50"
+        class="w-7 h-7"
         name="user"
       />
     </router-link>

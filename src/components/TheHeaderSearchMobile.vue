@@ -1,12 +1,12 @@
 <template>
   <div class="hidden lg:flex">
     <button
-      class="flex items-center px-2"
+      class="flex items-center px-2 transition-colors duration-200 text-black-50 hover:text-black-70"
       @click="toggleSearchMobFocus"
     >
       <VSvg
-        class="w-7 h-7 text-black-50 lg:w-6 lg:h-6"
-        name="loupe"
+        class="w-6 h-6"
+        :name="searchMobFocus ? 'close' : 'loupe'"
       />
     </button>
     <div
