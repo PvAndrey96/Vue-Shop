@@ -20,7 +20,7 @@
 
 <script>
 export default {
-  name: 'VSearchResultsItem',
+  name: 'VSearchListItem',
   props: {
     url: {
       type: [String, Object],

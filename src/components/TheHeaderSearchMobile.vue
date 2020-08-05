@@ -18,7 +18,7 @@
         type="text"
       />
       <ul class='mt-3 -mb-3'>
-        <VSearchResultsItem
+        <VSearchListItem
           v-for="result in searchResult"
           :key="result.title"
           :img="result.img"
@@ -34,13 +34,13 @@
 
 <script>
 import VTextfield from '@/components/base/VTextfield.vue';
-import VSearchResultsItem from '@/components/base/VSearchResultsItem.vue';
+import VSearchListItem from '@/components/base/VSearchListItem.vue';
 import { mapGetters, mapMutations } from 'vuex';
 
 export default {
   name: 'TheHeaderSearchMobile',
   components: {
-    VTextfield, VSearchResultsItem,
+    VTextfield, VSearchListItem,
   },
   computed: mapGetters(['searchMobFocus', 'searchResult']),
   methods: mapMutations(['toggleSearchMobFocus']),
