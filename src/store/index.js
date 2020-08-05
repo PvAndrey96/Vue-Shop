@@ -6,7 +6,7 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    searchFocus: true,
+    searchFocus: false,
     searchMobFocus: false,
     displayNavbarMob: false,
   },

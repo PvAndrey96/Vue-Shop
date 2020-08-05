@@ -17,7 +17,7 @@
         placeholder="Поиск"
         type="text"
       />
-      <ul class='mt-3 -mb-3'>
+      <ul>
         <VSearchListItem
           v-for="result in searchResult"
           :key="result.title"
@@ -25,7 +25,7 @@
           :title="result.title"
           :price="result.price"
           url="#"
-          class="mb-3"
+          class="mt-3"
         />
       </ul>
     </div>
