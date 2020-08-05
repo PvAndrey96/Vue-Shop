@@ -18,7 +18,7 @@
             {{category.name}}
           </div>
         </router-link>
-        <div class="absolute hidden pt-2 mt-18 group-hover:block">
+        <div class="absolute z-10 hidden pt-2 mt-18 group-hover:block">
           <ul class="py-2 bg-white border">
             <li
               v-for="subcategory in category.subcategories"

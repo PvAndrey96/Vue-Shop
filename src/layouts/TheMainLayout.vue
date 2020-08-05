@@ -2,7 +2,6 @@
   <div>
     <TheNavbarMobile/>
     <TheHeader/>
-    <img src="https://admin.roadtothedream.com/images/main_page_poster.jpg?v=1595859317" alt="">
     <router-view/>
     <TheFooter/>
   </div>
