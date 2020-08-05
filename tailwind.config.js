@@ -65,6 +65,9 @@ module.exports = {
       sm: '640px',
       xs: '320px',
     },
+    minWidth: (theme) => ({
+      ...theme('maxWidth'),
+    }),
     spacing: {
       px: '1px',
       '2px': '2px',

@@ -11,7 +11,7 @@
       @focus="toggleSearchFocus"
       @blur="toggleSearchFocus"
     />
-    <div class="absolute w-full pt-2 mt-18">
+    <div class="absolute w-full pt-2 mt-18 min-w-xs">
       <ul class='px-3 pt-3 bg-white border'>
         <VSearchListItem
           v-for="result in searchResult"
@@ -35,7 +35,7 @@ import { mapGetters, mapMutations } from 'vuex';
 export default {
   name: 'TheHeaderSearch',
   components: {
-    VTextfield, VSearchResultsItem,
+    VTextfield, VSearchListItem,
   },
   computed: mapGetters(['searchFocus', 'searchResult']),
   methods: mapMutations(['toggleSearchFocus']),
