@@ -70,9 +70,9 @@ export default {
       },
     ],
     carouselSlides: [
-      'https://admin.roadtothedream.com/images/main_page_poster2.jpg?v=1596178432',
-      'https://admin.roadtothedream.com/images/main_page_poster3.jpg?v=1596178432',
-      'https://admin.roadtothedream.com/images/main_page_poster4.jpg?v=1596178432',
+      '',
+      '',
+      '',
     ],
   },
   mutations: {

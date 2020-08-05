@@ -11,7 +11,7 @@
     </button>
     <div
       v-if="searchMobFocus"
-      class="absolute left-0 w-full px-4 py-3 bg-white border-b mt-14"
+      class="absolute left-0 z-10 w-full px-4 py-3 bg-white border-b mt-14"
     >
       <VTextfield
         placeholder="Поиск"

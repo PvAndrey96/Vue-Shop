@@ -11,7 +11,9 @@
       v-for="slide in carouselSlides"
       :key="slide"
     >
-      <img :src="slide">
+      <img
+        class="object-cover w-full h-128 bg-black-50 lg:h-96"
+      />
     </Slide>
   </Carousel>
 </template>
