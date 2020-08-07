@@ -74,6 +74,38 @@ export default {
       '',
       '',
     ],
+    products: [
+      {
+        name: 'Куртка спортивная',
+        img: 'https://cdn.demix-sport.com/upload/mdm/media_content/resize/1a1/500_500_2ff1/30975050299.jpg',
+        price: '4850',
+      },
+      {
+        name: 'Худи красная RD',
+        img: 'https://cdn.demix-sport.com/upload/mdm/media_content/resize/d2d/500_500_b318/32300440299.jpg',
+        price: '3570',
+      },
+      {
+        name: 'Ветровка спортивная',
+        img: 'https://cdn.demix-sport.com/upload/mdm/media_content/resize/f6a/500_500_27e9/19735240299.jpg',
+        price: '4570',
+      },
+      {
+        name: 'Куртка спортивная',
+        img: 'https://cdn.demix-sport.com/upload/mdm/media_content/resize/1a1/500_500_2ff1/30975050299.jpg',
+        price: '4850',
+      },
+      {
+        name: 'Худи красная RD',
+        img: 'https://cdn.demix-sport.com/upload/mdm/media_content/resize/d2d/500_500_b318/32300440299.jpg',
+        price: '3570',
+      },
+      {
+        name: 'Ветровка спортивная',
+        img: 'https://cdn.demix-sport.com/upload/mdm/media_content/resize/f6a/500_500_27e9/19735240299.jpg',
+        price: '4570',
+      },
+    ],
   },
   mutations: {
   },
@@ -86,6 +118,9 @@ export default {
     },
     carouselSlides(state) {
       return state.carouselSlides;
+    },
+    products(state) {
+      return state.products;
     },
   },
 };
