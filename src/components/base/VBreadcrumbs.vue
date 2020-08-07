@@ -1,32 +1,25 @@
 <template>
   <nav>
     <ul class="flex">
-      <li
+      <VBreadcrumbsItem
         v-for="item in items"
         :key="item"
-        class="flex items-center"
-      >
-        <router-link
-          to="#"
-          class="mr-2 font-medium transition-colors duration-200 text-4 text-black-50 hover:text-black-70"
-        >
-          {{item}}
-        </router-link>
-        <VSvg
-          name="arrow"
-          class="w-4 h-4 mr-2 text-black-30"
-        />
-      </li>
-      <li class="flex items-center font-medium text-4 text-theme">
-        Футболки
-      </li>
+        :text="item"
+        to="#"
+      />
+      <VBreadcrumbsItem text="Мужчинам"/>
     </ul>
   </nav>
 </template>
 
 <script>
+import VBreadcrumbsItem from '@/components/base/VBreadcrumbsItem.vue';
+
 export default {
   name: 'VBreadcrumbs',
+  components: {
+    VBreadcrumbsItem,
+  },
   data() {
     return {
       items: ['Главная', 'Каталог', 'Мужчинам'],
