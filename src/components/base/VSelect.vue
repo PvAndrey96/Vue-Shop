@@ -1,0 +1,18 @@
+<template>
+  <div class="relative flex h-10 min-w-xxs">
+    <select class="w-full pl-4 pr-10 border border-black-10 text-5">
+      <option class="block h-10">Сначала дороже</option>
+      <option>Сначала дешевле</option>
+    </select>
+    <VSvg
+      name='arrow-down'
+      class="absolute right-0 self-center mx-2 h-7 w-7 text-black-10"
+    />
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'VSelect',
+};
+</script>

@@ -1,9 +1,14 @@
 /* purgecss start ignore */
 @tailwind base;
 
-input, textarea, button:focus {
+input, textarea, button:focus, select {
   @apply outline-none;
 }
+
+select {
+  @apply appearance-none;
+}
+
 /* purgecss end ignore */
 @tailwind components;
 

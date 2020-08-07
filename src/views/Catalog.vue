@@ -1,6 +1,10 @@
 <template>
   <VContainer class="py-6 lg:py-4">
-    <VBreadcrumbs/>
+    <VBreadcrumbs class="mb-8"/>
+    <div class="flex items-center justify-between">
+      <h1 class="font-medium text-8">Мужчинам</h1>
+      <VSelect/>
+    </div>
     <div class="hidden">
       <div class="w-1/4">
         <ul>
@@ -36,12 +40,13 @@
 
 <script>
 import VBreadcrumbs from '@/components/base/VBreadcrumbs.vue';
+import VSelect from '@/components/base/VSelect.vue';
 import { mapGetters } from 'vuex';
 
 export default {
   name: 'Catalog',
   components: {
-    VBreadcrumbs,
+    VBreadcrumbs, VSelect,
   },
   computed: mapGetters(['categories']),
 };
