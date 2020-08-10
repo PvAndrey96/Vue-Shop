@@ -9,6 +9,7 @@ export default new Vuex.Store({
     searchFocus: false,
     searchMobFocus: false,
     displayNavbarMob: false,
+    displayFiltersMob: false,
   },
   mutations: {
     toggleSearchFocus(state) {
@@ -20,6 +21,9 @@ export default new Vuex.Store({
     toggleDisplayNavbarMob(state) {
       state.displayNavbarMob = !state.displayNavbarMob;
     },
+    toggleDisplayFiltersMob(state) {
+      state.displayFiltersMob = !state.displayFiltersMob;
+    },
   },
   getters: {
     searchFocus(state) {
@@ -30,6 +34,9 @@ export default new Vuex.Store({
     },
     displayNavbarMob(state) {
       return state.displayNavbarMob;
+    },
+    displayFiltersMob(state) {
+      return state.displayFiltersMob;
     },
   },
   modules: {

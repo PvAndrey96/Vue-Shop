@@ -1,5 +1,5 @@
 <template>
-  <footer>
+  <footer class="h-32 border-t">
   </footer>
 </template>
 

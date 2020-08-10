@@ -2,7 +2,7 @@
   <div>
     <TheNavbarMobile/>
     <TheHeader/>
-    <router-view/>
+    <slot/>
     <TheFooter/>
   </div>
 </template>

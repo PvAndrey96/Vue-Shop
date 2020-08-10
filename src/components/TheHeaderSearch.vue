@@ -14,8 +14,8 @@
     <div class="absolute z-10 hidden w-full pt-2 mt-18 min-w-xs">
       <ul class='px-3 pt-3 bg-white border'>
         <VSearchListItem
-          v-for="result in searchResult"
-          :key="result.title"
+          v-for="(result, id) in searchResult"
+          :key="id"
           :img="result.img"
           :title="result.title"
           :price="result.price"

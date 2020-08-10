@@ -1,6 +1,6 @@
 <template>
-  <div class="relative flex h-10 min-w-xxs">
-    <select class="w-full pl-4 pr-10 border text-5">
+  <div class="relative flex w-56 h-10 border">
+    <select class="w-full pl-4 pr-10 bg-transparent text-5">
       <option class="block h-10">Сначала дороже</option>
       <option>Сначала дешевле</option>
     </select>
