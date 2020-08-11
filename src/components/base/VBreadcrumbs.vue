@@ -2,12 +2,12 @@
   <nav>
     <ul class="flex">
       <VBreadcrumbsItem
-        v-for="item in items"
-        :key="item"
-        :text="item"
-        to="#"
+        v-for="(item, id) in items"
+        :key="item.text"
+        :text="item.text"
+        :to="item.to"
+        :past="id === items.length - 2"
       />
-      <VBreadcrumbsItem text="Мужчинам"/>
     </ul>
   </nav>
 </template>
@@ -22,7 +22,23 @@ export default {
   },
   data() {
     return {
-      items: ['Главная', 'Каталог', 'Мужчинам'],
+      items: [
+        {
+          text: 'Главная',
+          to: '#',
+        },
+        {
+          text: 'Каталог',
+          to: '#',
+        },
+        {
+          text: 'Мужчинам',
+          to: '#',
+        },
+        {
+          text: 'Футболки',
+        },
+      ],
     };
   },
 };
