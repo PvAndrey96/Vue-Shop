@@ -4,7 +4,7 @@
     @close="toggleDisplayNavbarMob"
   >
     <nav>
-      <ul class="px-4">
+      <ul class="px-5">
         <li class="border-b">
           <router-link
             to="#"
