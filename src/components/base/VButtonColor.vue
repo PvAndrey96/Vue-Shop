@@ -2,7 +2,7 @@
   <router-link
     :to="to"
     :style="{background: color}"
-    class="flex w-6 h-6 transition-transform duration-200 transform border hover:scale-120 hover:border-black-80"
+    class="flex transition-transform duration-200 transform border w-7 h-7 hover:scale-120 hover:border-black-80"
   />
 </template>
 

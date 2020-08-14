@@ -1,7 +1,7 @@
 <template>
   <router-link
     :to="to"
-    class="flex items-center justify-center h-10 font-medium uppercase transition-colors duration-200 border hover:bg-theme hover:text-white"
+    class="flex items-center justify-center w-10 h-10 font-medium uppercase transition-colors duration-200 border hover:bg-theme hover:text-white"
   >
     {{size}}
   </router-link>
