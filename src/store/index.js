@@ -10,6 +10,7 @@ export default new Vuex.Store({
     searchMobFocus: false,
     displayNavbarMob: false,
     displayFiltersMob: false,
+    cartPreviewOpen: false,
   },
   mutations: {
     toggleSearchFocus(state) {
@@ -24,6 +25,9 @@ export default new Vuex.Store({
     toggleDisplayFiltersMob(state) {
       state.displayFiltersMob = !state.displayFiltersMob;
     },
+    toggleCartPreviewOpen(state) {
+      state.cartPreviewOpen = !state.cartPreviewOpen;
+    },
   },
   getters: {
     searchFocus(state) {
@@ -37,6 +41,9 @@ export default new Vuex.Store({
     },
     displayFiltersMob(state) {
       return state.displayFiltersMob;
+    },
+    cartPreviewOpen(state) {
+      return state.cartPreviewOpen;
     },
   },
   modules: {
