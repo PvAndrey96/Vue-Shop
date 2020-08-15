@@ -78,32 +78,50 @@ export default {
       {
         name: 'Куртка спортивная',
         img: 'https://cdn.demix-sport.com/upload/mdm/media_content/resize/1a1/500_500_2ff1/30975050299.jpg',
-        price: '4850',
+        price: 4850,
       },
       {
         name: 'Худи красная RD',
         img: 'https://cdn.demix-sport.com/upload/mdm/media_content/resize/d2d/500_500_b318/32300440299.jpg',
-        price: '3570',
+        price: 3570,
       },
       {
         name: 'Ветровка спортивная',
         img: 'https://cdn.demix-sport.com/upload/mdm/media_content/resize/f6a/500_500_27e9/19735240299.jpg',
-        price: '4570',
+        price: 4570,
       },
       {
         name: 'Куртка спортивная',
         img: 'https://cdn.demix-sport.com/upload/mdm/media_content/resize/1a1/500_500_2ff1/30975050299.jpg',
-        price: '4850',
+        price: 4850,
       },
       {
         name: 'Худи красная RD',
         img: 'https://cdn.demix-sport.com/upload/mdm/media_content/resize/d2d/500_500_b318/32300440299.jpg',
-        price: '3570',
+        price: 3570,
       },
       {
         name: 'Ветровка спортивная',
         img: 'https://cdn.demix-sport.com/upload/mdm/media_content/resize/f6a/500_500_27e9/19735240299.jpg',
-        price: '4570',
+        price: 4570,
+      },
+    ],
+    cartItems: [
+      {
+        name: 'Куртка спортивная',
+        url: '#',
+        img: 'https://admin.roadtothedream.com/images/products/lg/road-to-the-dream-minimal-longsleeve-indigo_5f0ab583f2f3f2.07685677.jpg',
+        count: 1,
+        size: 'xs',
+        price: 4850,
+      },
+      {
+        name: 'Худи красная RD',
+        url: '#',
+        img: 'https://admin.roadtothedream.com/images/products/lg/road-to-the-dream-minimal-longsleeve-indigo_5f0ab584176645.31120481.jpg',
+        count: 2,
+        size: 's',
+        price: 3570,
       },
     ],
   },
@@ -121,6 +139,9 @@ export default {
     },
     products(state) {
       return state.products;
+    },
+    cartItems(state) {
+      return state.cartItems;
     },
   },
 };

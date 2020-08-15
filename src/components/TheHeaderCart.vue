@@ -17,18 +17,14 @@
       <div class="px-4 pb-3 bg-white border lg:border-0 lg:border-b">
         <ul class="mb-3">
           <VPreviewCartItem
-            url="#"
-            img="https://admin.roadtothedream.com/images/products/lg/road-to-the-dream-minimal-longsleeve-indigo_5f0ab583f2f3f2.07685677.jpg"
-            title="Футболка мужская"
-            count="2"
-            price="1120"
-          />
-          <VPreviewCartItem
-            url="#"
-            img="https://admin.roadtothedream.com/images/products/lg/road-to-the-dream-minimal-longsleeve-indigo_5f0ab583f2f3f2.07685677.jpg"
-            title="Футболка мужская"
-            count="2"
-            price="1120"
+            v-for="product in cartItems"
+            :key="product.name"
+            :url="product.url"
+            :img="product.img"
+            :title="product.name"
+            :size="product.size"
+            :count="product.count"
+            :price="product.price"
           />
         </ul>
         <div class="flex justify-between mb-3">
@@ -56,7 +52,7 @@ export default {
   components: {
     VPreviewCartItem, VButton,
   },
-  computed: mapGetters(['cartPreviewOpen']),
+  computed: mapGetters(['cartPreviewOpen', 'cartItems']),
   methods: mapMutations(['toggleCartPreviewOpen']),
 };
 </script>

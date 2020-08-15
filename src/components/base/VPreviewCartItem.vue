@@ -17,9 +17,12 @@
         >
           {{title}}
         </router-link>
-        <div class="font-medium text-black-70">Размер: XL</div>
+        <div>
+          <span class="font-medium text-black-50">Размер: </span>
+          <span class="font-medium uppercase text-black-50">{{size}}</span>
+        </div>
       </div>
-      <div class="font-medium text-black-70">Количество: 3</div>
+      <div class="font-medium text-black-50">Количество: {{count}}</div>
     </div>
     <div class="flex items-center font-medium uppercase text-black-50">
       {{price}} rub
@@ -42,6 +45,13 @@ export default {
     title: {
       type: String,
       required: true,
+    },
+    size: {
+      type: String,
+      required: true,
+      validator(val) {
+        return ['xxs', 'xs', 's', 'm', 'l', 'xl', 'xxl'].indexOf(val) !== -1;
+      },
     },
     count: {
       type: Number,
