@@ -19,7 +19,7 @@
           <VPreviewCartItem
             v-for="product in cartItems"
             :key="product.name"
-            :url="product.url"
+            :to="product.url"
             :img="product.img"
             :title="product.name"
             :size="product.size"

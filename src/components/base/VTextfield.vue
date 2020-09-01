@@ -2,8 +2,8 @@
   <div class="flex w-full h-10">
     <VSvg
       v-if='icon'
-      :name='icon'
       class="absolute self-center mx-2 h-7 w-7 text-black-50"
+      :name='icon'
     />
     <input
       class="w-full font-medium transition-colors duration-200 border-r-4 border-transparent pb-2px focus:border-theme bg-theme-7 text-5 placeholder-black-50"
@@ -19,7 +19,7 @@
 
 <script>
 export default {
-  name: 'VTextfield',
+  name: 'VTextField',
   props: {
     icon: {
       type: String,

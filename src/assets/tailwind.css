@@ -5,7 +5,9 @@ input, textarea, button:focus, select {
   @apply outline-none;
 }
 
-select {
+select,
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
   @apply appearance-none;
 }
 

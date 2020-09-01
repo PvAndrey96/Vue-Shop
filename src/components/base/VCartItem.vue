@@ -1,12 +1,12 @@
 <template>
-  <li class="flex py-3 border-b">
+  <li class="flex py-5 border-b">
     <router-link
       :to="to"
-      class="mr-4"
+      class="mr-5"
     >
       <img
         :src="img"
-        class="object-cover w-24 h-24"
+        class="object-cover w-40 h-40"
       />
     </router-link>
     <div class="flex flex-col justify-between flex-grow">
@@ -18,21 +18,37 @@
           {{title}}
         </router-link>
         <div>
-          <span class="font-medium text-black-50">Размер: </span>
-          <span class="font-medium uppercase text-black-50">{{size}}</span>
+          <span class="font-medium text-black-50 text-4">Размер: </span>
+          <span class="font-medium uppercase text-black-50 text-4">{{size}}</span>
         </div>
       </div>
-      <div class="font-medium text-black-50">Количество: {{count}}</div>
+      <div>
+        <button class="font-medium transition-colors duration-200 text-black-50 hover:text-black-70 text-4">
+          Удалить
+        </button>
+      </div>
     </div>
-    <div class="flex items-center font-medium uppercase text-black-50">
-      {{price}} rub
+    <div class="flex items-center">
+      <VQuantityField
+        :min="1"
+        :value="count"
+        @input='$emit("update:count", $event)'
+      />
+    </div>
+    <div class="flex items-center justify-end w-1/6">
+      <div class="font-medium text-right uppercase text-black-50">{{price}} rub</div>
     </div>
   </li>
 </template>
 
 <script>
+import VQuantityField from '@/components/base/VQuantityField.vue';
+
 export default {
   name: 'VPreviewCartItem',
+  components: {
+    VQuantityField,
+  },
   props: {
     to: {
       type: [String, Object],

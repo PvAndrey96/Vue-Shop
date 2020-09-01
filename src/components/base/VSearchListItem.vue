@@ -1,7 +1,7 @@
 <template>
   <li>
     <router-link
-      :to="url"
+      :to="to"
       class="flex h-12 group"
     >
       <img
@@ -22,7 +22,7 @@
 export default {
   name: 'VSearchListItem',
   props: {
-    url: {
+    to: {
       type: [String, Object],
       required: true,
     },
@@ -35,7 +35,7 @@ export default {
       required: true,
     },
     price: {
-      type: [String, Number],
+      type: Number,
       required: true,
     },
   },

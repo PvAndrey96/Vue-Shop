@@ -1,7 +1,7 @@
 <template>
   <router-link
-    to="#"
     class="group"
+    :to="to"
   >
     <img :src="img"/>
     <div class="py-4">
@@ -18,6 +18,23 @@
 <script>
 export default {
   name: 'VCard',
-  props: ['title', 'img', 'price'],
+  props: {
+    to: {
+      type: [String, Object],
+      required: true,
+    },
+    title: {
+      type: String,
+      required: true,
+    },
+    img: {
+      type: String,
+      required: true,
+    },
+    price: {
+      type: Number,
+      required: true,
+    },
+  },
 };
 </script>

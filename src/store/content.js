@@ -106,24 +106,6 @@ export default {
         price: 4570,
       },
     ],
-    cartItems: [
-      {
-        name: 'Куртка спортивная',
-        url: '#',
-        img: 'https://admin.roadtothedream.com/images/products/lg/road-to-the-dream-minimal-longsleeve-indigo_5f0ab583f2f3f2.07685677.jpg',
-        count: 1,
-        size: 'xs',
-        price: 4850,
-      },
-      {
-        name: 'Худи красная RD',
-        url: '#',
-        img: 'https://admin.roadtothedream.com/images/products/lg/road-to-the-dream-minimal-longsleeve-indigo_5f0ab584176645.31120481.jpg',
-        count: 2,
-        size: 's',
-        price: 3570,
-      },
-    ],
   },
   mutations: {
   },
@@ -139,9 +121,6 @@ export default {
     },
     products(state) {
       return state.products;
-    },
-    cartItems(state) {
-      return state.cartItems;
     },
   },
 };

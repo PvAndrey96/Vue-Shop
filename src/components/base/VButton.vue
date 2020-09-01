@@ -1,7 +1,7 @@
 <template>
   <button
     class="flex items-center justify-center px-5 text-white uppercase transition-colors duration-200 bg-theme hover:bg-theme-accent"
-    :class="[small ? 'h-8' : 'h-10', {'w-full': full}]"
+    :class="classButton"
   >
     <slot/>
   </button>
@@ -16,6 +16,11 @@ export default {
     },
     full: {
       type: Boolean,
+    },
+  },
+  computed: {
+    classButton() {
+      return [this.small ? 'h-8' : 'h-10', { 'w-full': this.full }];
     },
   },
 };

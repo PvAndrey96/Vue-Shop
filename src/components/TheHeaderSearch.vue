@@ -3,7 +3,7 @@
     class="relative flex mr-8 duration-200 transition-grow lg:hidden"
     :class="{'flex-grow': searchFocus}"
   >
-    <VTextfield
+    <VTextField
       icon="loupe"
       placeholder="Поиск"
       type="text"
@@ -19,7 +19,7 @@
           :img="result.img"
           :title="result.title"
           :price="result.price"
-          url="#"
+          to="#"
           class="mb-3"
         />
       </ul>
@@ -28,14 +28,14 @@
 </template>
 
 <script>
-import VTextfield from '@/components/base/VTextfield.vue';
+import VTextField from '@/components/base/VTextField.vue';
 import VSearchListItem from '@/components/base/VSearchListItem.vue';
 import { mapGetters, mapMutations } from 'vuex';
 
 export default {
   name: 'TheHeaderSearch',
   components: {
-    VTextfield, VSearchListItem,
+    VTextField, VSearchListItem,
   },
   computed: mapGetters(['searchFocus', 'searchResult']),
   methods: mapMutations(['toggleSearchFocus']),

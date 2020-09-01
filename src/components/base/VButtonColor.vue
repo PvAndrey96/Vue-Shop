@@ -1,8 +1,8 @@
 <template>
   <router-link
-    :to="to"
-    :style="{background: color}"
     class="flex transition-transform duration-200 transform border w-7 h-7 hover:scale-120 hover:border-black-80"
+    :style="{background: color}"
+    :to="to"
   />
 </template>
 

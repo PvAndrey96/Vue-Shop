@@ -8,8 +8,8 @@
     autoplay
   >
     <Slide
-      v-for="slide in carouselSlides"
-      :key="slide"
+      v-for="(slide, id) in carouselSlides"
+      :key="id"
     >
       <img
         class="object-cover w-full h-128 bg-black-50 lg:h-96"

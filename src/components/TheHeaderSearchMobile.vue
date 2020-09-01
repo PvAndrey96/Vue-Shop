@@ -13,7 +13,7 @@
       v-if="searchMobFocus"
       class="absolute left-0 z-10 w-full px-4 py-3 bg-white border-b mt-14"
     >
-      <VTextfield
+      <VTextField
         placeholder="Поиск"
         type="text"
       />
@@ -24,7 +24,7 @@
           :img="result.img"
           :title="result.title"
           :price="result.price"
-          url="#"
+          to="#"
           class="mt-3"
         />
       </ul>
@@ -33,14 +33,14 @@
 </template>
 
 <script>
-import VTextfield from '@/components/base/VTextfield.vue';
+import VTextField from '@/components/base/VTextField.vue';
 import VSearchListItem from '@/components/base/VSearchListItem.vue';
 import { mapGetters, mapMutations } from 'vuex';
 
 export default {
   name: 'TheHeaderSearchMobile',
   components: {
-    VTextfield, VSearchListItem,
+    VTextField, VSearchListItem,
   },
   computed: mapGetters(['searchMobFocus', 'searchResult']),
   methods: mapMutations(['toggleSearchMobFocus']),

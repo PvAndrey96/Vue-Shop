@@ -24,6 +24,7 @@
         <VCard
           v-for="(product, id) in products"
           :key="id"
+          to="#"
           :title="product.name"
           :img="product.img"
           :price="product.price"
