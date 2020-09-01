@@ -4,6 +4,17 @@
     <h1 class="mb-6 font-medium text-8">Корзина</h1>
     <div class="grid grid-cols-5 gap-8">
       <div class="col-span-3 -mt-5">
+        <VCartItem
+          v-for="product in cartItems"
+          :key="product.id"
+          :to="product.url"
+          :img="product.img"
+          :title="product.name"
+          :size="product.size"
+          :price="product.price"
+          :count="product.count"
+          @update:count="updateCountCartItem({ id: product.id, val: $event })"
+        />
       </div>
       <div class="grid-cols-2"></div>
     </div>
