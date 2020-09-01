@@ -23,7 +23,10 @@
         </div>
       </div>
       <div>
-        <button class="font-medium transition-colors duration-200 text-black-50 hover:text-black-70 text-4">
+        <button
+          class="font-medium transition-colors duration-200 text-black-50 hover:text-black-70 text-4"
+          @click="$emit('delete')"
+        >
           Удалить
         </button>
       </div>

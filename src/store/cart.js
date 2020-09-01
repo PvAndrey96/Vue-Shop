@@ -25,6 +25,9 @@ export default {
     updateCountCartItem(state, { id, val }) {
       state.cartItems.find((el) => el.id === id).count = val;
     },
+    removeCartItem(state, id) {
+      state.cartItems.splice(state.cartItems.findIndex((el) => el.id === id), 1);
+    },
   },
   getters: {
     cartItems(state) {

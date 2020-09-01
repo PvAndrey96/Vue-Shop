@@ -14,6 +14,7 @@
           :price="product.price"
           :count="product.count"
           @update:count="updateCountCartItem({ id: product.id, val: $event })"
+          @delete="removeCartItem(product.id)"
         />
       </div>
       <div class="grid-cols-2"></div>
@@ -32,6 +33,6 @@ export default {
     VBreadcrumbs, VCartItem,
   },
   computed: mapGetters(['cartItems']),
-  methods: mapMutations(['updateCountCartItem']),
+  methods: mapMutations(['updateCountCartItem', 'removeCartItem']),
 };
 </script>
