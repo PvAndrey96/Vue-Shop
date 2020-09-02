@@ -13,7 +13,7 @@
       v-if="searchMobFocus"
       class="absolute left-0 z-10 w-full px-4 py-3 bg-white border-b mt-14"
     >
-      <VTextField
+      <VTextFieldA
         placeholder="Поиск"
         type="text"
       />
@@ -33,14 +33,14 @@
 </template>
 
 <script>
-import VTextField from '@/components/base/VTextField.vue';
+import VTextFieldA from '@/components/base/VTextFieldA.vue';
 import VSearchListItem from '@/components/base/VSearchListItem.vue';
 import { mapGetters, mapMutations } from 'vuex';
 
 export default {
   name: 'TheHeaderSearchMobile',
   components: {
-    VTextField, VSearchListItem,
+    VTextFieldA, VSearchListItem,
   },
   computed: mapGetters(['searchMobFocus', 'searchResult']),
   methods: mapMutations(['toggleSearchMobFocus']),

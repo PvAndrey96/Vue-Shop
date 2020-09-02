@@ -2,10 +2,12 @@
   <VContainer class="py-6 lg:py-4">
     <VBreadcrumbs class="mb-8"/>
     <h1 class="mb-6 font-medium text-8">Корзина</h1>
-    <div class="grid grid-cols-5 gap-8">
-      <div class="col-span-3 -mt-5">
+    <div class="grid grid-cols-6 gap-8">
+      <div class="col-span-4 px-5 border">
         <VCartItem
-          v-for="product in cartItems"
+          v-for="(product, id) in cartItems"
+          class="py-5"
+          :class="{'border-t': id}"
           :key="product.id"
           :to="product.url"
           :img="product.img"
@@ -17,8 +19,9 @@
           @delete="removeCartItem(product.id)"
         />
       </div>
-      <div class="grid-cols-2"></div>
+      <div class="self-start col-span-2 p-5 border">
     </div>
+      </div>
   </VContainer>
 </template>
 

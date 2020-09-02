@@ -1,5 +1,5 @@
 <template>
-  <li class="flex py-5 border-b">
+  <li class="flex">
     <router-link
       :to="to"
       class="mr-5"
