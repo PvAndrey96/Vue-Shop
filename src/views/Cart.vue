@@ -20,50 +20,36 @@
         />
       </div>
       <div class="self-start col-span-2 p-5 border">
-        <div class="flex justify-between mb-4 font-medium text-4">
-          <div>Товаров:</div>
-          <div>2</div>
+        <div class="mb-4">
+          <div class="flex justify-between mb-4 font-medium text-4">
+            <div>Товаров:</div>
+            <div>2</div>
+          </div>
+          <div class="flex justify-between mb-4 font-medium text-4">
+            <div>На сумму:</div>
+            <div>1280 RUB</div>
+          </div>
+          <div class="flex justify-between pt-3 font-bold border-t text-4">
+            <div>Итого:</div>
+            <div>1280 RUB</div>
+          </div>
         </div>
-        <div class="flex justify-between mb-4 font-medium text-4">
-          <div>На сумму:</div>
-          <div>1280 RUB</div>
-        </div>
-        <div class="flex justify-between mb-4 font-medium text-4">
-          <div>Доставка:</div>
-          <div>0 RUB</div>
-        </div>
-        <div class="flex justify-between pt-3 font-bold border-t text-4">
-          <div>Итого:</div>
-          <div>1280 RUB</div>
-        </div>
-        <VButton
-          class="mt-4"
-          full
-        >
-          Оформить заказ
-        </VButton>
-        <div class="mt-4 font-medium text-center">
-          <span>Нажимая на кнопку "оформить заказ", вы подтверждаете согласие с </span>
-          <router-link
-            to="#"
-            class="underline text-theme hover:no-underline"
-          >
-            пользовательским соглашением
-          </router-link>
-    </div>
+        <VButton full>Оформление заказа</VButton>
       </div>
+    </div>
   </VContainer>
 </template>
 
 <script>
 import VBreadcrumbs from '@/components/base/VBreadcrumbs.vue';
+import VButton from '@/components/base/VButton.vue';
 import VCartItem from '@/components/base/VCartItem.vue';
 import { mapGetters, mapMutations } from 'vuex';
 
 export default {
   name: 'Catalog',
   components: {
-    VBreadcrumbs, VCartItem,
+    VBreadcrumbs, VCartItem, VButton,
   },
   computed: mapGetters(['cartItems']),
   methods: mapMutations(['updateCountCartItem', 'removeCartItem']),

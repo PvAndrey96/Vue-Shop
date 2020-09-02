@@ -18,6 +18,7 @@
         <ul class="mb-3">
           <VPreviewCartItem
             v-for="product in cartItems"
+            class="py-3 border-b"
             :key="product.name"
             :to="product.url"
             :img="product.img"
