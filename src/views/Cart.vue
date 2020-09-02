@@ -34,7 +34,12 @@
             <div>1280 RUB</div>
           </div>
         </div>
-        <VButton full>Оформление заказа</VButton>
+        <VButton
+          full
+          to="/checkout"
+        >
+          Оформление заказа
+        </VButton>
       </div>
     </div>
   </VContainer>
