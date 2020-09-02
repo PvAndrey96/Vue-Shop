@@ -20,6 +20,36 @@
         />
       </div>
       <div class="self-start col-span-2 p-5 border">
+        <div class="flex justify-between mb-4 font-medium text-4">
+          <div>Товаров:</div>
+          <div>2</div>
+        </div>
+        <div class="flex justify-between mb-4 font-medium text-4">
+          <div>На сумму:</div>
+          <div>1280 RUB</div>
+        </div>
+        <div class="flex justify-between mb-4 font-medium text-4">
+          <div>Доставка:</div>
+          <div>0 RUB</div>
+        </div>
+        <div class="flex justify-between pt-3 font-bold border-t text-4">
+          <div>Итого:</div>
+          <div>1280 RUB</div>
+        </div>
+        <VButton
+          class="mt-4"
+          full
+        >
+          Оформить заказ
+        </VButton>
+        <div class="mt-4 font-medium text-center">
+          <span>Нажимая на кнопку "оформить заказ", вы подтверждаете согласие с </span>
+          <router-link
+            to="#"
+            class="underline text-theme hover:no-underline"
+          >
+            пользовательским соглашением
+          </router-link>
     </div>
       </div>
   </VContainer>
