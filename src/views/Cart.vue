@@ -21,18 +21,18 @@
       </div>
       <div class="self-start col-span-2 p-5 border">
         <div class="mb-4">
-          <div class="flex justify-between mb-4 font-medium text-4">
+          <VTableRow>
             <div>Товаров:</div>
             <div>2</div>
-          </div>
-          <div class="flex justify-between mb-4 font-medium text-4">
+          </VTableRow>
+          <VTableRow>
             <div>На сумму:</div>
             <div>1280 RUB</div>
-          </div>
-          <div class="flex justify-between pt-3 font-bold border-t text-4">
+          </VTableRow>
+          <VTableFooter>
             <div>Итого:</div>
             <div>1280 RUB</div>
-          </div>
+          </VTableFooter>
         </div>
         <VButton
           full
@@ -48,13 +48,15 @@
 <script>
 import VBreadcrumbs from '@/components/base/VBreadcrumbs.vue';
 import VButton from '@/components/base/VButton.vue';
+import VTableRow from '@/components/base/VTableRow.vue';
+import VTableFooter from '@/components/base/VTableFooter.vue';
 import VCartItem from '@/components/base/VCartItem.vue';
 import { mapGetters, mapMutations } from 'vuex';
 
 export default {
   name: 'Catalog',
   components: {
-    VBreadcrumbs, VCartItem, VButton,
+    VBreadcrumbs, VCartItem, VButton, VTableRow, VTableFooter,
   },
   computed: mapGetters(['cartItems']),
   methods: mapMutations(['updateCountCartItem', 'removeCartItem']),
