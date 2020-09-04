@@ -1,6 +1,6 @@
 <template>
-  <div class="self-start col-span-2 p-5 border">
-    <div class="mb-4 -mt-5">
+  <div class="self-start col-span-2 p-5 border lg:col-span-6 lg:p-0 lg:border-0">
+    <div class="mb-4 -mt-5 lg:mt-0">
       <VPreviewCartItem
         v-for="(product) in cartItems"
         class="py-5 border-b"

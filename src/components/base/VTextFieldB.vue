@@ -1,6 +1,6 @@
 <template>
   <input
-    class="w-full h-10 px-4 font-medium border pb-2px text-5 placeholder-black-30"
+    class="w-full h-10 px-4 pb-px font-medium border text-5 placeholder-black-30"
     :type='type'
     :placeholder='placeholder'
     :value='value'

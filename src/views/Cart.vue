@@ -2,7 +2,7 @@
   <VContainer class="py-6 lg:py-4">
     <VBreadcrumbs class="mb-8"/>
     <h1 class="mb-6 font-medium text-8">Корзина</h1>
-    <div class="grid grid-cols-6 gap-8">
+    <div class="grid grid-cols-6 gap-8 lg:gap-0">
       <TheCartItems/>
       <TheCartInfo/>
     </div>

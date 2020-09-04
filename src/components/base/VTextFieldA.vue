@@ -6,7 +6,7 @@
       :name='icon'
     />
     <input
-      class="w-full font-medium transition-colors duration-200 border-r-4 border-transparent pb-2px focus:border-theme bg-theme-7 text-5 placeholder-black-50"
+      class="w-full pb-px font-medium transition-colors duration-200 border-r-4 border-transparent focus:border-theme bg-theme-7 text-5 placeholder-black-50"
       :class="classInput"
       :type='type'
       :placeholder='placeholder'
