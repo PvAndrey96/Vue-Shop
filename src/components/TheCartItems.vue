@@ -1,5 +1,5 @@
 <template>
-  <div class="col-span-4 px-5 border">
+  <div class="self-start col-span-4 px-5 border">
     <VCartItem
       v-for="(product, id) in cartItems"
       class="py-5"
