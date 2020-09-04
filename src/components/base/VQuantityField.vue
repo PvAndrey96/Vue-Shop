@@ -1,13 +1,13 @@
 <template>
-  <div class="flex h-10">
+  <div class="flex h-10 sm:h-9">
     <button
-      class="w-8 border"
+      class="border w-9 sm:w-8"
       @click="decrement"
     >
       -
     </button>
     <input
-      class="w-8 text-center border-t border-b"
+      class="text-center border-t border-b w-9 sm:w-8"
       type="number"
       :min="min"
       :max="max"
@@ -15,7 +15,7 @@
       @input="$emit('input', $event.target.valueAsNumber)"
     >
     <button
-      class="w-8 border"
+      class="border w-9 sm:w-8"
       @click="increment"
     >
       +

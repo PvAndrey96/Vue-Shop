@@ -2,18 +2,18 @@
   <li class="flex">
     <router-link
       :to="to"
-      class="mr-5"
+      class="mr-5 lg:mr-4"
     >
       <img
         :src="img"
-        class="object-cover w-40 h-40"
+        class="object-cover w-40 h-40 lg:w-32 lg:h-32"
       />
     </router-link>
     <div class="flex flex-col justify-between flex-grow">
       <div>
         <router-link
           :to="to"
-          class="font-bold uppercase transition-colors duration-200 text-4 text-black-70 hover:text-black-80"
+          class="flex font-bold uppercase transition-colors duration-200 text-4 text-black-70 hover:text-black-80"
         >
           {{title}}
         </router-link>
@@ -21,25 +21,18 @@
           <span class="font-medium text-black-50 text-4">Размер: </span>
           <span class="font-medium uppercase text-black-50 text-4">{{size}}</span>
         </div>
+        <div>
+          <span class="font-medium text-black-50 text-4">Цена: </span>
+          <span class="font-medium uppercase text-black-50 text-4">{{price}} rub</span>
+        </div>
       </div>
       <div>
-        <button
-          class="font-medium transition-colors duration-200 text-black-50 hover:text-black-70 text-4"
-          @click="$emit('delete')"
-        >
-          Удалить
-        </button>
-      </div>
-    </div>
-    <div class="flex items-center">
       <VQuantityField
         :min="1"
         :value="count"
         @input='$emit("update:count", $event)'
       />
-    </div>
-    <div class="flex items-center justify-end w-1/6">
-      <div class="font-medium text-right uppercase text-black-50">{{price}} rub</div>
+      </div>
     </div>
   </li>
 </template>
