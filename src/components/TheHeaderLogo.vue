@@ -1,10 +1,10 @@
 <template>
   <router-link
     to="/"
-    class="mr-8 lg:mx-auto lg:px-4"
+    class="mr-10 lg:mx-auto lg:px-4"
   >
     <VSvg
-      class="w-40 pb-1 lg:pb-2px h-18 lg:h-14 lg:w-28 sm:w-24"
+      class="w-40 h-18 lg:h-14 lg:w-32 sm:w-28"
       name="logo"
     />
   </router-link>
