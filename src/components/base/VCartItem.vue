@@ -26,13 +26,22 @@
           <span class="font-medium uppercase text-black-50 text-4">{{price}} rub</span>
         </div>
       </div>
-      <div>
       <VQuantityField
         :min="1"
         :value="count"
         @input='$emit("update:count", $event)'
       />
-      </div>
+    </div>
+    <div class="flex items-center sm:items-stretch">
+      <button
+        class="p-2 -mr-2 sm:px-0 sm:mr-0"
+        @click="$emit('delete')"
+      >
+        <VSvg
+          name="close"
+          class="w-5 h-5 text-black-50"
+        />
+      </button>
     </div>
   </li>
 </template>
