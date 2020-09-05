@@ -11,7 +11,7 @@
     <VModalWindow
       v-if="false"
     >
-      <div class="p-8 text-center">
+      <div class="p-8 text-center sm:px-4">
         <div class="font-bold uppercase text-4">Ваш заказ успешно оформлен</div>
         <div class="mt-2 text-4">Наш менеджер свяжется с вами в ближайшее время для подтверждения заказа и уточнения деталей доставки и оплаты.
         Спасибо за заказ!</div>
