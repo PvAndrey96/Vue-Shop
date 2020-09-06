@@ -3,9 +3,13 @@
     id="app"
     class="h-full text-3 text-black-80"
   >
-    <component :is="layout">
+    <component
+      v-if="layout"
+      :is="layout"
+    >
       <router-view/>
     </component>
+    <router-view v-else/>
   </div>
 </template>
 

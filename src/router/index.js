@@ -9,11 +9,6 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes: [
     {
-      path: '/',
-      meta: { layout: 'TheMainLayout' },
-      component: () => import('@/views/Home.vue'),
-    },
-    {
       path: '/catalog',
       meta: { layout: 'TheMainLayout' },
       component: () => import('@/views/Catalog.vue'),
@@ -32,6 +27,15 @@ const router = new VueRouter({
       path: '/checkout',
       meta: { layout: 'TheMainLayout' },
       component: () => import('@/views/Checkout.vue'),
+    },
+    {
+      path: '/',
+      meta: { layout: 'TheMainLayout' },
+      component: () => import('@/views/Home.vue'),
+    },
+    {
+      path: '*',
+      component: () => import('@/views/NotFound.vue'),
     },
   ],
 });
