@@ -42,6 +42,28 @@ export default {
         ],
       },
     ],
+    footerNav: [
+      {
+        text: 'О магазине',
+        link: '#',
+      },
+      {
+        text: 'Контакты',
+        link: '#',
+      },
+      {
+        text: 'Доставка и оплата',
+        link: '#',
+      },
+      {
+        text: 'Политика возврата',
+        link: '#',
+      },
+      {
+        text: 'Пользовательское соглашение',
+        link: '#',
+      },
+    ],
     searchResult: [
       {
         title: 'Худи Foces',
@@ -112,6 +134,9 @@ export default {
   getters: {
     categories(state) {
       return state.categories;
+    },
+    footerNav(state) {
+      return state.footerNav;
     },
     searchResult(state) {
       return state.searchResult;
