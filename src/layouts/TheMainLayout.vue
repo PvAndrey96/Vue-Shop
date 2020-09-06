@@ -1,8 +1,10 @@
 <template>
-  <div>
+  <div class="flex flex-col h-full">
     <TheNavbarMobile/>
     <TheHeader/>
-    <slot/>
+    <div class="flex-grow">
+      <slot/>
+    </div>
     <TheFooter/>
   </div>
 </template>

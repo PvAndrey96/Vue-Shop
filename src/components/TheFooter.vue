@@ -1,6 +1,6 @@
 <template>
-  <footer class="mt-8 border-t">
-    <VContainer class="flex justify-between py-7">
+  <footer class="border-t">
+    <VContainer class="flex justify-between py-8 lg:py-6">
       <nav>
         <ul class="flex flex-wrap -mb-4 -mr-4 font-medium text-4">
           <li

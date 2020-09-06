@@ -11,6 +11,11 @@ input::-webkit-inner-spin-button {
   @apply appearance-none;
 }
 
+html,
+body {
+  @apply h-full;
+}
+
 /* purgecss end ignore */
 @tailwind components;
 
