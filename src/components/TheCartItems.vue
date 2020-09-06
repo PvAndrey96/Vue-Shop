@@ -2,7 +2,7 @@
   <div class="self-start col-span-4 px-5 border lg:-mt-5 lg:border-0 lg:col-span-6 lg:px-0">
     <VCartItem
       v-for="(product, id) in cartItems"
-      class="py-5"
+      class="py-5 lg:py-4"
       :class="{'border-t': id}"
       :key="product.id"
       :to="product.url"

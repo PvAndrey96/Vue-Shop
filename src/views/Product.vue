@@ -12,7 +12,7 @@
           />
         </div>
       </div>
-      <div class="col-span-1 lg:col-span-3">
+      <div class="col-span-1 lg:col-span-3 lg:mb-4">
         <h1 class="mb-1 font-bold uppercase text-6 text-black-70">Футболка мужская</h1>
         <div class="font-medium uppercase mb-7 text-5 text-black-70">1180 rub</div>
         <div class="mb-7">

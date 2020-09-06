@@ -1,9 +1,9 @@
 <template>
-  <div class="self-start col-span-2 p-5 border lg:col-span-6 lg:p-0 lg:border-0">
+  <div class="self-start col-span-2 p-5 border lg:col-span-6 lg:p-0 lg:border-0 lg:mb-4">
     <div class="mb-4 -mt-5 lg:mt-0">
       <VPreviewCartItem
         v-for="(product) in cartItems"
-        class="py-5 border-b"
+        class="py-5 border-b lg:py-4"
         :key="product.name"
         :to="product.url"
         :img="product.img"
