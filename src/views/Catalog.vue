@@ -25,15 +25,17 @@
         <TheFilterSize/>
         <TheFilterColor/>
       </div>
-      <div class="grid grid-cols-4 col-span-4 gap-6 lg:col-span-5 md:grid-cols-3 sm:grid-cols-2">
-        <VCard
-          v-for="(product, id) in products"
-          :key="id"
-          to="#"
-          :title="product.name"
-          :img="product.img"
-          :price="product.price"
-        />
+      <div class="col-span-4 lg:col-span-5">
+        <div class="grid grid-cols-4 gap-6 md:grid-cols-3 sm:grid-cols-2">
+          <VCard
+            v-for="(product, id) in products"
+            :key="id"
+            to="#"
+            :title="product.name"
+            :img="product.img"
+            :price="product.price"
+          />
+        </div>
       </div>
     </div>
     <TheMobileFilters/>

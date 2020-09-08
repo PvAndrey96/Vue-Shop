@@ -15,22 +15,30 @@
       class="absolute right-0 z-10 pt-2 w-96 mt-18 lg:w-full lg:pt-0 lg:mt-14"
     >
       <div class="px-4 pb-3 bg-white border lg:border-0 lg:border-b">
-        <ul class="mb-3">
-          <VPreviewCartItem
-            v-for="product in cartItems"
-            class="py-3 border-b"
-            :key="product.name"
-            :to="product.url"
-            :img="product.img"
-            :title="product.name"
-            :size="product.size"
-            :count="product.count"
-            :price="product.price"
-          />
-        </ul>
-        <div class="flex justify-between mb-3">
-          <div class="font-medium text-4">4 товара на сумму:</div>
-          <div class="font-medium uppercase">4400 rub</div>
+        <template v-if="cartItems.length">
+          <ul class="mb-3">
+            <VPreviewCartItem
+              v-for="product in cartItems"
+              class="py-3 border-b"
+              :key="product.name"
+              :to="product.url"
+              :img="product.img"
+              :title="product.name"
+              :size="product.size"
+              :count="product.count"
+              :price="product.price"
+            />
+          </ul>
+          <div class="flex justify-between mb-3">
+            <div class="font-medium text-4">4 товара на сумму:</div>
+            <div class="font-medium uppercase">4400 rub</div>
+          </div>
+        </template>
+        <div
+          v-else
+          class="py-6 font-medium text-center text-5"
+        >
+          Ваша корзина пуста
         </div>
         <VButton
           small
