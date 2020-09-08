@@ -1,5 +1,5 @@
 <template>
-  <div class="relative w-56 font-medium text-5 text-black-70">
+  <div class="relative font-medium text-5 text-black-70">
     <div
       class="flex h-10 px-4 border cursor-pointer"
       @click='optionsOpen = !optionsOpen'
@@ -22,7 +22,8 @@
       <div
         v-for="option in options"
         :key="option.value"
-        class="flex items-center h-10 px-4"
+        class="flex items-center h-10 px-4 cursor-pointer"
+        :class="classOption(option.value)"
         @click="selectOption(option.value)"
       >
         {{option.text}}
@@ -62,9 +63,12 @@ export default {
     },
   },
   methods: {
-    selectOption(option) {
-      this.$emit('select', option);
+    selectOption(optionVal) {
+      this.$emit('select', optionVal);
       this.optionsOpen = false;
+    },
+    classOption(optionVal) {
+      return optionVal === this.selected ? 'bg-theme text-white font-normal' : 'hover:bg-theme-10 transition-colors duration-200';
     },
   },
 };

@@ -51,12 +51,13 @@
 </template>
 
 <script>
+import VSelect from '@/components/base/VSelect.vue';
 import VTextFieldB from '@/components/base/VTextFieldB.vue';
 
 export default {
   name: 'TheCheckoutForm',
   components: {
-    VTextFieldB,
+    VTextFieldB, VSelect,
   },
 };
 </script>

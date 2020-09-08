@@ -4,7 +4,7 @@
     <div class="flex flex-wrap items-center justify-between mb-6">
       <h1 class="font-medium lg:mb-3 text-8 lg:w-full">Мужчинам</h1>
       <VSelect
-        class="lg:w-2/3"
+        class="w-56 lg:w-2/3"
         :options="optionsSortOrders"
         :selected="catalogSortOrder"
         @select="toggleCatalogSortOrder($event)"
