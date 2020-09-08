@@ -23,7 +23,7 @@
         v-for="option in options"
         :key="option.value"
         class="flex items-center h-10 px-4"
-        @click="selectOption(option)"
+        @click="selectOption(option.value)"
       >
         {{option.text}}
       </div>
@@ -44,7 +44,7 @@ export default {
       required: true,
     },
     selected: {
-      type: Object,
+      type: String,
     },
     placeholder: {
       type: String,
@@ -58,7 +58,7 @@ export default {
   },
   computed: {
     text() {
-      return this.selected ? this.selected.text : this.placeholder;
+      return this.selected ? this.options.find((el) => el.value === this.selected).text : this.placeholder;
     },
   },
   methods: {

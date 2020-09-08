@@ -3,10 +3,15 @@
     <VBreadcrumbs class="mb-8"/>
     <div class="flex flex-wrap items-center justify-between mb-6">
       <h1 class="font-medium lg:mb-3 text-8 lg:w-full">Мужчинам</h1>
-      <VSelect class="lg:w-2/3 lg:border-r-0"/>
+      <VSelect
+        class="lg:w-2/3"
+        :options="optionsSortOrders"
+        :selected="catalogSortOrder"
+        @select="toggleCatalogSortOrder($event)"
+      />
       <button
         @click="toggleDisplayFiltersMob"
-        class="hidden w-1/3 h-10 border lg:flex"
+        class="hidden w-1/3 h-10 border lg:flex lg:border-l-0"
       >
         <VSvg
           name="filter"
@@ -50,7 +55,15 @@ export default {
   components: {
     VBreadcrumbs, VSelect, VCard, TheMobileFilters, TheFilterCategory, TheFilterSize, TheFilterColor,
   },
-  computed: mapGetters(['products']),
-  methods: mapMutations(['toggleDisplayFiltersMob']),
+  data() {
+    return {
+      optionsSortOrders: [
+        { value: 'price_desc', text: 'Сначала дороже' },
+        { value: 'price_asc', text: 'Сначала дешевле' },
+      ],
+    };
+  },
+  computed: mapGetters(['products', 'catalogSortOrder']),
+  methods: mapMutations(['toggleDisplayFiltersMob', 'toggleCatalogSortOrder']),
 };
 </script>
