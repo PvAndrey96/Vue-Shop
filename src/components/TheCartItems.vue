@@ -6,7 +6,7 @@
         class="py-5 lg:py-4"
         :class="{'border-t': id}"
         :key="product.id"
-        :to="product.url"
+        to="/product"
         :img="product.img"
         :title="product.name"
         :size="product.size"

@@ -10,7 +10,7 @@
         class="flex group"
       >
         <router-link
-          to="#"
+          to="/catalog"
           class="flex flex-col mx-5"
         >
           <hr class="w-0 mx-auto duration-200 border-t-4 border-theme transition-width group-hover:w-full" />
@@ -25,7 +25,7 @@
               :key="subcategory"
             >
               <router-link
-                to="#"
+                to="/catalog"
                 class="flex items-center h-10 px-5 font-medium transition-colors duration-200 text-4 hover:text-black text-black-70"
               >
                 {{subcategory}}

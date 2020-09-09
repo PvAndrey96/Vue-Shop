@@ -30,7 +30,7 @@
           <VCard
             v-for="(product, id) in products"
             :key="id"
-            to="#"
+            to="/product"
             :title="product.name"
             :img="product.img"
             :price="product.price"

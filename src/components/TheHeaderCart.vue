@@ -41,6 +41,7 @@
           Ваша корзина пуста
         </div>
         <VButton
+          to="/cart"
           small
           full
         >
