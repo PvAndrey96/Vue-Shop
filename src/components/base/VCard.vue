@@ -1,18 +1,23 @@
 <template>
-  <router-link
-    class="group"
-    :to="to"
-  >
-    <img :src="img"/>
+  <div class="group">
+    <router-link
+      :to="to"
+      class="flex"
+    >
+      <img :src="img"/>
+    </router-link>
     <div class="py-4">
-      <div class="mb-2 font-medium transition-colors duration-200 text-5 group-hover:text-black">
+      <router-link
+        :to="to"
+        class="flex mb-2 font-medium transition-colors duration-200 text-5 group-hover:text-black"
+      >
         {{title}}
-      </div>
+      </router-link>
       <div class="font-medium uppercase text-black-50">
         {{price}} rub
       </div>
     </div>
-  </router-link>
+  </div>
 </template>
 
 <script>
