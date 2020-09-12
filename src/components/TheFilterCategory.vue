@@ -12,7 +12,7 @@
           to="#"
           class="flex items-center h-8 px-3 font-medium transition-colors duration-200 text-4 hover:text-black text-black-70"
         >
-          {{subcategory}}
+          {{subcategory.name}}
         </router-link>
       </li>
     </ul>

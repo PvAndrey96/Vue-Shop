@@ -1,6 +1,5 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-// import api from '@/api';
 
 Vue.use(VueRouter);
 
@@ -9,7 +8,7 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes: [
     {
-      path: '/catalog',
+      path: '/catalog/:category',
       meta: { layout: 'TheMainLayout' },
       component: () => import('@/views/Catalog.vue'),
     },
@@ -39,15 +38,5 @@ const router = new VueRouter({
     },
   ],
 });
-
-// router.beforeEach((to, from, next) => {
-//   const currentUser = api.currentUser();
-//   const requireAuth = to.matched.some((record) => record.meta.auth);
-//   if (requireAuth && !currentUser) {
-//     next('/login?message=login');
-//   } else {
-//     next();
-//   }
-// });
 
 export default router;
