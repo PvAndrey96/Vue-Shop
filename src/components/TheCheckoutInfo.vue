@@ -24,7 +24,7 @@
       </VTableRow>
       <VTableRow>
         <div>Доставка:</div>
-        <div>0 RUB</div>
+        <div>{{delivery}} RUB</div>
       </VTableRow>
       <VTableFooter>
         <div>Итого:</div>
@@ -56,7 +56,7 @@ export default {
   components: {
     VButton, VPreviewCartItem, VTableFooter, VTableRow,
   },
-  computed: mapGetters(['cartItems']),
+  computed: mapGetters(['cartItems', 'delivery']),
   methods: mapMutations(['updateCountCartItem', 'removeCartItem']),
 };
 </script>

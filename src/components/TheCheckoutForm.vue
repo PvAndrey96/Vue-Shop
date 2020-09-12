@@ -3,9 +3,12 @@
     <div>
       <div class="mb-4 font-medium text-5">Адрес доставки</div>
       <div class="grid grid-cols-6 gap-5 lg:gap-4">
-        <VTextFieldB
+        <VSelect
           class='col-span-3 sm:col-span-6'
           placeholder='Город'
+          :options="optionsCities"
+          :selected="selectedCity"
+          @select="selectCity($event)"
         />
         <VTextFieldB
           class='col-span-3 sm:col-span-6'
@@ -53,11 +56,25 @@
 <script>
 import VSelect from '@/components/base/VSelect.vue';
 import VTextFieldB from '@/components/base/VTextFieldB.vue';
+import { mapGetters, mapMutations } from 'vuex';
 
 export default {
   name: 'TheCheckoutForm',
   components: {
     VTextFieldB, VSelect,
+  },
+  computed: {
+    ...mapGetters(['selectedCity']),
+    optionsCities() {
+      return this.$store.getters.cities.map((item) => ({
+        value: item.id,
+        text: item.name,
+      }));
+    },
+  },
+  methods: mapMutations(['selectCity']),
+  async mounted() {
+    await this.$store.dispatch('fetchCities');
   },
 };
 </script>

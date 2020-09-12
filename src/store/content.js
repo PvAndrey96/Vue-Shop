@@ -3,6 +3,8 @@ import api from '@/api';
 export default {
   state: {
     categories: [],
+    cities: [],
+    selectedCity: null,
     footerNav: [
       {
         text: 'О магазине',
@@ -94,28 +96,34 @@ export default {
     setCategories(state, data) {
       state.categories = data;
     },
+    setCities(state, data) {
+      state.cities = data;
+    },
+    selectCity(state, data) {
+      state.selectedCity = data;
+    },
   },
   actions: {
     async fetchCategories({ commit }) {
       const result = await api.getCategories();
       commit('setCategories', result);
     },
+    async fetchCities({ commit }) {
+      const result = await api.getCities();
+      commit('setCities', result);
+    },
   },
   getters: {
-    categories(state) {
-      return state.categories;
+    categories: (state) => state.categories,
+    cities: (state) => state.cities,
+    delivery: (state) => {
+      const city = state.cities.find((item) => item.id === state.selectedCity);
+      return city ? city.delivery : 0;
     },
-    footerNav(state) {
-      return state.footerNav;
-    },
-    searchResult(state) {
-      return state.searchResult;
-    },
-    carouselSlides(state) {
-      return state.carouselSlides;
-    },
-    products(state) {
-      return state.products;
-    },
+    selectedCity: (state) => state.selectedCity,
+    footerNav: (state) => state.footerNav,
+    searchResult: (state) => state.searchResult,
+    carouselSlides: (state) => state.carouselSlides,
+    products: (state) => state.products,
   },
 };

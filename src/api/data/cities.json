@@ -1,25 +1,31 @@
 [
   {
+    "id": 0,
     "name": "Москва",
     "delivery": 100
   },
   {
+    "id": 1,
     "name": "Киев",
     "delivery": 120
   },
   {
+    "id": 2,
     "name": "Минск",
     "delivery": 130
   },
   {
+    "id": 3,
     "name": "Донецк",
     "delivery": 140
   },
   {
+    "id": 4,
     "name": "Харьков",
     "delivery": 150
   },
   {
+    "id": 5,
     "name": "Одесса",
     "delivery": 160
   }

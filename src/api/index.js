@@ -1,4 +1,5 @@
 import categories from './data/categories.json';
+import cities from './data/cities.json';
 
 export default {
   getCategories() {
@@ -14,5 +15,8 @@ export default {
             url: item2.seo_url,
           })),
       }));
+  },
+  getCities() {
+    return cities;
   },
 };

@@ -6,7 +6,7 @@
     >
       <div
         class="flex items-center flex-grow"
-        :class="{'text-black-30': !selected}"
+        :class="{'text-black-30': !selectedOption}"
       >
         {{text}}
       </div>
@@ -45,7 +45,7 @@ export default {
       required: true,
     },
     selected: {
-      type: String,
+      type: [String, Number],
     },
     placeholder: {
       type: String,
@@ -58,8 +58,11 @@ export default {
     };
   },
   computed: {
+    selectedOption() {
+      return this.options.find((el) => el.value === this.selected);
+    },
     text() {
-      return this.selected ? this.options.find((el) => el.value === this.selected).text : this.placeholder;
+      return this.selectedOption ? this.selectedOption.text : this.placeholder;
     },
   },
   methods: {
