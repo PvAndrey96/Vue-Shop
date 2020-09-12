@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Москва",
+    "delivery": 100
+  },
+  {
+    "name": "Киев",
+    "delivery": 120
+  },
+  {
+    "name": "Минск",
+    "delivery": 130
+  },
+  {
+    "name": "Донецк",
+    "delivery": 140
+  },
+  {
+    "name": "Харьков",
+    "delivery": 150
+  },
+  {
+    "name": "Одесса",
+    "delivery": 160
+  }
+]

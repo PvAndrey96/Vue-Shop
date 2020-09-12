@@ -1,47 +1,8 @@
+import api from '@/api';
+
 export default {
   state: {
-    categories: [
-      {
-        name: 'Мужчинам',
-        active: true,
-        subcategories: [
-          'Худи и свитшоты',
-          'Майки',
-          'Motivation colection',
-          'Кросовки',
-          'Толстовки',
-        ],
-      },
-      {
-        name: 'Женщинам',
-        active: false,
-        subcategories: [
-          'Лонгсливы',
-          'Motivation colection',
-          'Толстовки',
-          'Кросовки',
-        ],
-      },
-      {
-        name: 'Детям',
-        active: false,
-        subcategories: [
-          'Футболки',
-          'Толстовки',
-          'Кросовки',
-        ],
-      },
-      {
-        name: 'Аксессуары',
-        active: false,
-        subcategories: [
-          'Футболки',
-          'Motivation colection',
-          'Толстовки',
-          'Кросовки',
-        ],
-      },
-    ],
+    categories: [],
     footerNav: [
       {
         text: 'О магазине',
@@ -130,6 +91,15 @@ export default {
     ],
   },
   mutations: {
+    setCategories(state, data) {
+      state.categories = data;
+    },
+  },
+  actions: {
+    async fetchCategories({ commit }) {
+      const result = await api.getCategories();
+      commit('setCategories', result);
+    },
   },
   getters: {
     categories(state) {

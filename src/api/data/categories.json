@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "name": "Мужчинам",
+    "seo_url": "mens",
+    "parent_id": null
+  },
+  {
+    "id": 2,
+    "name": "Женщинам",
+    "seo_url": "womens",
+    "parent_id": null
+  },
+  {
+    "id": 3,
+    "name": "Детям",
+    "seo_url": "child",
+    "parent_id": null
+  },
+  {
+    "id": 4,
+    "name": "Аксессуары",
+    "seo_url": "acsesuares",
+    "parent_id": null
+  },
+  {
+    "id": 5,
+    "name": "Толстовки",
+    "seo_url": "tolstovki",
+    "parent_id": 1
+  },
+  {
+    "id": 6,
+    "name": "Футболки и майки",
+    "seo_url": "futbolki",
+    "parent_id": 1
+  },
+  {
+    "id": 7,
+    "name": "Штаны",
+    "seo_url": "shtanu",
+    "parent_id": 1
+  },
+  {
+    "id": 8,
+    "name": "Шорты",
+    "seo_url": "shortu",
+    "parent_id": 1
+  },
+  {
+    "id": 9,
+    "name": "Костюмы",
+    "seo_url": "kostymu",
+    "parent_id": 1
+  }
+]

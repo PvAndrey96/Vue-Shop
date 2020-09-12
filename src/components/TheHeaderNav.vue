@@ -6,11 +6,11 @@
     <ul class="flex">
       <li
         v-for="category in categories"
-        :key="category.name"
+        :key="category.url"
         class="flex group"
       >
         <router-link
-          to="/catalog"
+          :to="category.url"
           class="flex flex-col mx-5"
         >
           <hr class="w-0 mx-auto duration-200 border-t-4 border-theme transition-width group-hover:w-full" />
@@ -18,17 +18,20 @@
             {{category.name}}
           </div>
         </router-link>
-        <div class="absolute z-10 hidden pt-2 mt-18 group-hover:block">
+        <div
+          v-if="category.subcategories.length"
+          class="absolute z-10 hidden pt-2 mt-18 group-hover:block"
+        >
           <ul class="py-2 bg-white border">
             <li
               v-for="subcategory in category.subcategories"
-              :key="subcategory"
+              :key="subcategory.url"
             >
               <router-link
-                to="/catalog"
+                :to="subcategory.url"
                 class="flex items-center h-10 px-5 font-medium transition-colors duration-200 text-4 hover:text-black text-black-70"
               >
-                {{subcategory}}
+                {{subcategory.name}}
               </router-link>
             </li>
           </ul>
@@ -44,5 +47,8 @@ import { mapGetters } from 'vuex';
 export default {
   name: 'TheHeaderNav',
   computed: mapGetters(['searchFocus', 'categories']),
+  async mounted() {
+    await this.$store.dispatch('fetchCategories');
+  },
 };
 </script>
