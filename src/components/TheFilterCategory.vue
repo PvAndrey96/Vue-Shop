@@ -20,10 +20,12 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
-
 export default {
   name: 'TheFilterCategory',
-  computed: mapGetters(['categories']),
+  computed: {
+    subcategories() {
+      return this.$store.getters.subcategories(this.$route.params.category);
+    },
+  },
 };
 </script>

@@ -115,6 +115,10 @@ export default {
   },
   getters: {
     categories: (state) => state.categories,
+    subcategories: (state) => (url) => {
+      const category = state.categories.find((item) => item.url === url);
+      return category ? category.subcategories : [];
+    },
     cities: (state) => state.cities,
     delivery: (state) => {
       const city = state.cities.find((item) => item.id === state.selectedCity);
