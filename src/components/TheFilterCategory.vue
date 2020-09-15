@@ -5,11 +5,11 @@
     </div>
     <ul>
       <li
-        v-for="subcategory in categories[0].subcategories"
-        :key="subcategory"
+        v-for="subcategory in subcategories"
+        :key="subcategory.url"
       >
         <router-link
-          to="#"
+          :to="`/catalog/${subcategory.url}`"
           class="flex items-center h-8 px-3 font-medium transition-colors duration-200 text-4 hover:text-black text-black-70"
         >
           {{subcategory.name}}
