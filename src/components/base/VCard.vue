@@ -4,7 +4,10 @@
       :to="to"
       class="flex"
     >
-      <img :src="img"/>
+      <img
+        :src="img"
+        class="w-full"
+      />
     </router-link>
     <div class="py-4">
       <router-link

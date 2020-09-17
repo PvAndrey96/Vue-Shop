@@ -1,62 +1,82 @@
 [
   {
     "id": 0,
-    "name": "Мужчинам",
-    "seo_url": "mens",
-    "category_id": 1
+    "slug": "tovar-1",
+    "category": "mens",
+    "name": "Товар 1",
+    "price": 1280,
+    "img": "https://reebok.kiev.ua/files/product-photos/sku-eh1724_0.jpg"
   },
   {
     "id": 1,
-    "name": "Мужчинам",
-    "seo_url": "mensa",
-    "category_id": 1
+    "slug": "tovar-2",
+    "category": "mens",
+    "name": "Товар 2",
+    "price": 1280,
+    "img": "https://reebok.kiev.ua/files/product-photos/sku-dv5184_0.jpg"
   },
   {
     "id": 2,
-    "name": "Женщинам",
-    "seo_url": "womens",
-    "category_id": 1
+    "slug": "tovar-3",
+    "category": "mens",
+    "name": "Товар 3",
+    "price": 1280,
+    "img": "https://reebok.kiev.ua/files/product-photos/sku-eg8916.jpg"
   },
   {
     "id": 3,
-    "name": "Детям",
-    "seo_url": "child",
-    "category_id": 1
+    "slug": "tovar-4",
+    "category": "mens",
+    "name": "Товар 4",
+    "price": 1280,
+    "img": "https://reebok.kiev.ua/files/product-photos/sku-eh1724_0.jpg"
   },
   {
     "id": 4,
-    "name": "Аксессуары",
-    "seo_url": "acsesuares",
-    "category_id": 1
+    "slug": "tovar-5",
+    "category": "mens",
+    "name": "Товар 5",
+    "price": 1280,
+    "img": "https://reebok.kiev.ua/files/product-photos/sku-fv3214_0.jpg"
   },
   {
     "id": 5,
-    "name": "Толстовки",
-    "seo_url": "tolstovki",
-    "category_id": 1
+    "slug": "tovar-6",
+    "category": "tolstovki",
+    "name": "Товар 6",
+    "price": 1280,
+    "img": "https://reebok.kiev.ua/files/product-photos/sku-dv5184_0.jpg"
   },
   {
     "id": 6,
-    "name": "Футболки и майки",
-    "seo_url": "futbolki",
-    "category_id": 1
+    "slug": "tovar-7",
+    "category": "tolstovki",
+    "name": "Товар 7",
+    "price": 1280,
+    "img": "https://reebok.kiev.ua/files/product-photos/sku-eg8916.jpg"
   },
   {
     "id": 7,
-    "name": "Штаны",
-    "seo_url": "shtanu",
-    "category_id": 1
+    "slug": "tovar-8",
+    "category": "tolstovki",
+    "name": "Товар 8",
+    "price": 1280,
+    "img": "https://reebok.kiev.ua/files/product-photos/sku-fv3214_0.jpg"
   },
   {
     "id": 8,
-    "name": "Шорты",
-    "seo_url": "shortu",
-    "category_id": 1
+    "slug": "tovar-9",
+    "category": "womens",
+    "name": "Товар 9",
+    "price": 1280,
+    "img": "https://reebok.kiev.ua/files/product-photos/sku-eg8916.jpg"
   },
   {
     "id": 9,
-    "name": "Костюмы",
-    "seo_url": "kostymu",
-    "category_id": 1
+    "slug": "tovar-10",
+    "category": "womens",
+    "name": "Товар 10",
+    "price": 1280,
+    "img": "https://reebok.kiev.ua/files/product-photos/sku-fv3214_0.jpg"
   }
 ]

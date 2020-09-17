@@ -28,7 +28,7 @@
       <div class="col-span-4 lg:col-span-5">
         <div class="grid grid-cols-4 gap-6 md:grid-cols-3 sm:grid-cols-2">
           <VCard
-            v-for="(product, id) in products"
+            v-for="(product, id) in categoryProducts"
             :key="id"
             to="/product"
             :title="product.name"
@@ -66,11 +66,17 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(['products', 'catalogSortOrder']),
+    ...mapGetters(['catalogSortOrder']),
     categoryTitle() {
       return this.$store.getters.categoryTitle(this.$route.params.category);
     },
+    categoryProducts() {
+      return this.$store.getters.categoryProducts(this.$route.params.category);
+    },
   },
   methods: mapMutations(['toggleDisplayFiltersMob', 'toggleCatalogSortOrder']),
+  async mounted() {
+    await this.$store.dispatch('fetchProducts');
+  },
 };
 </script>
