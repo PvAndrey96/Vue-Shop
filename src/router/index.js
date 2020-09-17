@@ -28,6 +28,11 @@ const router = new VueRouter({
       component: () => import('@/views/Checkout.vue'),
     },
     {
+      path: '/info/:page',
+      meta: { layout: 'TheMainLayout' },
+      component: () => import('@/views/Info.vue'),
+    },
+    {
       path: '/',
       meta: { layout: 'TheMainLayout' },
       component: () => import('@/views/Home.vue'),

@@ -5,6 +5,7 @@ export default {
     categories: [],
     products: [],
     cities: [],
+    infoPages: [],
     selectedCity: null,
     footerNav: [
       {
@@ -74,6 +75,9 @@ export default {
     selectCity(state, data) {
       state.selectedCity = data;
     },
+    setInfoPages(state, data) {
+      state.infoPages = data;
+    },
   },
   actions: {
     async fetchCategories({ commit }) {
@@ -88,6 +92,10 @@ export default {
       const result = await api.getProducts();
       commit('setProducts', result);
     },
+    async fetchInfoPages({ commit }) {
+      const result = await api.getInfoPages();
+      commit('setInfoPages', result);
+    },
   },
   getters: {
     categories: (state) => state.categories.filter((item) => !item.parent),
@@ -96,13 +104,21 @@ export default {
       const category = state.categories.find((item) => item.slug === slug);
       return category ? category.name : '';
     },
+    infoPages: (state) => state.infoPages,
+    infoPageTitle: (state) => (slug) => {
+      const infoPage = state.infoPages.find((item) => item.slug === slug);
+      return infoPage ? infoPage.title : '';
+    },
+    infoPageContent: (state) => (slug) => {
+      const infoPage = state.infoPages.find((item) => item.slug === slug);
+      return infoPage ? infoPage.content : '';
+    },
     cities: (state) => state.cities,
     delivery: (state) => {
       const city = state.cities.find((item) => item.id === state.selectedCity);
       return city ? city.delivery : 0;
     },
     selectedCity: (state) => state.selectedCity,
-    footerNav: (state) => state.footerNav,
     searchResult: (state) => state.searchResult,
     carouselSlides: (state) => state.carouselSlides,
     categoryProducts: (state) => (slug) => state.products.filter((item) => item.category === slug),

@@ -1,6 +1,7 @@
 import categories from './data/categories.json';
 import products from './data/products.json';
 import cities from './data/cities.json';
+import infoPages from './data/info_pages.json';
 
 export default {
   getCategories() {
@@ -11,5 +12,8 @@ export default {
   },
   getCities() {
     return cities;
+  },
+  getInfoPages() {
+    return infoPages;
   },
 };
