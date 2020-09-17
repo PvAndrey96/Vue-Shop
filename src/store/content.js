@@ -114,11 +114,8 @@ export default {
     },
   },
   getters: {
-    categories: (state) => state.categories,
-    subcategories: (state) => (url) => {
-      const category = state.categories.find((item) => item.url === url);
-      return category ? category.subcategories : [];
-    },
+    categories: (state) => state.categories.filter((item) => !item.parent),
+    subcategories: (state) => (slug) => state.categories.filter((item) => item.parent === slug),
     cities: (state) => state.cities,
     delivery: (state) => {
       const city = state.cities.find((item) => item.id === state.selectedCity);
