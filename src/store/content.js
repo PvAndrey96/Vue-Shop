@@ -116,6 +116,10 @@ export default {
   getters: {
     categories: (state) => state.categories.filter((item) => !item.parent),
     subcategories: (state) => (slug) => state.categories.filter((item) => item.parent === slug),
+    categoryTitle: (state) => (slug) => {
+      const category = state.categories.find((item) => item.slug === slug);
+      return category ? category.name : '';
+    },
     cities: (state) => state.cities,
     delivery: (state) => {
       const city = state.cities.find((item) => item.id === state.selectedCity);

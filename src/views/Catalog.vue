@@ -2,7 +2,7 @@
   <VContainer class="py-6 lg:py-4">
     <VBreadcrumbs class="mb-8"/>
     <div class="flex flex-wrap items-center justify-between mb-6">
-      <h1 class="font-medium lg:mb-3 text-8 lg:w-full">Мужчинам</h1>
+      <h1 class="font-medium lg:mb-3 text-8 lg:w-full">{{categoryTitle}}</h1>
       <VSelect
         class="w-56 lg:w-2/3"
         :options="optionsSortOrders"
@@ -65,7 +65,12 @@ export default {
       ],
     };
   },
-  computed: mapGetters(['products', 'catalogSortOrder']),
+  computed: {
+    ...mapGetters(['products', 'catalogSortOrder']),
+    categoryTitle() {
+      return this.$store.getters.categoryTitle(this.$route.params.category);
+    },
+  },
   methods: mapMutations(['toggleDisplayFiltersMob', 'toggleCatalogSortOrder']),
 };
 </script>
