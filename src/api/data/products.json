@@ -2,7 +2,7 @@
   {
     "id": 0,
     "slug": "tovar-1",
-    "category": "mens",
+    "category": "futbolki",
     "name": "Товар 1",
     "price": 1280,
     "img": "https://reebok.kiev.ua/files/product-photos/sku-eh1724_0.jpg"
@@ -10,7 +10,7 @@
   {
     "id": 1,
     "slug": "tovar-2",
-    "category": "mens",
+    "category": "futbolki",
     "name": "Товар 2",
     "price": 1280,
     "img": "https://reebok.kiev.ua/files/product-photos/sku-dv5184_0.jpg"
@@ -18,7 +18,7 @@
   {
     "id": 2,
     "slug": "tovar-3",
-    "category": "mens",
+    "category": "futbolki",
     "name": "Товар 3",
     "price": 1280,
     "img": "https://reebok.kiev.ua/files/product-photos/sku-eg8916.jpg"
@@ -26,7 +26,7 @@
   {
     "id": 3,
     "slug": "tovar-4",
-    "category": "mens",
+    "category": "shtanu",
     "name": "Товар 4",
     "price": 1280,
     "img": "https://reebok.kiev.ua/files/product-photos/sku-eh1724_0.jpg"
@@ -34,7 +34,7 @@
   {
     "id": 4,
     "slug": "tovar-5",
-    "category": "mens",
+    "category": "shtanu",
     "name": "Товар 5",
     "price": 1280,
     "img": "https://reebok.kiev.ua/files/product-photos/sku-fv3214_0.jpg"

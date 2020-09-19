@@ -3,7 +3,7 @@ import api from '@/api';
 export default {
   state: {
     categories: [],
-    products: [],
+    productsCategory: [],
     cities: [],
     infoPages: [],
     selectedCity: null,
@@ -69,8 +69,8 @@ export default {
     setCities(state, data) {
       state.cities = data;
     },
-    setProducts(state, data) {
-      state.products = data;
+    setProductsCategory(state, data) {
+      state.productsCategory = data;
     },
     selectCity(state, data) {
       state.selectedCity = data;
@@ -88,9 +88,9 @@ export default {
       const result = await api.getCities();
       commit('setCities', result);
     },
-    async fetchProducts({ commit }) {
-      const result = await api.getProducts();
-      commit('setProducts', result);
+    async fetchProductsCategory({ commit }, slug) {
+      const result = await api.getProductsCategory(slug);
+      commit('setProductsCategory', result);
     },
     async fetchInfoPages({ commit }) {
       const result = await api.getInfoPages();
@@ -121,6 +121,6 @@ export default {
     selectedCity: (state) => state.selectedCity,
     searchResult: (state) => state.searchResult,
     carouselSlides: (state) => state.carouselSlides,
-    categoryProducts: (state) => (slug) => state.products.filter((item) => item.category === slug),
+    productsCategory: (state) => state.productsCategory,
   },
 };

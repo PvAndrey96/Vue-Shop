@@ -7,8 +7,11 @@ export default {
   getCategories() {
     return categories;
   },
-  getProducts() {
-    return products;
+  getProductsCategory(slug) {
+    const subcategories = categories.filter((item) => item.parent === slug);
+    const slugsCategories = subcategories.map((item) => item.slug);
+    slugsCategories.push(slug);
+    return slugsCategories.reduce((prev, item) => prev.concat(products.filter((item2) => item2.category === item)), []);
   },
   getCities() {
     return cities;

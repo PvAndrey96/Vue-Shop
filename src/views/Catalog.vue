@@ -28,8 +28,8 @@
       <div class="col-span-4 lg:col-span-5">
         <div class="grid grid-cols-4 gap-6 md:grid-cols-3 sm:grid-cols-2">
           <VCard
-            v-for="(product, id) in categoryProducts"
-            :key="id"
+            v-for="product in productsCategory"
+            :key="product.slug"
             to="/product"
             :title="product.name"
             :img="product.img"
@@ -65,18 +65,23 @@ export default {
       ],
     };
   },
+  watch: {
+    $route: 'fetchProductsCategory',
+  },
   computed: {
-    ...mapGetters(['catalogSortOrder']),
+    ...mapGetters(['catalogSortOrder', 'productsCategory']),
     categoryTitle() {
       return this.$store.getters.categoryTitle(this.$route.params.category);
     },
-    categoryProducts() {
-      return this.$store.getters.categoryProducts(this.$route.params.category);
+  },
+  methods: {
+    ...mapMutations(['toggleDisplayFiltersMob', 'toggleCatalogSortOrder']),
+    async fetchProductsCategory() {
+      await this.$store.dispatch('fetchProductsCategory', this.$route.params.category);
     },
   },
-  methods: mapMutations(['toggleDisplayFiltersMob', 'toggleCatalogSortOrder']),
   async mounted() {
-    await this.$store.dispatch('fetchProducts');
+    await this.fetchProductsCategory();
   },
 };
 </script>
