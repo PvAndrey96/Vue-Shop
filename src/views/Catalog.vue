@@ -1,7 +1,6 @@
 <template>
   <VContainer class="py-6 lg:py-4">
-    <VBreadcrumbs class="mb-8"/>
-    <div class="flex flex-wrap items-center justify-between mb-6">
+    <div class="flex flex-wrap items-center justify-between mt-2 mb-6">
       <h1 class="font-medium lg:mb-3 text-8 lg:w-full">{{catalogTitle}}</h1>
       <VSelect
         class="w-56 lg:w-2/3"
@@ -43,7 +42,6 @@
 </template>
 
 <script>
-import VBreadcrumbs from '@/components/base/VBreadcrumbs.vue';
 import VSelect from '@/components/base/VSelect.vue';
 import VCard from '@/components/base/VCard.vue';
 import TheFilterCategory from '@/components/TheFilterCategory.vue';
@@ -55,7 +53,7 @@ import { mapGetters, mapMutations } from 'vuex';
 export default {
   name: 'Catalog',
   components: {
-    VBreadcrumbs, VSelect, VCard, TheMobileFilters, TheFilterCategory, TheFilterSize, TheFilterColor,
+    VSelect, VCard, TheMobileFilters, TheFilterCategory, TheFilterSize, TheFilterColor,
   },
   data() {
     return {

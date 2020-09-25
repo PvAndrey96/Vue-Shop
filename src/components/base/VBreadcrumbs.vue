@@ -3,7 +3,7 @@
     <ul class="flex">
       <VBreadcrumbsItem
         v-for="(item, id) in items"
-        :key="item.text"
+        :key="item.id"
         :text="item.text"
         :to="item.to"
         :past="id === items.length - 2"

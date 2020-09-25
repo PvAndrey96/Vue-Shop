@@ -1,7 +1,6 @@
 <template>
   <VContainer class="py-6 lg:py-4">
-    <VBreadcrumbs class="mb-8"/>
-    <div class="grid grid-cols-3 gap-8">
+    <div class="grid grid-cols-3 gap-8 mt-2">
       <div class="col-span-2 lg:col-span-3">
         <div class="grid grid-flow-col grid-cols-3 grid-rows-2 gap-4 sm:gap-2">
           <img
@@ -60,7 +59,6 @@
 </template>
 
 <script>
-import VBreadcrumbs from '@/components/base/VBreadcrumbs.vue';
 import VButtonColor from '@/components/base/VButtonColor.vue';
 import VButtonSize from '@/components/base/VButtonSize.vue';
 import VButton from '@/components/base/VButton.vue';
@@ -69,7 +67,7 @@ import { mapGetters } from 'vuex';
 export default {
   name: 'Product',
   components: {
-    VBreadcrumbs, VButtonColor, VButtonSize, VButton,
+    VButtonColor, VButtonSize, VButton,
   },
   computed: mapGetters(['productTitle', 'productImages', 'productDescription', 'productPrice']),
   async mounted() {
