@@ -30,7 +30,7 @@
           <VCard
             v-for="product in catalogProducts"
             :key="product.slug"
-            to="/product"
+            :to="`/product/${product.slug}`"
             :title="product.name"
             :img="product.img"
             :price="product.price"

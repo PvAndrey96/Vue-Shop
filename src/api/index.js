@@ -36,7 +36,7 @@ export default {
       content: infoPage.content,
     };
   },
-  getCategory(slug) {
+  getCategoryInfo(slug) {
     return {
       title: categories.find((item) => item.slug === slug).name,
       subcategories: helpers.subcategories(slug),
@@ -46,7 +46,25 @@ export default {
     const subcategories = categories.filter((item) => item.parent === slug);
     const slugsCategories = subcategories.map((item) => item.slug);
     slugsCategories.push(slug);
-    return slugsCategories.reduce((prev, item) => prev.concat(products.filter((item2) => item2.category === item)), []);
+    return slugsCategories.reduce((productsArr, slugCategory) => (
+      productsArr.concat(
+        products.filter((product) => product.category === slugCategory).map((product) => ({
+          slug: product.slug,
+          name: product.name,
+          price: product.price,
+          img: product.images[0],
+        })),
+      )
+    ), []);
+  },
+  getProductInfo(slug) {
+    const product = products.find((item) => item.slug === slug);
+    return {
+      name: product.name,
+      description: product.description,
+      price: product.price,
+      images: product.images,
+    };
   },
   getCities() {
     return cities;

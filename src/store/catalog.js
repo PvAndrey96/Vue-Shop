@@ -18,7 +18,7 @@ export default {
   },
   actions: {
     async fetchCategory({ commit }, slug) {
-      const result = await api.getCategory(slug);
+      const result = await api.getCategoryInfo(slug);
       commit('setCurrentCategory', result);
     },
     async fetchProductsCatalog({ commit }, slug) {
