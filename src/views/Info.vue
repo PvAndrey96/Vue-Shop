@@ -12,19 +12,24 @@
 
 <script>
 import VBreadcrumbs from '@/components/base/VBreadcrumbs.vue';
+import { mapGetters } from 'vuex';
 
 export default {
   name: 'Info',
   components: {
     VBreadcrumbs,
   },
-  computed: {
-    infoPageTitle() {
-      return this.$store.getters.infoPageTitle(this.$route.params.page);
+  watch: {
+    $route: 'fetchInfoPage',
+  },
+  computed: mapGetters(['infoPageTitle', 'infoPageContent']),
+  methods: {
+    async fetchInfoPage() {
+      await this.$store.dispatch('fetchInfoPage', this.$route.params.page);
     },
-    infoPageContent() {
-      return this.$store.getters.infoPageContent(this.$route.params.page);
-    },
+  },
+  async mounted() {
+    await this.fetchInfoPage();
   },
 };
 </script>

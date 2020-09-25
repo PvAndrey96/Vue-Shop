@@ -1,6 +1,6 @@
 <template>
   <div
-    v-if="subcategories.length"
+    v-if="catalogSubcategories.length"
     class="mb-4 lg:pb-6 lg:border-b lg:mb-0"
   >
     <div class="flex items-center h-12 mb-3 font-bold uppercase border-b text-theme lg:mb-0 lg:border-0 lg:h-14">
@@ -8,7 +8,7 @@
     </div>
     <ul>
       <li
-        v-for="subcategory in subcategories"
+        v-for="subcategory in catalogSubcategories"
         :key="subcategory.slug"
       >
         <router-link
@@ -23,12 +23,10 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 export default {
   name: 'TheFilterCategory',
-  computed: {
-    subcategories() {
-      return this.$store.getters.subcategories(this.$route.params.category);
-    },
-  },
+  computed: mapGetters(['catalogSubcategories']),
 };
 </script>

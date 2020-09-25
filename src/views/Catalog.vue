@@ -2,7 +2,7 @@
   <VContainer class="py-6 lg:py-4">
     <VBreadcrumbs class="mb-8"/>
     <div class="flex flex-wrap items-center justify-between mb-6">
-      <h1 class="font-medium lg:mb-3 text-8 lg:w-full">{{categoryTitle}}</h1>
+      <h1 class="font-medium lg:mb-3 text-8 lg:w-full">{{catalogTitle}}</h1>
       <VSelect
         class="w-56 lg:w-2/3"
         :options="optionsSortOrders"
@@ -28,7 +28,7 @@
       <div class="col-span-4 lg:col-span-5">
         <div class="grid grid-cols-4 gap-6 md:grid-cols-3 sm:grid-cols-2">
           <VCard
-            v-for="product in productsCategory"
+            v-for="product in catalogProducts"
             :key="product.slug"
             to="/product"
             :title="product.name"
@@ -66,22 +66,18 @@ export default {
     };
   },
   watch: {
-    $route: 'fetchProductsCategory',
+    $route: 'fetchData',
   },
-  computed: {
-    ...mapGetters(['catalogSortOrder', 'productsCategory']),
-    categoryTitle() {
-      return this.$store.getters.categoryTitle(this.$route.params.category);
-    },
-  },
+  computed: mapGetters(['catalogSortOrder', 'catalogProducts', 'catalogTitle']),
   methods: {
     ...mapMutations(['toggleDisplayFiltersMob', 'toggleCatalogSortOrder']),
-    async fetchProductsCategory() {
-      await this.$store.dispatch('fetchProductsCategory', this.$route.params.category);
+    async fetchData() {
+      await this.$store.dispatch('fetchCategory', this.$route.params.category);
+      await this.$store.dispatch('fetchProductsCatalog', this.$route.params.category);
     },
   },
   async mounted() {
-    await this.fetchProductsCategory();
+    await this.fetchData();
   },
 };
 </script>

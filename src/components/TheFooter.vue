@@ -4,7 +4,7 @@
       <nav>
         <ul class="flex flex-wrap -mb-4 -mr-6 font-medium md:-mr-4 text-4">
           <li
-            v-for="item in infoPages"
+            v-for="item in navInfoPages"
             :key="item.slug"
             class="mb-4 mr-6 md:mr-4"
           >
@@ -12,7 +12,7 @@
               :to="`/info/${item.slug}`"
               class="transition-colors duration-200 hover:text-black"
             >
-              {{item.title}}
+              {{item.name}}
             </router-link>
           </li>
         </ul>
@@ -27,9 +27,9 @@ import { mapGetters } from 'vuex';
 
 export default {
   name: 'TheFooter',
-  computed: mapGetters(['infoPages']),
+  computed: mapGetters(['navInfoPages']),
   async mounted() {
-    await this.$store.dispatch('fetchInfoPages');
+    await this.$store.dispatch('fetchNavInfoPages');
   },
 };
 </script>

@@ -5,33 +5,33 @@
   >
     <ul class="flex">
       <li
-        v-for="category in categories"
-        :key="category.slug"
+        v-for="item in navCategories"
+        :key="item.slug"
         class="flex group"
       >
         <router-link
-          :to="`/catalog/${category.slug}`"
+          :to="`/catalog/${item.slug}`"
           class="flex flex-col mx-5"
         >
           <hr class="w-0 mx-auto duration-200 border-t-4 border-theme transition-width group-hover:w-full" />
           <div class="flex items-center flex-grow pb-1 font-medium uppercase">
-            {{category.name}}
+            {{item.name}}
           </div>
         </router-link>
         <div
-          v-if="subcategories(category.slug).length"
+          v-if="item.subItems.length"
           class="absolute z-10 hidden pt-2 mt-18 group-hover:block"
         >
           <ul class="py-2 bg-white border">
             <li
-              v-for="subcategory in subcategories(category.slug)"
-              :key="subcategory.slug"
+              v-for="subItem in item.subItems"
+              :key="subItem.slug"
             >
               <router-link
-                :to="`/catalog/${subcategory.slug}`"
+                :to="`/catalog/${subItem.slug}`"
                 class="flex items-center h-10 px-5 font-medium transition-colors duration-200 text-4 hover:text-black text-black-70"
               >
-                {{subcategory.name}}
+                {{subItem.name}}
               </router-link>
             </li>
           </ul>
@@ -46,9 +46,9 @@ import { mapGetters } from 'vuex';
 
 export default {
   name: 'TheHeaderNav',
-  computed: mapGetters(['searchFocus', 'categories', 'subcategories']),
+  computed: mapGetters(['searchFocus', 'navCategories']),
   async mounted() {
-    await this.$store.dispatch('fetchCategories');
+    await this.$store.dispatch('fetchNavCategories');
   },
 };
 </script>
