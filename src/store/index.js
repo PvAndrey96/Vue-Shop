@@ -5,6 +5,7 @@ import content from './content';
 import cart from './cart';
 import catalog from './catalog';
 import infoPage from './infoPage';
+import checkout from './checkout';
 
 Vue.use(Vuex);
 
@@ -82,6 +83,6 @@ export default new Vuex.Store({
     },
   },
   modules: {
-    content, cart, catalog, infoPage,
+    content, cart, catalog, infoPage, checkout,
   },
 });

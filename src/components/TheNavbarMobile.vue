@@ -14,26 +14,26 @@
           </router-link>
         </li>
         <li
-          v-for="category in categories"
-          :key="category.name"
+          v-for="item in navCategories"
+          :key="item.slug"
           class="py-3 border-b"
         >
           <router-link
-            to="#"
+            :to="`/catalog/${item.slug}`"
             class="flex items-center h-10 font-bold uppercase transition-colors duration-200 text-theme hover:text-theme-accent"
           >
-            {{category.name}}
+            {{item.name}}
           </router-link>
           <ul>
             <li
-              v-for="subcategory in category.subcategories"
-              :key="subcategory"
+              v-for="subItem in item.subItems"
+              :key="subItem.slug"
             >
               <router-link
-                to="#"
+                :to="`/catalog/${subItem.slug}`"
                 class="flex items-center h-10 px-4 font-medium transition-colors duration-200 text-4 hover:text-black text-black-70"
               >
-                {{subcategory}}
+                {{subItem.name}}
               </router-link>
             </li>
           </ul>
@@ -52,7 +52,10 @@ export default {
   components: {
     VModalSidebar,
   },
-  computed: mapGetters(['categories', 'displayNavbarMob']),
+  computed: mapGetters(['displayNavbarMob', 'navCategories']),
   methods: mapMutations(['toggleDisplayNavbarMob']),
+  async mounted() {
+    await this.$store.dispatch('fetchNavCategories');
+  },
 };
 </script>
