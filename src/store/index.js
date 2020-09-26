@@ -3,6 +3,7 @@ import Vuex from 'vuex';
 import api from '@/api';
 import content from './content';
 import cart from './cart';
+import category from './category';
 import catalog from './catalog';
 import infoPage from './infoPage';
 import checkout from './checkout';
@@ -84,6 +85,6 @@ export default new Vuex.Store({
     },
   },
   modules: {
-    content, cart, catalog, infoPage, checkout, product,
+    content, cart, catalog, infoPage, checkout, product, category,
   },
 });

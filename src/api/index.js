@@ -2,6 +2,8 @@ import categories from './data/categories.json';
 import products from './data/products.json';
 import cities from './data/cities.json';
 import infoPages from './data/info_pages.json';
+import colors from './data/filters_color.json';
+// import sizes from './data/filters_size.json';
 
 const helpers = {
   subcategories(slug) {
@@ -9,6 +11,15 @@ const helpers = {
       name: item.name,
       slug: item.slug,
     }));
+  },
+  productsCategory(slug) {
+    const slugsCategories = categories.filter((item) => item.parent === slug).map((item) => item.slug);
+    slugsCategories.push(slug);
+    return slugsCategories.reduce((productsArr, slugCategory) => (
+      productsArr.concat(
+        products.filter((product) => product.category === slugCategory),
+      )
+    ), []);
   },
 };
 
@@ -42,20 +53,18 @@ export default {
       subcategories: helpers.subcategories(slug),
     };
   },
-  getProductsCatalog(slug) {
-    const subcategories = categories.filter((item) => item.parent === slug);
-    const slugsCategories = subcategories.map((item) => item.slug);
-    slugsCategories.push(slug);
-    return slugsCategories.reduce((productsArr, slugCategory) => (
-      productsArr.concat(
-        products.filter((product) => product.category === slugCategory).map((product) => ({
-          slug: product.slug,
-          name: product.name,
-          price: product.price,
-          img: product.images[0],
-        })),
-      )
-    ), []);
+  getProductsCategory(slug) {
+    return helpers.productsCategory(slug).map((product) => ({
+      slug: product.slug,
+      name: product.name,
+      price: product.price,
+      img: product.images[0],
+    }));
+  },
+  getFiltersColor(slugCategory) {
+    return colors.filter((color) => (
+      helpers.productsCategory(slugCategory).find((product) => product.color === color.slug)
+    ));
   },
   getProductInfo(slug) {
     const product = products.find((item) => item.slug === slug);
