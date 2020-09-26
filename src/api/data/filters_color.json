@@ -1,0 +1,26 @@
+[
+  {
+    "slug": "red",
+    "value": "#aa3333"
+  },
+  {
+    "slug": "blue",
+    "value": "#000099"
+  },
+  {
+    "slug": "black",
+    "value": "#000000"
+  },
+  {
+    "slug": "white",
+    "value": "#ffffff"
+  },
+  {
+    "slug": "green",
+    "value": "#66ff66"
+  },
+  {
+    "slug": "gray",
+    "value": "#555555"
+  }
+]
