@@ -5,13 +5,13 @@
     </div>
     <ul class="flex flex-wrap -mb-3 -mr-2">
       <li
-        v-for="(color, id) in ['#000', '#fff', '#dd5555', '#33aa44', '#dd8', '#006', '#484', '#33a', '#222', '#aa2222']"
-        :key="id"
+        v-for="filter in filtersColor"
+        :key="filter.slug"
         class="mb-3 mr-2"
       >
         <VButtonColor
-          to="#"
-          :color="color"
+          :to="`?color=${filter.slug}`"
+          :color="filter.value"
         />
       </li>
     </ul>
@@ -20,11 +20,24 @@
 
 <script>
 import VButtonColor from '@/components/base/VButtonColor.vue';
+import { mapGetters } from 'vuex';
 
 export default {
   name: 'TheFilterColor',
   components: {
     VButtonColor,
+  },
+  computed: mapGetters(['filtersColor']),
+  watch: {
+    $route: 'fetchFiltersColor',
+  },
+  methods: {
+    async fetchFiltersColor() {
+      await this.$store.dispatch('fetchFiltersColor', this.$route.params.category);
+    },
+  },
+  async mounted() {
+    await this.fetchFiltersColor();
   },
 };
 </script>

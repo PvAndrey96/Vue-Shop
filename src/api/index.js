@@ -3,7 +3,7 @@ import products from './data/products.json';
 import cities from './data/cities.json';
 import infoPages from './data/info_pages.json';
 import colors from './data/filters_color.json';
-// import sizes from './data/filters_size.json';
+import sizes from './data/filters_size.json';
 
 const helpers = {
   subcategories(slug) {
@@ -64,6 +64,11 @@ export default {
   getFiltersColor(slugCategory) {
     return colors.filter((color) => (
       helpers.productsCategory(slugCategory).find((product) => product.color === color.slug)
+    ));
+  },
+  getFiltersSize(slugCategory) {
+    return sizes.filter((size) => (
+      helpers.productsCategory(slugCategory).find((product) => product.sizes.includes(size.slug))
     ));
   },
   getProductInfo(slug) {

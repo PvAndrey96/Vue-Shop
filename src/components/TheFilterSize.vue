@@ -5,13 +5,13 @@
     </div>
     <ul class="flex flex-wrap -mb-3 -mr-2">
       <li
-        v-for="(size, id) in ['xxs', 'xs', 's', 'm', 'l', 'xl', 'xxl']"
-        :key="id"
+        v-for="filter in filtersSize"
+        :key="filter.slug"
         class="mb-3 mr-2"
       >
         <VButtonSize
-          to="#"
-          :size="size"
+          :to="`?size=${filter.slug}`"
+          :size="filter.value"
         />
       </li>
     </ul>
@@ -20,11 +20,24 @@
 
 <script>
 import VButtonSize from '@/components/base/VButtonSize.vue';
+import { mapGetters } from 'vuex';
 
 export default {
   name: 'TheFilterSize',
   components: {
     VButtonSize,
+  },
+  computed: mapGetters(['filtersSize']),
+  watch: {
+    $route: 'fetchFiltersSize',
+  },
+  methods: {
+    async fetchFiltersSize() {
+      await this.$store.dispatch('fetchFiltersSize', this.$route.params.category);
+    },
+  },
+  async mounted() {
+    await this.fetchFiltersSize();
   },
 };
 </script>
