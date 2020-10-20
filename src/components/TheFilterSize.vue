@@ -10,8 +10,9 @@
         class="mb-3 mr-2"
       >
         <VButtonSize
-          :to="`?size=${filter.slug}`"
+          :to="filterRoute(filter.slug)"
           :size="filter.value"
+          :active="$route.query.size === filter.slug"
         />
       </li>
     </ul>
@@ -34,6 +35,14 @@ export default {
   methods: {
     async fetchFiltersSize() {
       await this.$store.dispatch('fetchFiltersSize', this.$route.params.category);
+    },
+    filterRoute(slugSize) {
+      return {
+        query: {
+          ...this.$route.query,
+          size: this.$route.query.size === slugSize ? undefined : slugSize,
+        },
+      };
     },
   },
   async mounted() {

@@ -10,8 +10,9 @@
         class="mb-3 mr-2"
       >
         <VButtonColor
-          :to="`?color=${filter.slug}`"
+          :to="filterRoute(filter.slug)"
           :color="filter.value"
+          :active="$route.query.color === filter.slug"
         />
       </li>
     </ul>
@@ -34,6 +35,14 @@ export default {
   methods: {
     async fetchFiltersColor() {
       await this.$store.dispatch('fetchFiltersColor', this.$route.params.category);
+    },
+    filterRoute(slugColor) {
+      return {
+        query: {
+          ...this.$route.query,
+          color: this.$route.query.color === slugColor ? undefined : slugColor,
+        },
+      };
     },
   },
   async mounted() {
