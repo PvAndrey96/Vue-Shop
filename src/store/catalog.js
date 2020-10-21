@@ -3,23 +3,23 @@ import api from '@/api';
 export default {
   state: {
     currentProducts: [],
-    currentFiltersColor: [],
-    currentFiltersSize: [],
+    filtersColor: [],
+    filtersSize: [],
   },
   mutations: {
     setCurrentProducts(state, data) {
       state.currentProducts = data;
     },
     setFiltersColor(state, data) {
-      state.currentFiltersColor = data;
+      state.filtersColor = data;
     },
     setFiltersSize(state, data) {
-      state.currentFiltersSize = data;
+      state.filtersSize = data;
     },
   },
   actions: {
-    async fetchProductsCatalog({ commit }, slug) {
-      const result = await api.getProductsCategory(slug);
+    async fetchProductsCatalog({ commit }, { category, size, color }) {
+      const result = await api.getProductsCatalog(category, size, color);
       commit('setCurrentProducts', result);
     },
     async fetchFiltersColor({ commit }, slug) {
@@ -33,7 +33,7 @@ export default {
   },
   getters: {
     catalogProducts: (state) => state.currentProducts,
-    filtersColor: (state) => state.currentFiltersColor,
-    filtersSize: (state) => state.currentFiltersSize,
+    filtersColor: (state) => state.filtersColor,
+    filtersSize: (state) => state.filtersSize,
   },
 };

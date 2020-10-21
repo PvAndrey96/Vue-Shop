@@ -53,8 +53,12 @@ export default {
       subcategories: helpers.subcategories(slug),
     };
   },
-  getProductsCategory(slug) {
-    return helpers.productsCategory(slug).map((product) => ({
+  getProductsCatalog(category, size, color) {
+    return helpers.productsCategory(category).filter((product) => {
+      if (size && !product.sizes.includes(size)) return false;
+      if (color && product.color !== color) return false;
+      return true;
+    }).map((product) => ({
       slug: product.slug,
       name: product.name,
       price: product.price,

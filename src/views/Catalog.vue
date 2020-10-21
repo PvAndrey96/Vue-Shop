@@ -71,7 +71,11 @@ export default {
     ...mapMutations(['toggleDisplayFiltersMob', 'toggleCatalogSortOrder']),
     async fetchData() {
       await this.$store.dispatch('fetchCategory', this.$route.params.category);
-      await this.$store.dispatch('fetchProductsCatalog', this.$route.params.category);
+      await this.$store.dispatch('fetchProductsCatalog', {
+        category: this.$route.params.category,
+        size: this.$route.query.size,
+        color: this.$route.query.color,
+      });
     },
   },
   async mounted() {
