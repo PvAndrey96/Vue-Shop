@@ -2,18 +2,25 @@ import api from '@/api';
 
 export default {
   state: {
-    product: {
-      name: '',
-      images: [],
-      description: '',
-      price: '',
-      colors: [],
-      sizes: [],
-    },
+    name: '',
+    images: [],
+    description: '',
+    price: '',
+    colors: [],
+    sizes: [],
+    selectedSize: '',
   },
   mutations: {
     setProductInfo(state, data) {
-      state.product = data;
+      state.name = data.name;
+      state.images = data.images;
+      state.description = data.description;
+      state.price = data.price;
+      state.colors = data.colors;
+      state.sizes = data.sizes;
+    },
+    selectSize(state, slug) {
+      state.selectedSize = slug;
     },
   },
   actions: {
@@ -23,11 +30,12 @@ export default {
     },
   },
   getters: {
-    productTitle: (state) => state.product.name,
-    productImages: (state) => state.product.images,
-    productDescription: (state) => state.product.description,
-    productPrice: (state) => state.product.price,
-    productColors: (state) => state.product.colors,
-    productSizes: (state) => state.product.sizes,
+    productTitle: (state) => state.name,
+    productImages: (state) => state.images,
+    productDescription: (state) => state.description,
+    productPrice: (state) => state.price,
+    productColors: (state) => state.colors,
+    productSizes: (state) => state.sizes,
+    productSelectedSize: (state) => state.selectedSize,
   },
 };

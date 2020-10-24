@@ -39,10 +39,14 @@
           <ul class="flex flex-wrap -mb-3 -mr-2">
             <li
               v-for="size in productSizes"
-              :key="size"
+              :key="size.slug"
               class="mb-3 mr-2"
             >
-              <VButtonSize :size="size"/>
+              <VButtonSize
+                :size="size.value"
+                :active="size.slug === productSelectedSize"
+                @click.native="selectSize(size.slug)"
+              />
             </li>
           </ul>
         </div>
@@ -60,16 +64,28 @@
 import VButtonColor from '@/components/base/VButtonColor.vue';
 import VButtonSize from '@/components/base/VButtonSize.vue';
 import VButton from '@/components/base/VButton.vue';
-import { mapGetters } from 'vuex';
+import { mapGetters, mapMutations } from 'vuex';
 
 export default {
   name: 'Product',
   components: {
     VButtonColor, VButtonSize, VButton,
   },
-  computed: mapGetters(['productTitle', 'productImages', 'productDescription', 'productPrice', 'productColors', 'productSizes']),
+  watch: {
+    $route: 'fetchData',
+  },
+  computed: mapGetters(['productTitle', 'productImages', 'productDescription', 'productPrice', 'productColors', 'productSizes', 'productSelectedSize']),
+  methods: {
+    ...mapMutations(['selectSize']),
+    async fetchData() {
+      await this.$store.dispatch('fetchProductInfo', this.$route.params.product);
+    },
+    test() {
+      alert(2);
+    },
+  },
   async mounted() {
-    await this.$store.dispatch('fetchProductInfo', this.$route.params.product);
+    await this.fetchData();
   },
 };
 </script>
