@@ -1,11 +1,12 @@
 <template>
-  <router-link
+  <components
+    :is="to ? 'router-link' : 'button'"
     class="flex items-center justify-center w-10 h-10 font-medium uppercase border"
     :class="classes"
     :to="to"
   >
     {{size}}
-  </router-link>
+  </components>
 </template>
 
 <script>
@@ -21,7 +22,6 @@ export default {
     },
     to: {
       type: [String, Object],
-      required: true,
     },
     active: {
       type: Boolean,

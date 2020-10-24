@@ -7,6 +7,8 @@ export default {
       images: [],
       description: '',
       price: '',
+      colors: [],
+      sizes: [],
     },
   },
   mutations: {
@@ -25,5 +27,7 @@ export default {
     productImages: (state) => state.product.images,
     productDescription: (state) => state.product.description,
     productPrice: (state) => state.product.price,
+    productColors: (state) => state.product.colors,
+    productSizes: (state) => state.product.sizes,
   },
 };

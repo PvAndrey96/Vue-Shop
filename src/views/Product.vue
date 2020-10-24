@@ -20,13 +20,14 @@
           </div>
           <ul class="flex flex-wrap -mb-3 -mr-2">
             <li
-              v-for="(color, id) in ['#000', '#fff', '#006', '#484', '#33a']"
-              :key="id"
+              v-for="color in productColors"
+              :key="color.href"
               class="mb-3 mr-2"
             >
               <VButtonColor
-                to="#"
-                :color="color"
+                :to="color.href"
+                :color="color.value"
+                :active="color.href === $route.params.product"
               />
             </li>
           </ul>
@@ -37,14 +38,11 @@
           </div>
           <ul class="flex flex-wrap -mb-3 -mr-2">
             <li
-              v-for="(size, id) in ['s', 'm', 'l', 'xl']"
-              :key="id"
+              v-for="size in productSizes"
+              :key="size"
               class="mb-3 mr-2"
             >
-              <VButtonSize
-                to="#"
-                :size="size"
-              />
+              <VButtonSize :size="size"/>
             </li>
           </ul>
         </div>
@@ -69,7 +67,7 @@ export default {
   components: {
     VButtonColor, VButtonSize, VButton,
   },
-  computed: mapGetters(['productTitle', 'productImages', 'productDescription', 'productPrice']),
+  computed: mapGetters(['productTitle', 'productImages', 'productDescription', 'productPrice', 'productColors', 'productSizes']),
   async mounted() {
     await this.$store.dispatch('fetchProductInfo', this.$route.params.product);
   },

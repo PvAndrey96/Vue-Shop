@@ -1,23 +1,23 @@
-import categories from './data/categories.json';
-import products from './data/products.json';
-import cities from './data/cities.json';
-import infoPages from './data/info_pages.json';
-import colors from './data/filters_color.json';
-import sizes from './data/filters_size.json';
+import JSONcategories from './data/categories.json';
+import JSONproducts from './data/products.json';
+import JSONcities from './data/cities.json';
+import JSONinfoPages from './data/info_pages.json';
+import JSONcolors from './data/filters_color.json';
+import JSONsizes from './data/filters_size.json';
 
 const helpers = {
   subcategories(slug) {
-    return categories.filter((item) => item.parent === slug).map((item) => ({
+    return JSONcategories.filter((item) => item.parent === slug).map((item) => ({
       name: item.name,
       slug: item.slug,
     }));
   },
   productsCategory(slug) {
-    const slugsCategories = categories.filter((item) => item.parent === slug).map((item) => item.slug);
+    const slugsCategories = JSONcategories.filter((item) => item.parent === slug).map((item) => item.slug);
     slugsCategories.push(slug);
     return slugsCategories.reduce((productsArr, slugCategory) => (
       productsArr.concat(
-        products.filter((product) => product.category === slugCategory),
+        JSONproducts.filter((product) => product.category === slugCategory),
       )
     ), []);
   },
@@ -25,23 +25,23 @@ const helpers = {
 
 export default {
   getCategories() {
-    return categories;
+    return JSONcategories;
   },
   getNavCategories() {
-    return categories.filter((item) => !item.parent).map((item) => ({
+    return JSONcategories.filter((item) => !item.parent).map((item) => ({
       name: item.name,
       slug: item.slug,
       subItems: helpers.subcategories(item.slug),
     }));
   },
   getNavInfoPages() {
-    return infoPages.map((item) => ({
+    return JSONinfoPages.map((item) => ({
       name: item.title,
       slug: item.slug,
     }));
   },
   getInfoPage(slug) {
-    const infoPage = infoPages.find((item) => item.slug === slug);
+    const infoPage = JSONinfoPages.find((item) => item.slug === slug);
     return {
       title: infoPage.title,
       content: infoPage.content,
@@ -49,7 +49,7 @@ export default {
   },
   getCategoryInfo(slug) {
     return {
-      title: categories.find((item) => item.slug === slug).name,
+      title: JSONcategories.find((item) => item.slug === slug).name,
       subcategories: helpers.subcategories(slug),
     };
   },
@@ -66,25 +66,31 @@ export default {
     }));
   },
   getFiltersColor(slugCategory) {
-    return colors.filter((color) => (
+    return JSONcolors.filter((color) => (
       helpers.productsCategory(slugCategory).find((product) => product.color === color.slug)
     ));
   },
   getFiltersSize(slugCategory) {
-    return sizes.filter((size) => (
+    return JSONsizes.filter((size) => (
       helpers.productsCategory(slugCategory).find((product) => product.sizes.includes(size.slug))
     ));
   },
   getProductInfo(slug) {
-    const product = products.find((item) => item.slug === slug);
+    const product = JSONproducts.find((item) => item.slug === slug);
+    const productsModel = JSONproducts.filter((item) => item.model === product.model);
     return {
       name: product.name,
       description: product.description,
       price: product.price,
       images: product.images,
+      colors: productsModel.map((item) => ({
+        href: item.slug,
+        value: JSONcolors.find((color) => color.slug === item.color).value,
+      })),
+      sizes: product.sizes.map((slugSize) => JSONsizes.find((size) => size.slug === slugSize).value),
     };
   },
   getCities() {
-    return cities;
+    return JSONcities;
   },
 };
