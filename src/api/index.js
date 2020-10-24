@@ -88,6 +88,7 @@ export default {
         value: JSONcolors.find((color) => color.slug === item.color).value,
       })),
       sizes: product.sizes.map((slugSize) => JSONsizes.find((size) => size.slug === slugSize)),
+      selectedSize: '',
     };
   },
   getCities() {

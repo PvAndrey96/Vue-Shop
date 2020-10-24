@@ -18,6 +18,7 @@ export default {
       state.price = data.price;
       state.colors = data.colors;
       state.sizes = data.sizes;
+      state.selectedSize = data.selectedSize;
     },
     selectSize(state, slug) {
       state.selectedSize = slug;
