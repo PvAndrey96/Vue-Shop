@@ -78,7 +78,9 @@ export default {
   methods: {
     ...mapMutations(['toggleDisplayFiltersMob']),
     pushSortOrder(value) {
-      this.$router.push({ query: { sort: value } });
+      this.$router.push({
+        query: { ...this.$route.query, sort: value },
+      });
     },
     async fetchData() {
       await this.$store.dispatch('fetchCategory', this.$route.params.category);
