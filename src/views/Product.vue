@@ -80,9 +80,6 @@ export default {
     async fetchData() {
       await this.$store.dispatch('fetchProductInfo', this.$route.params.product);
     },
-    test() {
-      alert(2);
-    },
   },
   async mounted() {
     await this.fetchData();

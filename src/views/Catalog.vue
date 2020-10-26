@@ -5,12 +5,12 @@
       <VSelect
         class="w-56 lg:w-2/3"
         :options="optionsSortOrders"
-        :selected="catalogSortOrder"
-        @select="toggleCatalogSortOrder($event)"
+        :selected="selectedSortOrder"
+        @select="pushSortOrder($event)"
       />
       <button
-        @click="toggleDisplayFiltersMob"
         class="hidden w-1/3 h-10 border lg:flex lg:border-l-0"
+        @click="toggleDisplayFiltersMob"
       >
         <VSvg
           name="filter"
@@ -58,23 +58,37 @@ export default {
   data() {
     return {
       optionsSortOrders: [
-        { value: 'price_desc', text: 'Сначала дороже' },
-        { value: 'price_asc', text: 'Сначала дешевле' },
+        { value: 'sales-desc', text: 'По популярности' },
+        { value: 'price-desc', text: 'Сначала дороже' },
+        { value: 'price-asc', text: 'Сначала дешевле' },
+        { value: 'name-asc', text: 'Название (а-я)' },
+        { value: 'name-desc', text: 'Название (я-а)' },
       ],
     };
   },
   watch: {
     $route: 'fetchData',
   },
-  computed: mapGetters(['catalogSortOrder', 'catalogProducts', 'catalogTitle']),
+  computed: {
+    ...mapGetters(['catalogProducts', 'catalogTitle']),
+    selectedSortOrder() {
+      return this.$route.query.sort || this.optionsSortOrders[0].value;
+    },
+  },
   methods: {
-    ...mapMutations(['toggleDisplayFiltersMob', 'toggleCatalogSortOrder']),
+    ...mapMutations(['toggleDisplayFiltersMob']),
+    pushSortOrder(value) {
+      this.$router.push({ query: { sort: value } });
+    },
     async fetchData() {
       await this.$store.dispatch('fetchCategory', this.$route.params.category);
+      const [sort, order] = this.selectedSortOrder.split('-');
       await this.$store.dispatch('fetchProductsCatalog', {
         category: this.$route.params.category,
         size: this.$route.query.size,
         color: this.$route.query.color,
+        sort,
+        order,
       });
     },
   },

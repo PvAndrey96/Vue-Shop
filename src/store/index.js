@@ -20,7 +20,6 @@ export default new Vuex.Store({
     displayNavbarMob: false,
     displayFiltersMob: false,
     cartPreviewOpen: false,
-    catalogSortOrder: 'price_desc',
   },
   mutations: {
     toggleSearchFocus(state) {
@@ -37,9 +36,6 @@ export default new Vuex.Store({
     },
     toggleCartPreviewOpen(state) {
       state.cartPreviewOpen = !state.cartPreviewOpen;
-    },
-    toggleCatalogSortOrder(state, sortOrder) {
-      state.catalogSortOrder = sortOrder;
     },
     setNavCategories(state, data) {
       state.navCategories = data;
@@ -73,9 +69,6 @@ export default new Vuex.Store({
     },
     cartPreviewOpen(state) {
       return state.cartPreviewOpen;
-    },
-    catalogSortOrder(state) {
-      return state.catalogSortOrder;
     },
     navCategories(state) {
       return state.navCategories;

@@ -1,3 +1,4 @@
+import arraySort from 'array-sort';
 import JSONcategories from './data/categories.json';
 import JSONproducts from './data/products.json';
 import JSONcities from './data/cities.json';
@@ -53,8 +54,8 @@ export default {
       subcategories: helpers.subcategories(slug),
     };
   },
-  getProductsCatalog(category, size, color) {
-    return helpers.productsCategory(category).filter((product) => {
+  getProductsCatalog(category, size, color, sort, order) {
+    const products = helpers.productsCategory(category).filter((product) => {
       if (size && !product.sizes.includes(size)) return false;
       if (color && product.color !== color) return false;
       return true;
@@ -64,6 +65,7 @@ export default {
       price: product.price,
       img: product.images[0],
     }));
+    return arraySort(products, sort, { reverse: order === 'desc' });
   },
   getFiltersColor(slugCategory) {
     return JSONcolors.filter((color) => (
