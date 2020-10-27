@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import api from '@/api';
+import { debounce } from 'debounce';
 import content from './content';
 import cart from './cart';
 import category from './category';
@@ -20,6 +21,7 @@ export default new Vuex.Store({
     displayNavbarMob: false,
     displayFiltersMob: false,
     cartPreviewOpen: false,
+    searchResult: [],
   },
   mutations: {
     toggleSearchFocus(state) {
@@ -43,6 +45,9 @@ export default new Vuex.Store({
     setNavInfoPages(state, data) {
       state.navInfoPages = data;
     },
+    setSearchResult(state, data) {
+      state.searchResult = data;
+    },
   },
   actions: {
     async fetchNavCategories({ commit }) {
@@ -53,29 +58,24 @@ export default new Vuex.Store({
       const result = await api.getNavInfoPages();
       commit('setNavInfoPages', result);
     },
+    fetchSearchResult({ commit }, searchString) {
+      if (searchString.length > 2) {
+        debounce(async () => {
+          const result = await api.getSearchResult(searchString);
+          commit('setSearchResult', result);
+        }, 200)();
+      }
+    },
   },
   getters: {
-    searchFocus(state) {
-      return state.searchFocus;
-    },
-    searchMobFocus(state) {
-      return state.searchMobFocus;
-    },
-    displayNavbarMob(state) {
-      return state.displayNavbarMob;
-    },
-    displayFiltersMob(state) {
-      return state.displayFiltersMob;
-    },
-    cartPreviewOpen(state) {
-      return state.cartPreviewOpen;
-    },
-    navCategories(state) {
-      return state.navCategories;
-    },
-    navInfoPages(state) {
-      return state.navInfoPages;
-    },
+    searchFocus: (state) => state.searchFocus,
+    searchMobFocus: (state) => state.searchMobFocus,
+    displayNavbarMob: (state) => state.displayNavbarMob,
+    displayFiltersMob: (state) => state.displayFiltersMob,
+    cartPreviewOpen: (state) => state.cartPreviewOpen,
+    navCategories: (state) => state.navCategories,
+    navInfoPages: (state) => state.navInfoPages,
+    searchResult: (state) => state.searchResult,
   },
   modules: {
     content, cart, catalog, infoPage, checkout, product, category,

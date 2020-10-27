@@ -54,6 +54,16 @@ export default {
       subcategories: helpers.subcategories(slug),
     };
   },
+  getSearchResult(searchString) {
+    return JSONproducts.filter(
+      (product) => new RegExp(searchString, 'i').test(product.name),
+    ).map((product) => ({
+      slug: product.slug,
+      name: product.name,
+      price: product.price,
+      img: product.images[0],
+    }));
+  },
   getProductsCatalog(category, size, color, sort, order) {
     const products = helpers.productsCategory(category).filter((product) => {
       if (size && !product.sizes.includes(size)) return false;

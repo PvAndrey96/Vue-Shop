@@ -10,16 +10,17 @@
       class="my-auto"
       @focus="toggleSearchFocus"
       @blur="toggleSearchFocus"
+      @input="fetchSearchResult($event)"
     />
-    <div class="absolute z-10 hidden w-full pt-2 mt-18 min-w-xs">
+    <div class="absolute z-10 w-full pt-2 mt-18 min-w-xs">
       <ul class='px-3 pt-3 bg-white border'>
         <VSearchListItem
-          v-for="(result, id) in searchResult"
-          :key="id"
+          v-for="result in searchResult"
+          :key="result.slug"
+          :to="`/product/${result.slug}`"
           :img="result.img"
-          :title="result.title"
+          :title="result.name"
           :price="result.price"
-          to="#"
           class="mb-3"
         />
       </ul>
@@ -30,7 +31,7 @@
 <script>
 import VTextFieldA from '@/components/base/VTextFieldA.vue';
 import VSearchListItem from '@/components/base/VSearchListItem.vue';
-import { mapGetters, mapMutations } from 'vuex';
+import { mapGetters, mapMutations, mapActions } from 'vuex';
 
 export default {
   name: 'TheHeaderSearch',
@@ -38,6 +39,9 @@ export default {
     VTextFieldA, VSearchListItem,
   },
   computed: mapGetters(['searchFocus', 'searchResult']),
-  methods: mapMutations(['toggleSearchFocus']),
+  methods: {
+    ...mapMutations(['toggleSearchFocus']),
+    ...mapActions(['fetchSearchResult']),
+  },
 };
 </script>
