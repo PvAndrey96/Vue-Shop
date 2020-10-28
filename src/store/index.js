@@ -48,6 +48,9 @@ export default new Vuex.Store({
     setSearchResult(state, data) {
       state.searchResult = data;
     },
+    clearSearchResult(state) {
+      state.searchResult = [];
+    },
   },
   actions: {
     async fetchNavCategories({ commit }) {
@@ -59,12 +62,14 @@ export default new Vuex.Store({
       commit('setNavInfoPages', result);
     },
     fetchSearchResult({ commit }, searchString) {
-      if (searchString.length > 2) {
-        debounce(async () => {
+      debounce(async () => {
+        if (searchString.length > 2) {
           const result = await api.getSearchResult(searchString);
           commit('setSearchResult', result);
-        }, 200)();
-      }
+        } else {
+          commit('clearSearchResult');
+        }
+      }, 200)();
     },
   },
   getters: {

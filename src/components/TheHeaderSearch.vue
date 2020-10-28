@@ -12,7 +12,10 @@
       @blur="toggleSearchFocus"
       @input="fetchSearchResult($event)"
     />
-    <div class="absolute z-10 w-full pt-2 mt-18 min-w-xs">
+    <div
+      v-if="searchResult.length && searchFocus"
+      class="absolute z-10 w-full pt-2 mt-18 min-w-xs"
+    >
       <ul class='px-3 pt-3 bg-white border'>
         <VSearchListItem
           v-for="result in searchResult"
