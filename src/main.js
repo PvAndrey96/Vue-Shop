@@ -1,4 +1,5 @@
 import Vue from 'vue';
+import vClickOutside from 'v-click-outside';
 import Vuelidate from 'vuelidate';
 import App from './App.vue';
 import router from './router';
@@ -9,6 +10,7 @@ import VContainer from './components/base/VContainer.vue';
 
 Vue.config.productionTip = false;
 
+Vue.use(vClickOutside);
 Vue.use(Vuelidate);
 
 Vue.component('VSvg', VSvg);

@@ -15,6 +15,7 @@
     <div
       v-if="searchResult.length && searchFocus"
       class="absolute z-10 w-full pt-2 mt-18 min-w-xs"
+      @mousedown.prevent
     >
       <ul class='px-3 pt-3 bg-white border'>
         <VSearchListItem
