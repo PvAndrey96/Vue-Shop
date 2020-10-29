@@ -1,8 +1,8 @@
 <template>
   <div class="self-start col-span-4 px-5 border lg:-mt-4 lg:border-0 lg:col-span-6 lg:px-0">
-    <div v-if="cartItems.length">
+    <div v-if="cartProducts.length">
       <VCartItem
-        v-for="(product, id) in cartItems"
+        v-for="(product, id) in cartProducts"
         class="py-5 lg:py-4"
         :class="{'border-t': id}"
         :key="product.id"
@@ -12,8 +12,8 @@
         :size="product.size"
         :price="product.price"
         :count="product.count"
-        @update:count="updateCountCartItem({ id: product.id, val: $event })"
-        @delete="removeCartItem(product.id)"
+        @update:count="updateCountCartProduct({ id: product.id, val: $event })"
+        @delete="removeCartProduct(product.id)"
       />
     </div>
     <div
@@ -34,7 +34,7 @@ export default {
   components: {
     VCartItem,
   },
-  computed: mapGetters(['cartItems']),
-  methods: mapMutations(['updateCountCartItem', 'removeCartItem']),
+  computed: mapGetters(['cartProducts']),
+  methods: mapMutations(['updateCountCartProduct', 'removeCartProduct']),
 };
 </script>

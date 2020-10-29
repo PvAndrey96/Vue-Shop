@@ -69,7 +69,7 @@ export default new Vuex.Store({
         } else {
           commit('clearSearchResult');
         }
-      }, 200)();
+      }, 400)();
     },
   },
   getters: {

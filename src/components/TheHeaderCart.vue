@@ -15,10 +15,10 @@
       class="absolute right-0 z-10 pt-2 w-96 mt-18 lg:w-full lg:pt-0 lg:mt-14"
     >
       <div class="px-4 pb-3 bg-white border lg:border-0 lg:border-b">
-        <template v-if="cartItems.length">
+        <template v-if="cartProducts.length">
           <ul class="mb-3">
             <VPreviewCartItem
-              v-for="product in cartItems"
+              v-for="product in cartProducts"
               class="py-3 border-b"
               :key="product.name"
               :to="product.url"
@@ -62,7 +62,7 @@ export default {
   components: {
     VPreviewCartItem, VButton,
   },
-  computed: mapGetters(['cartPreviewOpen', 'cartItems']),
+  computed: mapGetters(['cartPreviewOpen', 'cartProducts']),
   methods: mapMutations(['toggleCartPreviewOpen']),
 };
 </script>
