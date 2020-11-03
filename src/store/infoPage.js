@@ -2,14 +2,13 @@ import api from '@/api';
 
 export default {
   state: {
-    currentInfoPage: {
-      title: '',
-      content: '',
-    },
+    infoPageTitle: '',
+    infoPageContent: '',
   },
   mutations: {
     setInfoPage(state, data) {
-      state.currentInfoPage = data;
+      state.infoPageTitle = data.title;
+      state.infoPageContent = data.content;
     },
   },
   actions: {

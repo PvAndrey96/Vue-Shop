@@ -2,14 +2,13 @@ import api from '@/api';
 
 export default {
   state: {
-    currentCategory: {
-      title: '',
-      subcategories: [],
-    },
+    catalogTitle: '',
+    catalogSubcategories: [],
   },
   mutations: {
     setCurrentCategory(state, data) {
-      state.currentCategory = data;
+      state.catalogTitle = data.title;
+      state.catalogSubcategories = data.subcategories;
     },
   },
   actions: {

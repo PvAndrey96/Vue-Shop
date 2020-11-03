@@ -74,7 +74,16 @@ export default {
   watch: {
     $route: 'fetchData',
   },
-  computed: mapGetters(['productSlug', 'productTitle', 'productImages', 'productDescription', 'productPrice', 'productColors', 'productSizes', 'productSelectedSize']),
+  computed: mapGetters([
+    'productSlug',
+    'productTitle',
+    'productImages',
+    'productDescription',
+    'productPrice',
+    'productColors',
+    'productSizes',
+    'productSelectedSize',
+  ]),
   methods: {
     ...mapMutations(['selectSize']),
     async fetchData() {
