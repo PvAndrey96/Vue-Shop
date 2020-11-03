@@ -4,6 +4,7 @@
     :to="to"
     class="flex items-center justify-center px-5 text-white uppercase transition-colors duration-200 bg-theme hover:bg-theme-accent"
     :class="classButton"
+    @click="$emit('click')"
   >
     <slot/>
   </component>

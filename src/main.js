@@ -1,4 +1,5 @@
 import Vue from 'vue';
+import Toasted from 'vue-toasted';
 import vClickOutside from 'v-click-outside';
 import Vuelidate from 'vuelidate';
 import App from './App.vue';
@@ -12,6 +13,10 @@ Vue.config.productionTip = false;
 
 Vue.use(vClickOutside);
 Vue.use(Vuelidate);
+Vue.use(Toasted, {
+  position: 'bottom-center',
+  duration: 3000,
+});
 
 Vue.component('VSvg', VSvg);
 Vue.component('VContainer', VContainer);

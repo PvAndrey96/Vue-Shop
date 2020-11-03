@@ -54,7 +54,7 @@
           <div class="mb-2 font-bold uppercase text-theme">Описание</div>
           <div class="font-medium">{{productDescription}}</div>
         </div>
-        <VButton>Добавить в корзину</VButton>
+        <VButton @click="addToCart()">Добавить в корзину</VButton>
       </div>
     </div>
   </VContainer>
@@ -74,11 +74,21 @@ export default {
   watch: {
     $route: 'fetchData',
   },
-  computed: mapGetters(['productTitle', 'productImages', 'productDescription', 'productPrice', 'productColors', 'productSizes', 'productSelectedSize']),
+  computed: mapGetters(['productSlug', 'productTitle', 'productImages', 'productDescription', 'productPrice', 'productColors', 'productSizes', 'productSelectedSize']),
   methods: {
     ...mapMutations(['selectSize']),
     async fetchData() {
       await this.$store.dispatch('fetchProductInfo', this.$route.params.product);
+    },
+    addToCart() {
+      // if (this.productSelectedSize) {
+      //   this.$store.dispatch('addToCart', {
+      //     slug: this.productSlug,
+      //     size: this.productSelectedSize,
+      //   });
+      // } else {
+      //   this.$toasted.show('Выберите размер');
+      // }
     },
   },
   async mounted() {

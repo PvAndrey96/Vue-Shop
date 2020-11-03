@@ -91,6 +91,7 @@ export default {
     const product = JSONproducts.find((item) => item.slug === slug);
     const productsModel = JSONproducts.filter((item) => item.model === product.model);
     return {
+      slug: product.slug,
       name: product.name,
       description: product.description,
       price: product.price,

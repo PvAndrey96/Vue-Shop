@@ -10,6 +10,11 @@ export default {
       state.cartProducts.splice(state.cartProducts.findIndex((el) => el.id === id), 1);
     },
   },
+  actions: {
+    // addToCart({ commit }, { slug, size }) {
+    //   //
+    // },
+  },
   getters: {
     cartProducts(state) {
       return state.cartProducts;

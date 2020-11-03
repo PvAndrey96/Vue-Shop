@@ -2,6 +2,7 @@ import api from '@/api';
 
 export default {
   state: {
+    slug: '',
     name: '',
     images: [],
     description: '',
@@ -12,6 +13,7 @@ export default {
   },
   mutations: {
     setProductInfo(state, data) {
+      state.slug = data.slug;
       state.name = data.name;
       state.images = data.images;
       state.description = data.description;
@@ -31,6 +33,7 @@ export default {
     },
   },
   getters: {
+    productSlug: (state) => state.slug,
     productTitle: (state) => state.name,
     productImages: (state) => state.images,
     productDescription: (state) => state.description,
