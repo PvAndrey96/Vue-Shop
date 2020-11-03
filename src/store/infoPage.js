@@ -18,7 +18,7 @@ export default {
     },
   },
   getters: {
-    infoPageTitle: (state) => state.currentInfoPage.title,
-    infoPageContent: (state) => state.currentInfoPage.content,
+    infoPageTitle: (state) => state.infoPageTitle,
+    infoPageContent: (state) => state.infoPageContent,
   },
 };

@@ -18,7 +18,7 @@ export default {
     },
   },
   getters: {
-    catalogTitle: (state) => state.currentCategory.title,
-    catalogSubcategories: (state) => state.currentCategory.subcategories,
+    catalogTitle: (state) => state.catalogTitle,
+    catalogSubcategories: (state) => state.catalogSubcategories,
   },
 };
