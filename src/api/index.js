@@ -82,7 +82,7 @@ export default {
     products = arraySort(products, sort, { reverse: order === 'desc' });
 
     products = products.splice(start, limit);
-    console.log(products);
+
     products = products.map((product) => ({
       slug: product.slug,
       name: product.name,
