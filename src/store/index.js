@@ -2,7 +2,7 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 import api from '@/api';
 import { debounce } from 'debounce';
-import content from './content';
+import home from './home';
 import cart from './cart';
 import category from './category';
 import catalog from './catalog';
@@ -83,6 +83,6 @@ export default new Vuex.Store({
     searchResult: (state) => state.searchResult,
   },
   modules: {
-    content, cart, catalog, infoPage, checkout, product, category,
+    home, cart, catalog, infoPage, checkout, product, category,
   },
 });

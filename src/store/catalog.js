@@ -19,7 +19,7 @@ export default {
   },
   actions: {
     async fetchProductsCatalog({ commit }, { category, size, color, sort, order }) {
-      const result = await api.getProductsCatalog(category, size, color, sort, order);
+      const result = await api.getProducts({ category, size, color, sort, order });
       commit('setCurrentProducts', result);
     },
     async fetchFiltersColor({ commit }, slug) {

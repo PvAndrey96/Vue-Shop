@@ -2,7 +2,7 @@
   <component
     :is="component"
     :to="to"
-    class="flex items-center justify-center px-5 text-white uppercase transition-colors duration-200 bg-theme hover:bg-theme-accent"
+    class="flex items-center justify-center px-5 text-white transition-colors duration-200 bg-theme hover:bg-theme-accent"
     :class="classButton"
     @click="$emit('click')"
   >
@@ -26,7 +26,7 @@ export default {
   },
   computed: {
     classButton() {
-      return [this.small ? 'h-8' : 'h-10', { 'w-full': this.full }];
+      return [this.small ? 'h-8 text-5' : 'h-10 uppercase', { 'w-full': this.full }];
     },
     component() {
       return this.to ? 'router-link' : 'button';
