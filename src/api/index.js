@@ -64,22 +64,35 @@ export default {
       img: product.images[0],
     }));
   },
-  getProducts({ category, size, color, sort, order = 'asc', limit = Infinity, start = 0 }) {
-    const products = category ? helpers.productsCategory(category) : JSONproducts;
-    return arraySort(
-      products.filter((product) => {
-        if (size && !product.sizes.includes(size)) return false;
-        if (color && product.color !== color) return false;
-        return true;
-      }),
-      sort, { reverse: order === 'desc' },
-    ).splice(start, limit).map((product) => ({
+
+  getProducts({ category, size, color, sort, order, limit = Infinity, start = 0 }) {
+    let products = category ? helpers.productsCategory(category) : JSONproducts;
+
+    products = products.filter((product) => {
+      if (size && !product.sizes.includes(size)) return false;
+      if (color && product.color !== color) return false;
+      return true;
+    });
+
+    products.forEach((product) => {
+      // eslint-disable-next-line no-param-reassign
+      product.time = new Date(product.date).getTime();
+    });
+
+    products = arraySort(products, sort, { reverse: order === 'desc' });
+
+    products = products.splice(start, limit);
+    console.log(products);
+    products = products.map((product) => ({
       slug: product.slug,
       name: product.name,
       price: product.price,
       img: product.images[0],
     }));
+
+    return products;
   },
+
   getFiltersColor(slugCategory) {
     return JSONcolors.filter((color) => (
       helpers.productsCategory(slugCategory).find((product) => product.color === color.slug)

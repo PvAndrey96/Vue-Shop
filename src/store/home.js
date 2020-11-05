@@ -8,25 +8,29 @@ export default {
       '',
     ],
     productsBestsellers: [],
-    // productsNew: [],
+    productsNew: [],
   },
   mutations: {
     setProductsBestsellers(state, data) {
       state.productsBestsellers = data;
     },
+    setProductsNew(state, data) {
+      state.productsNew = data;
+    },
   },
   actions: {
     async fetchProductsBestsellers({ commit }) {
-      const result = await api.getProducts({ sort: 'sales', limit: 5 });
+      const result = await api.getProducts({ sort: 'sales', order: 'desc', limit: 5 });
       commit('setProductsBestsellers', result);
     },
-    // async fetchProductsNew({ commit }) {
-    //   const result = await api.getProducts({ sort: 'date', limit: 8 });
-    //   commit('setProductsNew', result);
-    // },
+    async fetchProductsNew({ commit }) {
+      const result = await api.getProducts({ sort: 'time', order: 'desc', limit: 5 });
+      commit('setProductsNew', result);
+    },
   },
   getters: {
     carouselSlides: (state) => state.carouselSlides,
     productsBestsellers: (state) => state.productsBestsellers,
+    productsNew: (state) => state.productsNew,
   },
 };

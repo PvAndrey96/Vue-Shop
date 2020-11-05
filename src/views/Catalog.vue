@@ -25,7 +25,7 @@
         <TheFilterColor/>
       </div>
       <div class="col-span-4 lg:col-span-5">
-        <div class="grid grid-cols-4 gap-6 md:grid-cols-3 sm:grid-cols-2">
+        <div class="grid grid-cols-4 gap-6 sm:gap-4 md:grid-cols-3 sm:grid-cols-2">
           <VCard
             v-for="product in catalogProducts"
             :key="product.slug"
