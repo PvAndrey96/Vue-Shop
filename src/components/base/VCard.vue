@@ -12,7 +12,7 @@
     <div class="py-4">
       <router-link
         :to="to"
-        class="flex mb-2 font-medium transition-colors duration-200 text-5 group-hover:text-black"
+        class="block mb-2 font-medium truncate transition-colors duration-200 text-5 group-hover:text-black"
       >
         {{title}}
       </router-link>
