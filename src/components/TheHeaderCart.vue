@@ -13,6 +13,7 @@
     <div
       v-if="cartPreviewOpen"
       class="absolute right-0 z-10 pt-2 w-96 mt-18 lg:w-full lg:pt-0 lg:mt-14"
+      v-click-outside="closeCartPreviewOpen"
     >
       <div class="px-4 pb-3 bg-white border lg:border-0 lg:border-b">
         <template v-if="cartProducts.length">
@@ -41,9 +42,9 @@
           Ваша корзина пуста
         </div>
         <VButton
-          to="/cart"
           small
           full
+          @click="pushToCart"
         >
           Перейти в корзину
         </VButton>
@@ -63,6 +64,12 @@ export default {
     VPreviewCartItem, VButton,
   },
   computed: mapGetters(['cartPreviewOpen', 'cartProducts']),
-  methods: mapMutations(['toggleCartPreviewOpen']),
+  methods: {
+    ...mapMutations(['toggleCartPreviewOpen', 'closeCartPreviewOpen']),
+    pushToCart() {
+      this.closeCartPreviewOpen();
+      this.$router.push('/cart');
+    },
+  },
 };
 </script>

@@ -39,6 +39,9 @@ export default new Vuex.Store({
     toggleCartPreviewOpen(state) {
       state.cartPreviewOpen = !state.cartPreviewOpen;
     },
+    closeCartPreviewOpen(state) {
+      state.cartPreviewOpen = false;
+    },
     setNavCategories(state, data) {
       state.navCategories = data;
     },
