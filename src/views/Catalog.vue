@@ -19,10 +19,12 @@
       </button>
     </div>
     <div class="grid grid-cols-5 gap-8">
-      <div class="col-span-1 lg:hidden">
-        <TheFilterCategory/>
-        <TheFilterSize/>
-        <TheFilterColor/>
+      <div class="col-span-1 -mt-3 lg:hidden">
+        <div class="sticky top-0 pt-3">
+          <TheFilterCategory/>
+          <TheFilterSize/>
+          <TheFilterColor/>
+        </div>
       </div>
       <div class="col-span-4 lg:col-span-5">
         <div class="grid grid-cols-4 gap-6 sm:gap-4 md:grid-cols-3 sm:grid-cols-2">
