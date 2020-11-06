@@ -7,7 +7,7 @@
     />
     <input
       class="w-full pb-px font-medium transition-colors duration-200 border-r-4 border-transparent focus:border-theme bg-theme-7 text-5 placeholder-black-50"
-      :class="classInput"
+      :class="[icon ? 'pr-4 pl-11' : 'px-4']"
       :type='type'
       :placeholder='placeholder'
       :value='value'
@@ -38,11 +38,6 @@ export default {
     },
     value: {
       type: String,
-    },
-  },
-  computed: {
-    classInput() {
-      return [this.icon ? 'pr-4 pl-11' : 'px-4'];
     },
   },
   methods: {

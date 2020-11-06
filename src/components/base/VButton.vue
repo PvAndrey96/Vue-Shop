@@ -1,9 +1,9 @@
 <template>
   <component
-    :is="component"
+    :is="to ? 'router-link' : 'button'"
     :to="to"
     class="flex items-center justify-center px-5 text-white transition-colors duration-200 bg-theme hover:bg-theme-accent"
-    :class="classButton"
+    :class="[small ? 'h-8 text-5' : 'h-10 uppercase', { 'w-full': full }]"
     @click="$emit('click')"
   >
     <slot/>
@@ -22,14 +22,6 @@ export default {
     },
     full: {
       type: Boolean,
-    },
-  },
-  computed: {
-    classButton() {
-      return [this.small ? 'h-8 text-5' : 'h-10 uppercase', { 'w-full': this.full }];
-    },
-    component() {
-      return this.to ? 'router-link' : 'button';
     },
   },
 };

@@ -1,7 +1,7 @@
 <template>
   <div
     class="fixed top-0 bottom-0 left-0 right-0 z-10 flex"
-    :class="classContainer"
+    :class="{'flex-row-reverse': right}"
   >
     <div class="flex flex-col w-full max-w-xs bg-white">
       <header class="flex flex-row-reverse flex-shrink-0 px-4 border-b h-14">
@@ -38,11 +38,6 @@ export default {
   props: {
     right: {
       type: Boolean,
-    },
-  },
-  computed: {
-    classContainer() {
-      return { 'flex-row-reverse': this.right };
     },
   },
 };

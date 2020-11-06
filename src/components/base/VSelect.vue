@@ -23,7 +23,7 @@
         v-for="option in options"
         :key="option.value"
         class="flex items-center h-10 px-4 cursor-pointer"
-        :class="classOption(option.value)"
+        :class="option.value === selected ? 'bg-theme text-white font-normal' : 'hover:bg-theme-10 transition-colors duration-200'"
         @click="selectOption(option.value)"
       >
         {{option.text}}
@@ -69,9 +69,6 @@ export default {
     selectOption(optionVal) {
       this.$emit('select', optionVal);
       this.optionsOpen = false;
-    },
-    classOption(optionVal) {
-      return optionVal === this.selected ? 'bg-theme text-white font-normal' : 'hover:bg-theme-10 transition-colors duration-200';
     },
   },
 };

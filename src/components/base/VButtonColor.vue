@@ -1,7 +1,7 @@
 <template>
   <router-link
     class="flex transform border w-7 h-7"
-    :class="classes"
+    :class="active ? 'scale-120 border-black-80' : 'transition-transform duration-200 hover:scale-120 hover:border-black-80'"
     :style="{background: color}"
     :to="to"
   />
@@ -22,11 +22,6 @@ export default {
     active: {
       type: Boolean,
       default: false,
-    },
-  },
-  computed: {
-    classes() {
-      return this.active ? 'scale-120 border-black-80' : 'transition-transform duration-200 hover:scale-120 hover:border-black-80';
     },
   },
 };

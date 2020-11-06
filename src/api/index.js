@@ -13,6 +13,7 @@ const helpers = {
       slug: item.slug,
     }));
   },
+
   productsCategory(slug) {
     const slugsCategories = JSONcategories.filter((item) => item.parent === slug).map((item) => item.slug);
     slugsCategories.push(slug);
@@ -28,6 +29,7 @@ export default {
   getCategories() {
     return JSONcategories;
   },
+
   getNavCategories() {
     return JSONcategories.filter((item) => !item.parent).map((item) => ({
       name: item.name,
@@ -35,12 +37,14 @@ export default {
       subItems: helpers.subcategories(item.slug),
     }));
   },
+
   getNavInfoPages() {
     return JSONinfoPages.map((item) => ({
       name: item.title,
       slug: item.slug,
     }));
   },
+
   getInfoPage(slug) {
     const infoPage = JSONinfoPages.find((item) => item.slug === slug);
     return {
@@ -48,12 +52,14 @@ export default {
       content: infoPage.content,
     };
   },
+
   getCategoryInfo(slug) {
     return {
       title: JSONcategories.find((item) => item.slug === slug).name,
       subcategories: helpers.subcategories(slug),
     };
   },
+
   getSearchResult(searchString) {
     return JSONproducts.filter(
       (product) => new RegExp(searchString, 'i').test(product.name),
@@ -98,11 +104,13 @@ export default {
       helpers.productsCategory(slugCategory).find((product) => product.color === color.slug)
     ));
   },
+
   getFiltersSize(slugCategory) {
     return JSONsizes.filter((size) => (
       helpers.productsCategory(slugCategory).find((product) => product.sizes.includes(size.slug))
     ));
   },
+
   getProductInfo(slug) {
     const product = JSONproducts.find((item) => item.slug === slug);
     const productsModel = JSONproducts.filter((item) => item.model === product.model);
@@ -120,6 +128,7 @@ export default {
       selectedSize: '',
     };
   },
+
   getCities() {
     return JSONcities;
   },

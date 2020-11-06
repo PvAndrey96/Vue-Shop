@@ -1,7 +1,7 @@
 <template>
   <li>
     <component
-      :is="component"
+      :is="to ? 'router-link' : 'div'"
       :to="to"
       class="flex h-12 cursor-pointer group"
       @click="$emit('click')"
@@ -38,11 +38,6 @@ export default {
     price: {
       type: Number,
       required: true,
-    },
-  },
-  computed: {
-    component() {
-      return this.to ? 'router-link' : 'div';
     },
   },
 };

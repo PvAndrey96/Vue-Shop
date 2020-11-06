@@ -2,7 +2,7 @@
   <components
     :is="to ? 'router-link' : 'button'"
     class="flex items-center justify-center w-10 h-10 font-medium uppercase border"
-    :class="classes"
+    :class="active ? 'bg-theme text-white' : 'transition-colors duration-200 hover:bg-theme hover:text-white'"
     :to="to"
   >
     {{size}}
@@ -26,11 +26,6 @@ export default {
     active: {
       type: Boolean,
       default: false,
-    },
-  },
-  computed: {
-    classes() {
-      return this.active ? 'bg-theme text-white' : 'transition-colors duration-200 hover:bg-theme hover:text-white';
     },
   },
 };
