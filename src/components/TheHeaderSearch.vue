@@ -26,7 +26,7 @@
           :title="result.name"
           :price="result.price"
           class="mb-3"
-          @click="pushToProduct(result.slug)"
+          :to="`/product/${result.slug}`"
         />
       </ul>
     </div>
@@ -43,14 +43,15 @@ export default {
   components: {
     VTextFieldA, VSearchListItem,
   },
+  watch: {
+    $route() {
+      this.$refs.textField.blur();
+    },
+  },
   computed: mapGetters(['searchFocus', 'searchResult']),
   methods: {
     ...mapMutations(['openSearchFocus', 'closeSearchFocus']),
     ...mapActions(['fetchSearchResult']),
-    pushToProduct(slug) {
-      this.$refs.textField.blur();
-      this.$router.push(`/product/${slug}`);
-    },
   },
 };
 </script>

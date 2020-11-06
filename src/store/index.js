@@ -33,8 +33,11 @@ export default new Vuex.Store({
     toggleSearchMobFocus(state) {
       state.searchMobFocus = !state.searchMobFocus;
     },
-    toggleDisplayNavbarMob(state) {
-      state.displayNavbarMob = !state.displayNavbarMob;
+    openNavbarMob(state) {
+      state.displayNavbarMob = true;
+    },
+    closeNavbarMob(state) {
+      state.displayNavbarMob = false;
     },
     toggleDisplayFiltersMob(state) {
       state.displayFiltersMob = !state.displayFiltersMob;

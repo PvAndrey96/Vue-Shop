@@ -1,7 +1,7 @@
 <template>
   <VModalSidebar
     v-if="displayNavbarMob"
-    @close="toggleDisplayNavbarMob"
+    @close="closeNavbarMob"
   >
     <nav>
       <ul class="px-5">
@@ -44,8 +44,13 @@ export default {
   components: {
     VModalSidebar,
   },
+  watch: {
+    $route() {
+      this.closeNavbarMob();
+    },
+  },
   computed: mapGetters(['displayNavbarMob', 'navCategories']),
-  methods: mapMutations(['toggleDisplayNavbarMob']),
+  methods: mapMutations(['closeNavbarMob']),
   async mounted() {
     await this.$store.dispatch('fetchNavCategories');
   },
