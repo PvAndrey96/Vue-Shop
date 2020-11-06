@@ -4,6 +4,7 @@
     class="flex items-center justify-center w-10 h-10 font-medium uppercase border"
     :class="active ? 'bg-theme text-white' : 'transition-colors duration-200 hover:bg-theme hover:text-white'"
     :to="to"
+    @click="$emit('click')"
   >
     {{size}}
   </components>

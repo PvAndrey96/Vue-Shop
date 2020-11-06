@@ -1,23 +1,20 @@
 <template>
   <VContainer class="py-6 lg:py-4">
     <h1 class="mt-2 mb-6 font-medium text-8">
-      {{infoPageTitle}}
+      {{ $store.getters.infoPageTitle }}
     </h1>
     <div class="text-4">
-      {{infoPageContent}}
+      {{ $store.getters.infoPageContent }}
     </div>
   </VContainer>
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
-
 export default {
   name: 'Info',
   watch: {
     $route: 'fetchInfoPage',
   },
-  computed: mapGetters(['infoPageTitle', 'infoPageContent']),
   methods: {
     async fetchInfoPage() {
       await this.$store.dispatch('fetchInfoPage', this.$route.params.page);

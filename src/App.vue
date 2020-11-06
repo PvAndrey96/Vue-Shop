@@ -4,8 +4,8 @@
     class="h-full text-3 text-black-80"
   >
     <component
-      v-if="layout"
-      :is="layout"
+      v-if="$route.meta.layout"
+      :is="$route.meta.layout"
     >
       <router-view/>
     </component>
@@ -17,11 +17,6 @@
 import TheMainLayout from '@/layouts/TheMainLayout.vue';
 
 export default {
-  computed: {
-    layout() {
-      return this.$route.meta.layout;
-    },
-  },
   components: {
     TheMainLayout,
   },

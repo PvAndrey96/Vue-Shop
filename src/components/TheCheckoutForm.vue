@@ -7,7 +7,7 @@
           class='col-span-3 sm:col-span-6'
           placeholder='Город'
           :options="optionsCities"
-          :selected="$store.getter.selectedCity"
+          :selected="$store.getters.selectedCity"
           @select="$store.commit('selectCity', $event)"
         />
         <VTextFieldB
