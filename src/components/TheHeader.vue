@@ -6,7 +6,6 @@
       <TheHeaderNav />
       <TheHeaderSearch />
       <TheHeaderSearchMobile />
-      <TheHeaderAccount />
       <TheHeaderCart />
     </VContainer>
   </header>
@@ -18,7 +17,6 @@ import TheHeaderLogo from '@/components/TheHeaderLogo.vue';
 import TheHeaderNav from '@/components/TheHeaderNav.vue';
 import TheHeaderSearch from '@/components/TheHeaderSearch.vue';
 import TheHeaderSearchMobile from '@/components/TheHeaderSearchMobile.vue';
-import TheHeaderAccount from '@/components/TheHeaderAccount.vue';
 import TheHeaderCart from '@/components/TheHeaderCart.vue';
 
 export default {
@@ -29,7 +27,6 @@ export default {
     TheHeaderNav,
     TheHeaderSearch,
     TheHeaderSearchMobile,
-    TheHeaderAccount,
     TheHeaderCart,
   },
 };

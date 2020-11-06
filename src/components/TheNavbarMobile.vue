@@ -5,14 +5,6 @@
   >
     <nav>
       <ul class="px-5">
-        <li class="border-b">
-          <router-link
-            to="#"
-            class="flex items-center font-bold uppercase transition-colors duration-200 h-14 text-theme hover:text-theme-accent"
-          >
-            Личный кабинет
-          </router-link>
-        </li>
         <li
           v-for="item in navCategories"
           :key="item.slug"
