@@ -1,11 +1,11 @@
 <template>
   <nav
     class="flex mr-8 duration-200 transition-grow lg:hidden"
-    :class="{'flex-grow': !searchFocus}"
+    :class="{'flex-grow': !$store.getters.searchFocus}"
   >
     <ul class="flex">
       <li
-        v-for="item in navCategories"
+        v-for="item in $store.getters.navCategories"
         :key="item.slug"
         class="flex group"
       >
@@ -42,11 +42,8 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
-
 export default {
   name: 'TheHeaderNav',
-  computed: mapGetters(['searchFocus', 'navCategories']),
   async mounted() {
     await this.$store.dispatch('fetchNavCategories');
   },

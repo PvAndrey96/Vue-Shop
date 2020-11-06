@@ -1,7 +1,7 @@
 <template>
   <div
     class="relative flex mr-8 duration-200 transition-grow lg:hidden"
-    :class="{'flex-grow': searchFocus}"
+    :class="{'flex-grow': $store.getters.searchFocus}"
   >
     <VTextFieldA
       icon="loupe"
@@ -9,18 +9,18 @@
       type="text"
       class="my-auto"
       ref="textField"
-      @focus="openSearchFocus"
-      @blur="closeSearchFocus"
-      @input="fetchSearchResult($event)"
+      @focus="$store.commit('openSearchFocus')"
+      @blur="$store.commit('closeSearchFocus')"
+      @input="$store.dispatch('fetchSearchResult', $event)"
     />
     <div
-      v-if="searchResult.length && searchFocus"
+      v-if="$store.getters.searchResult.length && $store.getters.searchFocus"
       class="absolute z-10 w-full pt-2 mt-18 min-w-xs"
       @mousedown.prevent
     >
       <ul class='px-3 pt-3 bg-white border'>
         <VSearchListItem
-          v-for="result in searchResult"
+          v-for="result in $store.getters.searchResult"
           :key="result.slug"
           :img="result.img"
           :title="result.name"
@@ -36,7 +36,6 @@
 <script>
 import VTextFieldA from '@/components/base/VTextFieldA.vue';
 import VSearchListItem from '@/components/base/VSearchListItem.vue';
-import { mapGetters, mapMutations, mapActions } from 'vuex';
 
 export default {
   name: 'TheHeaderSearch',
@@ -47,11 +46,6 @@ export default {
     $route() {
       this.$refs.textField.blur();
     },
-  },
-  computed: mapGetters(['searchFocus', 'searchResult']),
-  methods: {
-    ...mapMutations(['openSearchFocus', 'closeSearchFocus']),
-    ...mapActions(['fetchSearchResult']),
   },
 };
 </script>

@@ -1,7 +1,7 @@
 <template>
   <button
     class="items-center hidden px-4 mr-8 -ml-4 lg:flex"
-    @click="openNavbarMob"
+    @click="$store.commit('openNavbarMob')"
   >
     <VSvg
       class="w-5 h-5"
@@ -11,10 +11,7 @@
 </template>
 
 <script>
-import { mapMutations } from 'vuex';
-
 export default {
   name: 'TheHeaderBurger',
-  methods: mapMutations(['openNavbarMob']),
 };
 </script>

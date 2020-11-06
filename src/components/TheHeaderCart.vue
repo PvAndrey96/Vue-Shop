@@ -2,7 +2,7 @@
   <div class="relative flex lg:static">
     <button
       class="flex items-center h-10 px-2 my-auto -mr-2 transition-colors duration-200 lg:h-auto lg:my-0 text-black-50 hover:text-black-70"
-      @click="toggleCartPreviewOpen"
+      @click="$store.commit('toggleCartPreviewOpen')"
     >
       <VSvg
         class="w-6 h-6 md:w-5 md:h-5"
@@ -11,15 +11,15 @@
       <div class="ml-1 font-medium text-black-50">2</div>
     </button>
     <div
-      v-if="cartPreviewOpen"
+      v-if="$store.getters.cartPreviewOpen"
       class="absolute right-0 z-10 pt-2 w-96 mt-18 lg:w-full lg:pt-0 lg:mt-14"
       v-click-outside="closeCartPreviewOpen"
     >
       <div class="px-4 pb-3 bg-white border lg:border-0 lg:border-b">
-        <template v-if="cartProducts.length">
+        <template v-if="$store.getters.cartProducts.length">
           <ul class="mb-3">
             <VPreviewCartItem
-              v-for="product in cartProducts"
+              v-for="product in $store.getters.cartProducts"
               class="py-3 border-b"
               :key="product.name"
               :to="product.url"
@@ -56,19 +56,21 @@
 <script>
 import VPreviewCartItem from '@/components/base/VPreviewCartItem.vue';
 import VButton from '@/components/base/VButton.vue';
-import { mapGetters, mapMutations } from 'vuex';
 
 export default {
   name: 'TheHeaderCart',
   components: {
     VPreviewCartItem, VButton,
   },
-  computed: mapGetters(['cartPreviewOpen', 'cartProducts']),
   methods: {
-    ...mapMutations(['toggleCartPreviewOpen', 'closeCartPreviewOpen']),
+    closeCartPreviewOpen() {
+      this.$store.commit('closeCartPreviewOpen');
+    },
     pushToCart() {
-      this.closeCartPreviewOpen();
-      this.$router.push('/cart');
+      this.$store.commit('closeCartPreviewOpen');
+      if (this.$route.path !== '/cart') {
+        this.$router.push('/cart');
+      }
     },
   },
 };

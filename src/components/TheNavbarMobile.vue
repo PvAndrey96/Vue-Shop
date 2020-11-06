@@ -1,12 +1,12 @@
 <template>
   <VModalSidebar
-    v-if="displayNavbarMob"
-    @close="closeNavbarMob"
+    v-if="$store.getters.displayNavbarMob"
+    @close="$store.commit('closeNavbarMob')"
   >
     <nav>
       <ul class="px-5">
         <li
-          v-for="item in navCategories"
+          v-for="item in $store.getters.navCategories"
           :key="item.slug"
           class="py-3 border-b"
         >
@@ -46,7 +46,7 @@ export default {
   },
   watch: {
     $route() {
-      this.closeNavbarMob();
+      this.$store.commit('closeNavbarMob');
     },
   },
   computed: mapGetters(['displayNavbarMob', 'navCategories']),

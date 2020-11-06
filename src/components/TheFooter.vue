@@ -4,7 +4,7 @@
       <nav>
         <ul class="flex flex-wrap -mb-4 -mr-6 font-medium md:-mr-4 text-4">
           <li
-            v-for="item in navInfoPages"
+            v-for="item in $store.getters.navInfoPages"
             :key="item.slug"
             class="mb-4 mr-6 md:mr-4"
           >
@@ -23,11 +23,8 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
-
 export default {
   name: 'TheFooter',
-  computed: mapGetters(['navInfoPages']),
   async mounted() {
     await this.$store.dispatch('fetchNavInfoPages');
   },

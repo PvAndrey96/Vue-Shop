@@ -8,7 +8,7 @@
     autoplay
   >
     <Slide
-      v-for="(slide, id) in carouselSlides"
+      v-for="(slide, id) in $store.getters.carouselSlides"
       :key="id"
     >
       <img
@@ -20,13 +20,11 @@
 
 <script>
 import { Carousel, Slide } from 'vue-carousel';
-import { mapGetters } from 'vuex';
 
 export default {
   components: {
     Carousel,
     Slide,
   },
-  computed: mapGetters(['carouselSlides']),
 };
 </script>

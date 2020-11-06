@@ -5,7 +5,7 @@
     </div>
     <ul class="flex flex-wrap -mb-3 -mr-2">
       <li
-        v-for="filter in filtersSize"
+        v-for="filter in $store.getters.filtersSize"
         :key="filter.slug"
         class="mb-3 mr-2"
       >
@@ -21,14 +21,12 @@
 
 <script>
 import VButtonSize from '@/components/base/VButtonSize.vue';
-import { mapGetters } from 'vuex';
 
 export default {
   name: 'TheFilterSize',
   components: {
     VButtonSize,
   },
-  computed: mapGetters(['filtersSize']),
   watch: {
     $route: 'fetchFiltersSize',
   },

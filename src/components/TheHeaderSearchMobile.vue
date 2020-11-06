@@ -2,15 +2,15 @@
   <div class="hidden lg:flex">
     <button
       class="flex items-center px-2 transition-colors duration-200 text-black-50 hover:text-black-70"
-      @click="toggleSearchMobFocus"
+      @click="$store.commit('toggleSearchMobFocus')"
     >
       <VSvg
         class="w-6 h-6"
-        :name="searchMobFocus ? 'close' : 'loupe'"
+        :name="$store.getters.searchMobFocus ? 'close' : 'loupe'"
       />
     </button>
     <div
-      v-if="searchMobFocus"
+      v-if="$store.getters.searchMobFocus"
       class="absolute left-0 z-10 w-full px-4 py-3 bg-white border-b mt-14"
     >
       <VTextFieldA
@@ -19,7 +19,7 @@
       />
       <ul>
         <VSearchListItem
-          v-for="result in searchResult"
+          v-for="result in $store.getters.searchResult"
           :key="result.title"
           :img="result.img"
           :title="result.title"
@@ -35,14 +35,11 @@
 <script>
 import VTextFieldA from '@/components/base/VTextFieldA.vue';
 import VSearchListItem from '@/components/base/VSearchListItem.vue';
-import { mapGetters, mapMutations } from 'vuex';
 
 export default {
   name: 'TheHeaderSearchMobile',
   components: {
     VTextFieldA, VSearchListItem,
   },
-  computed: mapGetters(['searchMobFocus', 'searchResult']),
-  methods: mapMutations(['toggleSearchMobFocus']),
 };
 </script>

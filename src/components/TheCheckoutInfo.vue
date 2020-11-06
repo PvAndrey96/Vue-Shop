@@ -2,7 +2,7 @@
   <div class="self-start col-span-2 p-5 border lg:col-span-6 lg:p-0 lg:border-0 lg:mb-4">
     <div class="mb-4 -mt-5 lg:mt-0">
       <VPreviewCartItem
-        v-for="product in cartProducts"
+        v-for="product in $store.getters.cartProducts"
         class="py-5 border-b lg:py-4"
         :key="product.name"
         :to="product.url"
@@ -24,7 +24,7 @@
       </VTableRow>
       <VTableRow>
         <div>Доставка:</div>
-        <div>{{delivery}} RUB</div>
+        <div>{{ $store.getters.delivery }} RUB</div>
       </VTableRow>
       <VTableFooter>
         <div>Итого:</div>
@@ -49,14 +49,11 @@ import VButton from '@/components/base/VButton.vue';
 import VTableRow from '@/components/base/VTableRow.vue';
 import VTableFooter from '@/components/base/VTableFooter.vue';
 import VPreviewCartItem from '@/components/base/VPreviewCartItem.vue';
-import { mapGetters, mapMutations } from 'vuex';
 
 export default {
   name: 'TheCheckoutInfo',
   components: {
     VButton, VPreviewCartItem, VTableFooter, VTableRow,
   },
-  computed: mapGetters(['cartProducts', 'delivery']),
-  methods: mapMutations(['updateCountCartProduct', 'removeCartProduct']),
 };
 </script>

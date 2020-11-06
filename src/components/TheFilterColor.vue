@@ -5,7 +5,7 @@
     </div>
     <ul class="flex flex-wrap -mb-3 -mr-2">
       <li
-        v-for="filter in filtersColor"
+        v-for="filter in $store.getters.filtersColor"
         :key="filter.slug"
         class="mb-3 mr-2"
       >
@@ -21,14 +21,12 @@
 
 <script>
 import VButtonColor from '@/components/base/VButtonColor.vue';
-import { mapGetters } from 'vuex';
 
 export default {
   name: 'TheFilterColor',
   components: {
     VButtonColor,
   },
-  computed: mapGetters(['filtersColor']),
   watch: {
     $route: 'fetchFiltersColor',
   },
