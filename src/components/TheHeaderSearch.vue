@@ -8,8 +8,9 @@
       placeholder="Поиск"
       type="text"
       class="my-auto"
-      @focus="toggleSearchFocus"
-      @blur="toggleSearchFocus"
+      ref="textField"
+      @focus="openSearchFocus"
+      @blur="closeSearchFocus"
       @input="fetchSearchResult($event)"
     />
     <div
@@ -21,11 +22,11 @@
         <VSearchListItem
           v-for="result in searchResult"
           :key="result.slug"
-          :to="`/product/${result.slug}`"
           :img="result.img"
           :title="result.name"
           :price="result.price"
           class="mb-3"
+          @click="pushToProduct(result.slug)"
         />
       </ul>
     </div>
@@ -44,8 +45,12 @@ export default {
   },
   computed: mapGetters(['searchFocus', 'searchResult']),
   methods: {
-    ...mapMutations(['toggleSearchFocus']),
+    ...mapMutations(['openSearchFocus', 'closeSearchFocus']),
     ...mapActions(['fetchSearchResult']),
+    pushToProduct(slug) {
+      this.$refs.textField.blur();
+      this.$router.push(`/product/${slug}`);
+    },
   },
 };
 </script>

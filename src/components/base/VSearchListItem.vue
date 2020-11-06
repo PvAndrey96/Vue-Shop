@@ -1,8 +1,10 @@
 <template>
   <li>
-    <router-link
+    <component
+      :is="component"
       :to="to"
-      class="flex h-12 group"
+      class="flex h-12 cursor-pointer group"
+      @click="$emit('click')"
     >
       <img
         :src="img"
@@ -14,7 +16,7 @@
       <div class="flex items-center font-medium uppercase text-black-70">
         {{price}} rub
       </div>
-    </router-link>
+    </component>
   </li>
 </template>
 
@@ -24,7 +26,6 @@ export default {
   props: {
     to: {
       type: [String, Object],
-      required: true,
     },
     img: {
       type: String,
@@ -37,6 +38,11 @@ export default {
     price: {
       type: Number,
       required: true,
+    },
+  },
+  computed: {
+    component() {
+      return this.to ? 'router-link' : 'div';
     },
   },
 };

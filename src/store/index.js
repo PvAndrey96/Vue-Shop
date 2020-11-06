@@ -24,8 +24,11 @@ export default new Vuex.Store({
     searchResult: [],
   },
   mutations: {
-    toggleSearchFocus(state) {
-      state.searchFocus = !state.searchFocus;
+    openSearchFocus(state) {
+      state.searchFocus = true;
+    },
+    closeSearchFocus(state) {
+      state.searchFocus = false;
     },
     toggleSearchMobFocus(state) {
       state.searchMobFocus = !state.searchMobFocus;

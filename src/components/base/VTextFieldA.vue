@@ -11,6 +11,7 @@
       :type='type'
       :placeholder='placeholder'
       :value='value'
+      ref="input"
       @input="$emit('input', $event.target.value)"
       @focus="$emit('focus')"
       @blur="$emit('blur')"
@@ -42,6 +43,14 @@ export default {
   computed: {
     classInput() {
       return [this.icon ? 'pr-4 pl-11' : 'px-4'];
+    },
+  },
+  methods: {
+    focus() {
+      this.$refs.input.focus();
+    },
+    blur() {
+      this.$refs.input.blur();
     },
   },
 };
