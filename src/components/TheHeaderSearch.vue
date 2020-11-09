@@ -9,9 +9,10 @@
       type="text"
       class="my-auto"
       ref="textField"
-      @focus="$store.commit('openSearchFocus')"
-      @blur="$store.commit('closeSearchFocus')"
-      @input="$store.dispatch('fetchSearchResult', $event)"
+      :value="$store.getters.searchString"
+      @input="$store.dispatch('searchInput', $event)"
+      @focus="$store.commit('searchFocus')"
+      @blur="$store.commit('searchBlur')"
     />
     <div
       v-if="$store.getters.searchResult.length && $store.getters.searchFocus"
