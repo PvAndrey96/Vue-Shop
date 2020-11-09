@@ -37,7 +37,6 @@
 
 <script>
 import VModalSidebar from '@/components/base/VModalSidebar.vue';
-import { mapGetters, mapMutations } from 'vuex';
 
 export default {
   name: 'TheNavbarMobile',
@@ -49,8 +48,6 @@ export default {
       this.$store.commit('closeNavbarMob');
     },
   },
-  computed: mapGetters(['displayNavbarMob', 'navCategories']),
-  methods: mapMutations(['closeNavbarMob']),
   async mounted() {
     await this.$store.dispatch('fetchNavCategories');
   },
