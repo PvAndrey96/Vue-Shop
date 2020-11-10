@@ -48,7 +48,7 @@ export default {
   },
   watch: {
     $route() {
-      this.closeSearchMob();
+      this.$store.commit('closeSearchMob');
     },
   },
   methods: {

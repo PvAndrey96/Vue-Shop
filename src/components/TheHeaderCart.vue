@@ -1,5 +1,8 @@
 <template>
-  <div class="relative flex lg:static">
+  <div
+    class="relative flex lg:static"
+    v-click-outside="closeCartPreviewOpen"
+  >
     <button
       class="flex items-center h-10 px-2 my-auto -mr-2 transition-colors duration-200 lg:h-auto lg:my-0 text-black-50 hover:text-black-70"
       @click="$store.commit('toggleCartPreviewOpen')"
@@ -13,7 +16,6 @@
     <div
       v-if="$store.getters.cartPreviewOpen"
       class="absolute right-0 z-10 pt-2 w-96 mt-18 lg:w-full lg:pt-0 lg:mt-14"
-      v-click-outside="closeCartPreviewOpen"
     >
       <div class="px-4 pb-3 bg-white border lg:border-0 lg:border-b">
         <template v-if="$store.getters.cartProducts.length">
@@ -21,8 +23,8 @@
             <VPreviewCartItem
               v-for="product in $store.getters.cartProducts"
               class="py-3 border-b"
-              :key="product.name"
-              :to="product.url"
+              :key="product.slug"
+              :to="`/product/${product.slug}`"
               :img="product.img"
               :title="product.name"
               :size="product.size"
@@ -44,7 +46,7 @@
         <VButton
           small
           full
-          @click="pushToCart"
+          to="/cart"
         >
           Перейти в корзину
         </VButton>
@@ -62,16 +64,18 @@ export default {
   components: {
     VPreviewCartItem, VButton,
   },
+  watch: {
+    $route() {
+      this.$store.commit('closeCartPreviewOpen');
+    },
+  },
   methods: {
     closeCartPreviewOpen() {
       this.$store.commit('closeCartPreviewOpen');
     },
-    pushToCart() {
-      this.$store.commit('closeCartPreviewOpen');
-      if (this.$route.path !== '/cart') {
-        this.$router.push('/cart');
-      }
-    },
+  },
+  mounted() {
+    this.$store.dispatch('fetchCart');
   },
 };
 </script>

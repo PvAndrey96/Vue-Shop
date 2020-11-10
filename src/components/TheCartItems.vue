@@ -5,15 +5,15 @@
         v-for="(product, id) in $store.getters.cartProducts"
         class="py-5 lg:py-4"
         :class="{'border-t': id}"
-        :key="product.id"
-        to="/product"
+        :key="product.slug"
+        :to="`/product/${product.slug}`"
         :img="product.img"
         :title="product.name"
         :size="product.size"
         :price="product.price"
         :count="product.count"
-        @update:count="$store.commit('updateCountCartProduct', { id: product.id, val: $event })"
-        @delete="$store.commit('removeCartProduct', product.id)"
+        @update:count="$store.commit('updateCountCartProduct', { id: product.slug, val: $event })"
+        @delete="$store.commit('removeCartProduct', product.slug)"
       />
     </div>
     <div
@@ -32,6 +32,9 @@ export default {
   name: 'TheCartItems',
   components: {
     VCartItem,
+  },
+  mounted() {
+    this.$store.dispatch('fetchCart');
   },
 };
 </script>

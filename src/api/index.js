@@ -129,6 +129,15 @@ export default {
     };
   },
 
+  getDetailProductCart(slug) {
+    const product = JSONproducts.find((item) => item.slug === slug);
+    return {
+      name: product.name,
+      price: product.price,
+      img: product.images[0],
+    };
+  },
+
   getCities() {
     return JSONcities;
   },

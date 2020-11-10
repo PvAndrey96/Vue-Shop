@@ -78,14 +78,15 @@ export default {
       await this.$store.dispatch('fetchProductInfo', this.$route.params.product);
     },
     addToCart() {
-      // if (this.$store.getters.productSelectedSize) {
-      //   this.$store.dispatch('addToCart', {
-      //     slug: this.$store.getters.productSlug,
-      //     size: this.$store.getters.productSelectedSize,
-      //   });
-      // } else {
-      //   this.$toasted.show('Выберите размер');
-      // }
+      if (this.$store.getters.productSelectedSize) {
+        this.$store.dispatch('addToCart', {
+          slug: this.$store.getters.productSlug,
+          size: this.$store.getters.productSelectedSize,
+          count: 1,
+        });
+      } else {
+        this.$toasted.show('Выберите размер');
+      }
     },
   },
   async mounted() {
