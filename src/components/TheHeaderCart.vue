@@ -74,8 +74,8 @@ export default {
       this.$store.commit('closeCartPreviewOpen');
     },
   },
-  mounted() {
-    this.$store.dispatch('fetchCart');
+  async mounted() {
+    await this.$store.dispatch('fetchCart');
   },
 };
 </script>

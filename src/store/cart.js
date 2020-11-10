@@ -19,22 +19,22 @@ export default {
     },
   },
   actions: {
-    fetchCart({ commit }) {
+    async fetchCart({ commit }) {
       let cartItems = localStorage.getItem('cart');
       cartItems = cartItems ? JSON.parse(cartItems) : [];
-      cartItems = cartItems.map((item) => ({
+      cartItems = await cartItems.map((item) => ({
         ...item,
         ...api.getDetailProductCart(item.slug),
       }));
       commit('setProductsCart', cartItems);
     },
-    addToCart({ commit }, { slug, size, count }) {
+    async addToCart({ commit }, { slug, size, count }) {
       let cartItems = localStorage.getItem('cart');
       cartItems = cartItems ? JSON.parse(cartItems) : [];
       cartItems.push({ slug, size, count });
       localStorage.setItem('cart', JSON.stringify(cartItems));
       commit('addProductCart', {
-        slug, size, count, ...api.getDetailProductCart(slug),
+        slug, size, count, ...await api.getDetailProductCart(slug),
       });
     },
   },

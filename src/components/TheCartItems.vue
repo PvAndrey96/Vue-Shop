@@ -33,8 +33,8 @@ export default {
   components: {
     VCartItem,
   },
-  mounted() {
-    this.$store.dispatch('fetchCart');
+  async mounted() {
+    await this.$store.dispatch('fetchCart');
   },
 };
 </script>
