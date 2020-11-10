@@ -1,3 +1,5 @@
+import api from '@/api';
+
 export default {
   state: {
     cartProducts: [],
@@ -12,19 +14,29 @@ export default {
     setProductsCart(state, products) {
       state.cartProducts = products;
     },
+    addProductCart(state, product) {
+      state.cartProducts.push(product);
+    },
+  },
   actions: {
     fetchCart({ commit }) {
       let cartItems = localStorage.getItem('cart');
       cartItems = cartItems ? JSON.parse(cartItems) : [];
-      cartItems.map((item) => ({
+      cartItems = cartItems.map((item) => ({
         ...item,
         ...api.getDetailProductCart(item.slug),
       }));
       commit('setProductsCart', cartItems);
     },
-    // addToCart({ commit }, { slug, size }) {
-    //   //
-    // },
+    addToCart({ commit }, { slug, size, count }) {
+      let cartItems = localStorage.getItem('cart');
+      cartItems = cartItems ? JSON.parse(cartItems) : [];
+      cartItems.push({ slug, size, count });
+      localStorage.setItem('cart', JSON.stringify(cartItems));
+      commit('addProductCart', {
+        slug, size, count, ...api.getDetailProductCart(slug),
+      });
+    },
   },
   getters: {
     cartProducts(state) {
