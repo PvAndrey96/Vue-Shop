@@ -12,8 +12,8 @@
         :size="product.size"
         :price="product.price"
         :count="product.count"
-        @update:count="$store.commit('updateCountCartProduct', { id: product.slug, val: $event })"
-        @delete="$store.commit('removeCartProduct', product.slug)"
+        @update:count="$store.dispatch('updateCountCartProduct', { slug: product.slug, count: $event })"
+        @delete="$store.dispatch('removeCartProduct', product.slug)"
       />
     </div>
     <div
