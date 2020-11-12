@@ -5,22 +5,22 @@
         v-for="product in $store.getters.cartProducts"
         class="py-5 border-b lg:py-4"
         :key="product.name"
-        :to="product.url"
+        :to="product.slug"
         :img="product.img"
         :title="product.name"
         :size="product.size"
         :count="product.count"
-        :price="product.price"
+        :price="product.price * product.count"
       />
     </div>
     <div class="mb-4">
       <VTableRow>
         <div>Товаров:</div>
-        <div>2</div>
+        <div>{{ $store.getters.cartProductsCount }}</div>
       </VTableRow>
       <VTableRow>
         <div>На сумму:</div>
-        <div>1280 RUB</div>
+        <div>{{ $store.getters.cartProductsPrice }} RUB</div>
       </VTableRow>
       <VTableRow>
         <div>Доставка:</div>
@@ -28,7 +28,7 @@
       </VTableRow>
       <VTableFooter>
         <div>Итого:</div>
-        <div>1280 RUB</div>
+        <div>{{ totalPrice }} RUB</div>
       </VTableFooter>
     </div>
     <VButton full>Оформить заказ</VButton>
@@ -54,6 +54,11 @@ export default {
   name: 'TheCheckoutInfo',
   components: {
     VButton, VPreviewCartItem, VTableFooter, VTableRow,
+  },
+  computed: {
+    totalPrice() {
+      return this.$store.getters.cartProductsPrice + this.$store.getters.delivery;
+    },
   },
 };
 </script>
