@@ -3,15 +3,15 @@
     <div class="mb-4">
       <VTableRow>
         <div>Товаров:</div>
-        <div>2</div>
+        <div>{{$store.getters.cartProductsCount}}</div>
       </VTableRow>
       <VTableRow>
         <div>На сумму:</div>
-        <div>1280 RUB</div>
+        <div>{{$store.getters.cartProductsPrice}} RUB</div>
       </VTableRow>
       <VTableFooter>
         <div>Итого:</div>
-        <div>1280 RUB</div>
+        <div>{{$store.getters.cartProductsPrice}} RUB</div>
       </VTableFooter>
     </div>
     <VButton

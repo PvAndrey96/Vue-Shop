@@ -11,7 +11,9 @@
         class="w-6 h-6 md:w-5 md:h-5"
         name="cart"
       />
-      <div class="ml-1 font-medium text-black-50">2</div>
+      <div class="ml-1 font-medium text-black-50">
+        {{$store.getters.cartProductsCount}}
+      </div>
     </button>
     <div
       v-if="$store.getters.cartPreviewOpen"
@@ -29,12 +31,12 @@
               :title="product.name"
               :size="product.size"
               :count="product.count"
-              :price="product.price"
+              :price="product.price * product.count"
             />
           </ul>
           <div class="flex justify-between mb-3">
-            <div class="font-medium text-4">4 товара на сумму:</div>
-            <div class="font-medium uppercase">4400 rub</div>
+            <div class="font-medium text-4">{{$store.getters.cartProducts.length}} товара на сумму:</div>
+            <div class="font-medium uppercase">{{$store.getters.cartProductsPrice}} rub</div>
           </div>
         </template>
         <div

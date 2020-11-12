@@ -61,5 +61,7 @@ export default {
   },
   getters: {
     cartProducts: (state) => state.cartProducts,
+    cartProductsCount: (state) => state.cartProducts.reduce((count, product) => count + product.count, 0),
+    cartProductsPrice: (state) => state.cartProducts.reduce((price, product) => price + product.price * product.count, 0),
   },
 };

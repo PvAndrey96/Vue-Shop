@@ -10,7 +10,7 @@
         :img="product.img"
         :title="product.name"
         :size="product.size"
-        :price="product.price"
+        :price="product.price * product.count"
         :count="product.count"
         @update:count="$store.dispatch('updateCountCartProduct', { slug: product.slug, count: $event })"
         @delete="$store.dispatch('removeCartProduct', product.slug)"
