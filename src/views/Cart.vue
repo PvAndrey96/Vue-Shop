@@ -46,11 +46,12 @@ import TheCartItems from '@/components/TheCartItems.vue';
 import TheCartForm from '@/components/TheCartForm.vue';
 import VModalWindow from '@/components/base/VModalWindow.vue';
 import TheCartInfo from '@/components/TheCartInfo.vue';
+import VButton from '@/components/base/VButton.vue';
 
 export default {
   name: 'Catalog',
   components: {
-    TheCartItems, TheCartForm, TheCartInfo, VModalWindow,
+    TheCartItems, TheCartForm, TheCartInfo, VModalWindow, VButton,
   },
 };
 </script>
