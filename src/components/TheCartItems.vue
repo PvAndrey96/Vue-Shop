@@ -4,7 +4,7 @@
       v-for="(product, id) in $store.getters.cartProducts"
       class="py-5 lg:py-4"
       :class="{'border-t': id}"
-      :key="product.slug"
+      :key="product.slug + product.size"
       :to="`/product/${product.slug}`"
       :img="product.img"
       :title="product.name"

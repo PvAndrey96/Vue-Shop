@@ -26,7 +26,14 @@ export default {
       state.cartProducts = products;
     },
     addProductCart(state, product) {
-      state.cartProducts.push(product);
+      const id = state.cartProducts.findIndex((item) => (
+        item.slug === product.slug && item.size === product.size
+      ));
+      if (id >= 0) {
+        state.cartProducts[id].count += product.count;
+      } else {
+        state.cartProducts.push(product);
+      }
     },
   },
   actions: {
@@ -39,11 +46,18 @@ export default {
       commit('setProductsCart', cartItems);
     },
     async addToCart({ commit }, { slug, size, count }) {
+      const data = { slug, size, count };
       const cartItems = localCart.get();
-      cartItems.push({ slug, size, count });
+      const id = cartItems.findIndex((item) => item.slug === slug && item.size === size);
+      if (id >= 0) {
+        cartItems[id].count += count;
+      } else {
+        cartItems.push(data);
+      }
       localCart.set(cartItems);
       commit('addProductCart', {
-        slug, size, count, ...await api.getDetailProductCart(slug),
+        ...data,
+        ...await api.getDetailProductCart(slug),
       });
     },
     removeCartProduct({ commit }, slug) {

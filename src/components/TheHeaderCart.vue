@@ -25,7 +25,7 @@
             <VPreviewCartItem
               v-for="product in $store.getters.cartProducts"
               class="py-3 border-b"
-              :key="product.slug"
+              :key="product.slug + product.size"
               :to="`/product/${product.slug}`"
               :img="product.img"
               :title="product.name"
