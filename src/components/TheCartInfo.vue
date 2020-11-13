@@ -1,5 +1,5 @@
 <template>
-  <div class="self-start col-span-2 p-5 border lg:py-4 lg:border-0 lg:border-t lg:col-span-6 lg:px-0">
+  <div class="p-5 border lg:py-4 lg:border-0 lg:border-t lg:px-0">
     <div class="mb-4">
       <VTableRow>
         <div>Товаров:</div>

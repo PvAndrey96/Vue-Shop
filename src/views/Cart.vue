@@ -10,7 +10,11 @@
           <TheCartItems/>
           <TheCartForm/>
         </div>
-        <TheCartInfo/>
+        <div class="col-span-2 -mt-6 lg:col-span-6">
+          <div class="sticky top-0 pt-6">
+            <TheCartInfo/>
+          </div>
+        </div>
       </div>
       <div
         v-else
