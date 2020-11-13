@@ -2,12 +2,21 @@
   <div>
     <VContainer class="py-6 lg:py-4">
       <h1 class="mt-2 mb-6 font-medium text-8">Корзина / Оформление</h1>
-      <div class="grid grid-cols-6 gap-8 lg:gap-0">
+      <div
+        v-if="$store.getters.cartProducts.length"
+        class="grid grid-cols-6 gap-8 lg:gap-0"
+      >
         <div class="grid self-start col-span-4 gap-6 lg:gap-0 lg:-mt-4 lg:col-span-6">
           <TheCartItems/>
           <TheCartForm/>
         </div>
         <TheCartInfo/>
+      </div>
+      <div
+        v-else
+        class="p-5 font-medium border lg:border-0 lg:border-t lg:px-0 lg:py-4 text-5"
+      >
+        Ваша корзина пуста
       </div>
     </VContainer>
     <VModalWindow
