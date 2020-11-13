@@ -3,23 +3,31 @@
     <div class="mb-4">
       <VTableRow>
         <div>Товаров:</div>
-        <div>{{$store.getters.cartProductsCount}}</div>
+        <div>{{ $store.getters.cartProductsCount }}</div>
       </VTableRow>
       <VTableRow>
         <div>На сумму:</div>
-        <div>{{$store.getters.cartProductsPrice}} RUB</div>
+        <div>{{ $store.getters.cartProductsPrice }} RUB</div>
+      </VTableRow>
+      <VTableRow>
+        <div>Доставка:</div>
+        <div>{{ $store.getters.delivery }} RUB</div>
       </VTableRow>
       <VTableFooter>
         <div>Итого:</div>
-        <div>{{$store.getters.cartProductsPrice}} RUB</div>
+        <div>{{ totalPrice }} RUB</div>
       </VTableFooter>
     </div>
-    <VButton
-      full
-      to="/checkout"
-    >
-      Оформление заказа
-    </VButton>
+    <VButton full>Оформить заказ</VButton>
+    <div class="mt-4 font-medium text-center">
+      <span>Нажимая на кнопку "оформить заказ", вы подтверждаете согласие с </span>
+      <router-link
+        to="#"
+        class="underline text-theme hover:no-underline"
+      >
+        пользовательским соглашением
+      </router-link>
+    </div>
   </div>
 </template>
 
@@ -32,6 +40,11 @@ export default {
   name: 'TheCartInfo',
   components: {
     VButton, VTableRow, VTableFooter,
+  },
+  computed: {
+    totalPrice() {
+      return this.$store.getters.cartProductsPrice + this.$store.getters.delivery;
+    },
   },
 };
 </script>

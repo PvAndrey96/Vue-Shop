@@ -1,5 +1,5 @@
 <template>
-  <div class="self-start col-span-4 px-5 border lg:-mt-4 lg:border-0 lg:col-span-6 lg:px-0">
+  <div class="px-5 border lg:border-0 lg:px-0">
     <div v-if="$store.getters.cartProducts.length">
       <VCartItem
         v-for="(product, id) in $store.getters.cartProducts"

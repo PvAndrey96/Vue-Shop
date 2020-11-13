@@ -1,5 +1,5 @@
 <template>
-  <div class="grid self-start col-span-4 gap-6 p-5 pb-8 border lg:col-span-6 lg:border-l-0 lg:border-r-0 lg:px-0 ">
+  <div class="grid gap-6 p-5 pb-8 border lg:border-0 lg:border-t lg:px-0 ">
     <div>
       <div class="mb-4 font-medium text-5">Адрес доставки</div>
       <div class="grid grid-cols-6 gap-5 lg:gap-4">
