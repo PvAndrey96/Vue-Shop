@@ -13,7 +13,10 @@
           :to="`/catalog/${item.slug}`"
           class="flex flex-col mx-5"
         >
-          <hr class="w-0 mx-auto duration-200 border-t-4 border-theme transition-width group-hover:w-full" />
+          <hr
+            class="w-0 mx-auto duration-200 border-t-4 border-theme transition-width"
+            :class="item.slug === activeRootCategory ? 'w-full' : 'group-hover:w-full'"
+          />
           <div class="flex items-center flex-grow pb-1 font-medium uppercase">
             {{item.name}}
           </div>
@@ -29,7 +32,8 @@
             >
               <router-link
                 :to="`/catalog/${subItem.slug}`"
-                class="flex items-center h-10 px-5 font-medium transition-colors duration-200 text-4 hover:text-black text-black-70"
+                class="flex items-center h-10 px-5 font-medium transition-colors duration-200 text-4 text-black-70"
+                :class="subItem.slug === $route.params.category ? 'text-black' : 'hover:text-black'"
               >
                 {{subItem.name}}
               </router-link>
@@ -46,6 +50,19 @@ export default {
   name: 'TheHeaderNav',
   async mounted() {
     await this.$store.dispatch('fetchNavCategories');
+  },
+  computed: {
+    activeRootCategory() {
+      const parentCategory = this.$store.getters.navCategories.find((item) => (
+        item.subItems.findIndex((subItem) => subItem.slug === this.$route.params.category) >= 0
+      ));
+      return parentCategory ? parentCategory.slug : this.$route.params.category;
+    },
+  },
+  methods: {
+    subItemActive(subItems) {
+      return subItems.findIndex((item) => item.slug === this.$route.params.category) >= 0;
+    },
   },
 };
 </script>
