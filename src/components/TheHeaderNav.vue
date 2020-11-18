@@ -53,10 +53,7 @@ export default {
   },
   computed: {
     activeRootCategory() {
-      const parentCategory = this.$store.getters.navCategories.find((item) => (
-        item.subItems.findIndex((subItem) => subItem.slug === this.$route.params.category) >= 0
-      ));
-      return parentCategory ? parentCategory.slug : this.$route.params.category;
+      return this.$store.getters.rootCategory(this.$route.params.category);
     },
   },
   methods: {

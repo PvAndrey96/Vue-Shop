@@ -12,7 +12,8 @@
         >
           <router-link
             :to="`/catalog/${item.slug}`"
-            class="flex items-center h-10 font-bold uppercase transition-colors duration-200 text-theme hover:text-theme-accent"
+            class="flex items-center h-10 font-bold uppercase"
+            :class="item.slug === $route.params.category ? 'text-theme-accent' : 'text-theme hover:text-theme-accent transition-colors duration-200'"
           >
             {{item.name}}
           </router-link>
@@ -23,7 +24,8 @@
             >
               <router-link
                 :to="`/catalog/${subItem.slug}`"
-                class="flex items-center h-10 px-4 font-medium transition-colors duration-200 text-4 hover:text-black text-black-70"
+                class="flex items-center h-10 px-4 font-medium text-4"
+                :class="subItem.slug === $route.params.category ? 'text-black' : 'text-black-70 hover:text-black transition-colors duration-200'"
               >
                 {{subItem.name}}
               </router-link>

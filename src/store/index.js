@@ -57,8 +57,14 @@ export default new Vuex.Store({
     displayNavbarMob: (state) => state.displayNavbarMob,
     displayFiltersMob: (state) => state.displayFiltersMob,
     cartPreviewOpen: (state) => state.cartPreviewOpen,
-    navCategories: (state) => state.navCategories,
     navInfoPages: (state) => state.navInfoPages,
+    navCategories: (state) => state.navCategories,
+    rootCategory: (state) => (slug) => {
+      const result = state.navCategories.find((item) => (
+        item.subItems.findIndex((subItem) => subItem.slug === slug) >= 0
+      ));
+      return result ? result.slug : slug;
+    },
   },
   modules: {
     home, cart, catalog, infoPage, checkout, product, category, search,
