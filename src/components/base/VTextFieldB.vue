@@ -1,13 +1,17 @@
 <template>
-  <input
-    class="w-full h-10 px-4 pb-px font-medium border text-5 placeholder-black-30"
-    :type='type'
-    :placeholder='placeholder'
-    :value='value'
-    @input="$emit('input', $event.target.value)"
-    @focus="$emit('focus')"
-    @blur="$emit('blur')"
-  />
+  <label>
+    <input
+      class="w-full h-10 px-4 pb-px font-medium border text-5 placeholder-black-30"
+      :class="{'border-error': textError}"
+      :type='type'
+      :placeholder='placeholder'
+      :value='value'
+      @input="$emit('input', $event.target.value)"
+      @focus="$emit('focus')"
+      @blur="$emit('blur')"
+    />
+    <div class="mt-1 text-error min-h-5">{{textError}}</div>
+  </label>
 </template>
 
 <script>
@@ -25,6 +29,9 @@ export default {
       type: String,
     },
     value: {
+      type: String,
+    },
+    textError: {
       type: String,
     },
   },
