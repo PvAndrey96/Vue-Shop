@@ -1,68 +1,75 @@
 <template>
-  <div class="grid gap-6 p-5 pb-8 border lg:border-0 lg:border-t lg:px-0 ">
-    <div>
-      <div class="mb-4 font-medium text-5">Адрес доставки</div>
-      <div class="grid grid-cols-6 gap-5 lg:gap-4">
-        <VSelect
-          class='col-span-3 sm:col-span-6'
-          placeholder='Город'
-          :options="optionsCities"
-          :selected="$store.getters.selectedCity"
-          @select="$store.commit('selectCity', $event)"
-        />
-        <VTextFieldB
-          class='col-span-3 sm:col-span-6'
-          placeholder='Адрес'
-        />
-      </div>
-    </div>
-    <div>
-      <div class="mb-4 font-medium text-5">Контактная информация</div>
-      <div class="grid grid-cols-6 gap-5 lg:gap-4">
-        <VTextFieldB
-          placeholder='Email'
-          class='col-span-3 sm:col-span-6'
-        />
-        <VTextFieldB
-          placeholder='Телефон'
-          class='col-span-3 sm:col-span-6'
-        />
-        <VTextFieldB
-          placeholder='Фамилия'
-          class='col-span-2 sm:col-span-6'
-        />
-        <VTextFieldB
-          placeholder='Имя'
-          class='col-span-2 sm:col-span-6'
-        />
-        <VTextFieldB
-          placeholder='Отчевство'
-          class='col-span-2 sm:col-span-6'
-        />
-      </div>
-    </div>
-    <div>
-      <div class="mb-4 font-medium text-5">Дополнительная информация</div>
-      <div class="grid grid-cols-6 gap-5">
-        <VTextFieldB
-          class='col-span-6'
-          placeholder='Коментарий к заказу'
-        />
-      </div>
-    </div>
-  </div>
+  <form class="grid gap-4 p-5 border lg:border-0 lg:border-t lg:px-0">
+    <VFieldset legend="Адрес доставки">
+      <VSelect
+        class='col-span-3 sm:col-span-6'
+        placeholder='Город'
+        :options="optionsCities"
+        :selected="formCity"
+        @select="$store.commit('updateCity', $event)"
+      />
+      <VTextFieldB
+        class='col-span-3 sm:col-span-6'
+        placeholder='Адрес'
+        :textError="textErrorAddress"
+        :value="formAddress"
+        @input="$store.commit('updateAddress', $event)"
+      />
+    </VFieldset>
+    <VFieldset legend="Контактная информация">
+      <VTextFieldB
+        placeholder='Email'
+        class='col-span-3 sm:col-span-6'
+      />
+      <VTextFieldB
+        placeholder='Телефон'
+        class='col-span-3 sm:col-span-6'
+      />
+      <VTextFieldB
+        placeholder='Фамилия'
+        class='col-span-2 sm:col-span-6'
+      />
+      <VTextFieldB
+        placeholder='Имя'
+        class='col-span-2 sm:col-span-6'
+      />
+      <VTextFieldB
+        placeholder='Отчевство'
+        class='col-span-2 sm:col-span-6'
+      />
+    </VFieldset>
+    <VFieldset legend="Дополнительная информация">
+      <VTextFieldB
+        class='col-span-6'
+        placeholder='Коментарий к заказу'
+      />
+    </VFieldset>
+  </form>
 </template>
 
 <script>
 import VSelect from '@/components/base/VSelect.vue';
 import VTextFieldB from '@/components/base/VTextFieldB.vue';
+import VFieldset from '@/components/base/VFieldset.vue';
+import { mapGetters } from 'vuex';
+import { maxLength } from 'vuelidate/lib/validators';
 
 export default {
   name: 'TheCheckoutForm',
   components: {
-    VTextFieldB, VSelect,
+    VTextFieldB, VSelect, VFieldset,
+  },
+  validations: {
+    formAddress: { maxLength: maxLength(4) },
   },
   computed: {
+    ...mapGetters(['formCity', 'formAddress']),
+    textErrorAddress() {
+      if (!this.$v.formAddress.maxLength) {
+        return 'Косяк';
+      }
+      return 'Все четко';
+    },
     optionsCities() {
       return this.$store.getters.cities.map((item) => ({
         value: item.id,

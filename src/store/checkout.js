@@ -3,14 +3,18 @@ import api from '@/api';
 export default {
   state: {
     cities: [],
-    selectedCity: null,
+    formCity: null,
+    formAddress: '',
   },
   mutations: {
     setCities(state, data) {
       state.cities = data;
     },
-    selectCity(state, data) {
-      state.selectedCity = data;
+    updateCity(state, data) {
+      state.formCity = data;
+    },
+    updateAddress(state, val) {
+      state.formAddress = val;
     },
   },
   actions: {
@@ -22,9 +26,10 @@ export default {
   getters: {
     cities: (state) => state.cities,
     delivery: (state) => {
-      const city = state.cities.find((item) => item.id === state.selectedCity);
+      const city = state.cities.find((item) => item.id === state.formCity);
       return city ? city.delivery : 0;
     },
-    selectedCity: (state) => state.selectedCity,
+    formCity: (state) => state.formCity,
+    formAddress: (state) => state.formAddress,
   },
 };
