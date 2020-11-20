@@ -1,34 +1,38 @@
 <template>
-  <div class="relative font-medium text-5 text-black-70">
-    <div
-      class="flex h-10 px-4 border cursor-pointer"
-      @click='optionsOpen = !optionsOpen'
-    >
+  <div>
+    <div class="relative font-medium text-5 text-black-70">
       <div
-        class="flex items-center flex-grow"
-        :class="{'text-black-30': !selectedOption}"
+        class="flex h-10 px-4 border cursor-pointer"
+        :class="{'border-error': textError}"
+        @click='optionsOpen = !optionsOpen'
       >
-        {{text}}
+        <div
+          class="flex items-center flex-grow"
+          :class="{'text-black-30': !selectedOption}"
+        >
+          {{text}}
+        </div>
+        <VSvg
+          name='arrow-down'
+          class="w-6 -mr-2 text-black-10"
+        />
       </div>
-      <VSvg
-        name='arrow-down'
-        class="w-6 -mr-2 text-black-10"
-      />
-    </div>
-    <div
-      v-if="optionsOpen"
-      class="absolute w-full py-1 mt-2 bg-white border"
-    >
       <div
-        v-for="option in options"
-        :key="option.value"
-        class="flex items-center h-10 px-4 cursor-pointer"
-        :class="option.value === selected ? 'bg-theme text-white font-normal' : 'hover:bg-theme-10 transition-colors duration-200'"
-        @click="selectOption(option.value)"
+        v-if="optionsOpen"
+        class="absolute w-full py-1 mt-2 bg-white border"
       >
-        {{option.text}}
+        <div
+          v-for="option in options"
+          :key="option.value"
+          class="flex items-center h-10 px-4 cursor-pointer"
+          :class="option.value === selected ? 'bg-theme text-white font-normal' : 'hover:bg-theme-10 transition-colors duration-200'"
+          @click="selectOption(option.value)"
+        >
+          {{option.text}}
+        </div>
       </div>
     </div>
+    <div class="mt-1 text-error min-h-5">{{textError}}</div>
   </div>
 </template>
 
@@ -50,6 +54,9 @@ export default {
     placeholder: {
       type: String,
       default: '',
+    },
+    textError: {
+      type: String,
     },
   },
   data() {
