@@ -141,4 +141,8 @@ export default {
   getCities() {
     return JSONcities;
   },
+
+  addOrder(city, address, email, phone, surname, name, patr, comment, products) {
+    console.log(city, address, email, phone, surname, name, patr, comment, products);
+  },
 };

@@ -18,7 +18,7 @@
         <div>{{ totalPrice }} RUB</div>
       </VTableFooter>
     </div>
-    <VButton @click="formSubmit" full>Оформить заказ</VButton>
+    <VButton form="checkoutForm" type="submit" full>Оформить заказ</VButton>
     <div class="mt-4 font-medium text-center">
       <span>Нажимая на кнопку "оформить заказ", вы подтверждаете согласие с </span>
       <router-link
@@ -44,15 +44,6 @@ export default {
   computed: {
     totalPrice() {
       return this.$store.getters.cartProductsPrice + this.$store.getters.delivery;
-    },
-  },
-  methods: {
-    async formSubmit() {
-      // if (!this.$v.$invalid) {
-      //   alert(1);
-      // } else {
-      //   this.$v.$touch();
-      // }
     },
   },
 };

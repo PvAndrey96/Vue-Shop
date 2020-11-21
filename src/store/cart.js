@@ -16,6 +16,9 @@ export default {
     cartProducts: [],
   },
   mutations: {
+    clearCart(state) {
+      state.cartProducts = [];
+    },
     updateCountCartProduct(state, { slug, count }) {
       state.cartProducts.find((item) => item.slug === slug).count = count;
     },
@@ -71,6 +74,10 @@ export default {
       cartItems.find((item) => item.slug === slug).count = count;
       localCart.set(cartItems);
       commit('updateCountCartProduct', { slug, count });
+    },
+    clearCart({ commit }) {
+      localCart.set([]);
+      commit('clearCart');
     },
   },
   getters: {

@@ -2,8 +2,9 @@ import api from '@/api';
 
 export default {
   state: {
+    windowSuccess: false,
     cities: [],
-    selectedCity: null,
+    city: null,
     address: '',
     email: '',
     phone: '',
@@ -13,11 +14,17 @@ export default {
     comment: '',
   },
   mutations: {
+    openWindowSuccess(state) {
+      state.windowSuccess = true;
+    },
+    closseWindowSuccess(state) {
+      state.windowSuccess = false;
+    },
     setCities(state, data) {
       state.cities = data;
     },
     updateCity(state, data) {
-      state.selectedCity = data;
+      state.city = data;
     },
     updateAddress(state, val) {
       state.address = val;
@@ -34,7 +41,7 @@ export default {
     updateName(state, val) {
       state.name = val;
     },
-    updatePart(state, val) {
+    updatePatr(state, val) {
       state.patr = val;
     },
     updateComment(state, val) {
@@ -46,14 +53,28 @@ export default {
       const result = await api.getCities();
       commit('setCities', result);
     },
+    async addOrder({ state }, products) {
+      await api.addOrder(
+        state.city,
+        state.address,
+        state.email,
+        state.phone,
+        state.surname,
+        state.name,
+        state.patr,
+        state.comment,
+        products,
+      );
+    },
   },
   getters: {
+    checkoutWindowSuccess: (state) => state.windowSuccess,
     cities: (state) => state.cities,
     delivery: (state) => {
-      const city = state.cities.find((item) => item.id === state.selectedCity);
+      const city = state.cities.find((item) => item.id === state.city);
       return city ? city.delivery : 0;
     },
-    formCity: (state) => state.selectedCity,
+    formCity: (state) => state.city,
     formAddress: (state) => state.address,
     formEmail: (state) => state.email,
     formPhone: (state) => state.phone,

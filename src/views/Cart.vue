@@ -24,7 +24,8 @@
       </div>
     </VContainer>
     <VModalWindow
-      v-if="false"
+      v-if="$store.getters.checkoutWindowSuccess"
+      @close="$store.commit('closseWindowSuccess')"
     >
       <div class="p-8 text-center sm:px-4">
         <div class="font-bold uppercase text-4">Ваш заказ успешно оформлен</div>
@@ -34,6 +35,7 @@
       <VButton
         full
         small
+        @click="$store.commit('closseWindowSuccess')"
       >
         Закрыть
       </VButton>

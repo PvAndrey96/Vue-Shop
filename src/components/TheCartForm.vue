@@ -1,5 +1,6 @@
 <template>
   <form
+    id="checkoutForm"
     class="grid gap-4 p-5 border lg:border-0 lg:border-t lg:px-0"
     @submit.prevent='formSubmit'
   >
@@ -77,7 +78,7 @@ import { mapGetters } from 'vuex';
 import { required, email, minLength, maxLength } from 'vuelidate/lib/validators';
 
 export default {
-  name: 'TheCheckoutForm',
+  name: 'TheCartForm',
   components: {
     VTextFieldB, VSelect, VFieldset,
   },
@@ -156,11 +157,14 @@ export default {
   },
   methods: {
     async formSubmit() {
-      // if (!this.$v.$invalid) {
-      //   alert(1);
-      // } else {
-      //   this.$v.$touch();
-      // }
+      if (!this.$v.$invalid) {
+        await this.$store.dispatch('addOrder', this.$store.getters.cartProducts);
+        this.$store.dispatch('clearCart');
+        this.$store.commit('openWindowSuccess');
+      } else {
+        this.$v.$touch();
+        this.$toasted.show('Некорректные данные в форме оформления');
+      }
     },
   },
   async mounted() {
