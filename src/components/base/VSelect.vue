@@ -32,7 +32,12 @@
         </div>
       </div>
     </div>
-    <div class="mt-1 text-error min-h-5">{{textError}}</div>
+    <div
+      v-if="textError !== undefined"
+      class="mt-1 text-error min-h-5"
+    >
+      {{textError}}
+    </div>
   </div>
 </template>
 
