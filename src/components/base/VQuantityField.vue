@@ -8,11 +8,8 @@
     </button>
     <input
       class="text-center border-t border-b w-9 sm:w-8"
-      type="number"
-      :min="min"
-      :max="max"
+      disabled
       :value="value"
-      @input="$emit('input', $event.target.valueAsNumber)"
     >
     <button
       class="border w-9 sm:w-8"

@@ -5,6 +5,10 @@ input, textarea, button:focus, select {
   @apply outline-none;
 }
 
+input, input:disabled {
+  @apply bg-transparent;
+}
+
 select,
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
