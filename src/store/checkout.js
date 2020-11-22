@@ -1,4 +1,5 @@
 import api from '@/api';
+import localCart from '@/utils/localCart';
 
 export default {
   state: {
@@ -53,7 +54,8 @@ export default {
       const result = await api.getCities();
       commit('setCities', result);
     },
-    async addOrder({ state }, products) {
+    async addOrder({ state }) {
+      const products = localCart.get();
       await api.addOrder(
         state.city,
         state.address,

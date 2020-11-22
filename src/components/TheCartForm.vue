@@ -158,7 +158,7 @@ export default {
   methods: {
     async formSubmit() {
       if (!this.$v.$invalid) {
-        await this.$store.dispatch('addOrder', this.$store.getters.cartProducts);
+        await this.$store.dispatch('addOrder');
         this.$store.dispatch('clearCart');
         this.$store.commit('openWindowSuccess');
       } else {
