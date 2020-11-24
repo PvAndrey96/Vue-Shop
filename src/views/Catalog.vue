@@ -1,5 +1,8 @@
 <template>
-  <VContainer class="py-6 lg:py-4">
+  <VContainer
+    v-if="$store.getters.catalogSlug"
+    class="py-6 lg:py-4"
+  >
     <div class="flex flex-wrap items-center justify-between mt-2 mb-6">
       <h1 class="font-medium lg:mb-3 text-8 lg:w-full">{{ $store.getters.catalogTitle }}</h1>
       <VSelect
@@ -41,6 +44,7 @@
     </div>
     <TheMobileFilters/>
   </VContainer>
+  <VNotFound v-else />
 </template>
 
 <script>
@@ -50,11 +54,12 @@ import TheFilterCategory from '@/components/TheFilterCategory.vue';
 import TheFilterSize from '@/components/TheFilterSize.vue';
 import TheFilterColor from '@/components/TheFilterColor.vue';
 import TheMobileFilters from '@/components/TheMobileFilters.vue';
+import VNotFound from '@/components/base/VNotFound.vue';
 
 export default {
   name: 'Catalog',
   components: {
-    VSelect, VCard, TheMobileFilters, TheFilterCategory, TheFilterSize, TheFilterColor,
+    VSelect, VCard, TheMobileFilters, TheFilterCategory, TheFilterSize, TheFilterColor, VNotFound,
   },
   data() {
     return {

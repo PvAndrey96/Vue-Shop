@@ -54,10 +54,15 @@ export default {
   },
 
   getCategoryInfo(slug) {
-    return {
-      title: JSONcategories.find((item) => item.slug === slug).name,
-      subcategories: helpers.subcategories(slug),
-    };
+    const category = JSONcategories.find((item) => item.slug === slug);
+    if (category) {
+      return {
+        slug: category.slug,
+        title: category.name,
+        subcategories: helpers.subcategories(category.slug),
+      };
+    }
+    return {};
   },
 
   getSearchResult(searchString) {
