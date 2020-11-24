@@ -2,13 +2,15 @@ import api from '@/api';
 
 export default {
   state: {
-    infoPageTitle: '',
-    infoPageContent: '',
+    slug: '',
+    title: '',
+    content: '',
   },
   mutations: {
     setInfoPage(state, data) {
-      state.infoPageTitle = data.title;
-      state.infoPageContent = data.content;
+      state.slug = data.slug;
+      state.title = data.title;
+      state.content = data.content;
     },
   },
   actions: {
@@ -18,7 +20,8 @@ export default {
     },
   },
   getters: {
-    infoPageTitle: (state) => state.infoPageTitle,
-    infoPageContent: (state) => state.infoPageContent,
+    infoPageSlug: (state) => state.slug,
+    infoPageTitle: (state) => state.title,
+    infoPageContent: (state) => state.content,
   },
 };

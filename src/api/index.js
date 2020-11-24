@@ -46,11 +46,15 @@ export default {
   },
 
   getInfoPage(slug) {
-    const infoPage = JSONinfoPages.find((item) => item.slug === slug);
-    return {
-      title: infoPage.title,
-      content: infoPage.content,
-    };
+    const page = JSONinfoPages.find((item) => item.slug === slug);
+    if (page) {
+      return {
+        slug: page.slug,
+        title: page.title,
+        content: page.content,
+      };
+    }
+    return {};
   },
 
   getCategoryInfo(slug) {
