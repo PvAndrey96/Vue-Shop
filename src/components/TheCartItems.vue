@@ -4,15 +4,15 @@
       v-for="(product, id) in $store.getters.cartProducts"
       class="py-5 lg:py-4"
       :class="{'border-t': id}"
-      :key="product.slug + product.size"
+      :key="product.cartId"
       :to="`/product/${product.slug}`"
       :img="product.img"
       :title="product.name"
       :size="product.size"
       :price="product.price * product.count"
       :count="product.count"
-      @update:count="$store.dispatch('updateCountCartProduct', { slug: product.slug, count: $event })"
-      @delete="$store.dispatch('removeCartProduct', product.slug)"
+      @update:count="$store.dispatch('updateCountCartProduct', { cartId: product.cartId, count: $event })"
+      @delete="$store.dispatch('removeCartProduct', product.cartId)"
     />
   </div>
 </template>

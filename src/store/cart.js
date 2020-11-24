@@ -9,21 +9,19 @@ export default {
     clearCart(state) {
       state.cartProducts = [];
     },
-    updateCountCartProduct(state, { slug, count }) {
-      state.cartProducts.find((item) => item.slug === slug).count = count;
+    updateCountCartProduct(state, { cartId, count }) {
+      state.cartProducts.find((item) => item.cartId === cartId).count = count;
     },
-    removeCartProduct(state, slug) {
-      state.cartProducts.splice(state.cartProducts.findIndex((item) => item.slug === slug), 1);
+    removeCartProduct(state, cartId) {
+      state.cartProducts.splice(state.cartProducts.findIndex((item) => item.cartId === cartId), 1);
     },
     setProductsCart(state, products) {
       state.cartProducts = products;
     },
     addProductCart(state, product) {
-      const id = state.cartProducts.findIndex((item) => (
-        item.slug === product.slug && item.size === product.size
-      ));
-      if (id >= 0) {
-        state.cartProducts[id].count += product.count;
+      const index = state.cartProducts.findIndex((item) => item.cartId === product.cartId);
+      if (index >= 0) {
+        state.cartProducts[index].count += product.count;
       } else {
         state.cartProducts.push(product);
       }
@@ -39,11 +37,12 @@ export default {
       commit('setProductsCart', cartItems);
     },
     async addToCart({ commit }, { slug, size, count }) {
-      const data = { slug, size, count };
+      const cartId = `${slug}-${size}`;
+      const data = { cartId, slug, size, count };
       const cartItems = localCart.get();
-      const id = cartItems.findIndex((item) => item.slug === slug && item.size === size);
-      if (id >= 0) {
-        cartItems[id].count += count;
+      const index = cartItems.findIndex((item) => item.cartId === cartId);
+      if (index >= 0) {
+        cartItems[index].count += count;
       } else {
         cartItems.push(data);
       }
@@ -53,17 +52,17 @@ export default {
         ...await api.getDetailProductCart(slug),
       });
     },
-    removeCartProduct({ commit }, slug) {
+    removeCartProduct({ commit }, cartId) {
       const cartItems = localCart.get();
-      cartItems.splice(cartItems.findIndex((item) => item.slug === slug), 1);
+      cartItems.splice(cartItems.findIndex((item) => item.cartId === cartId), 1);
       localCart.set(cartItems);
-      commit('removeCartProduct', slug);
+      commit('removeCartProduct', cartId);
     },
-    updateCountCartProduct({ commit }, { slug, count }) {
+    updateCountCartProduct({ commit }, { cartId, count }) {
       const cartItems = localCart.get();
-      cartItems.find((item) => item.slug === slug).count = count;
+      cartItems.find((item) => item.cartId === cartId).count = count;
       localCart.set(cartItems);
-      commit('updateCountCartProduct', { slug, count });
+      commit('updateCountCartProduct', { cartId, count });
     },
     clearCart({ commit }) {
       localCart.set([]);
