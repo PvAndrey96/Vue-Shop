@@ -1,5 +1,8 @@
 <template>
-  <VContainer class="py-6 lg:py-4">
+  <VContainer
+    v-if="$store.getters.productSlug"
+    class="py-6 lg:py-4"
+  >
     <div class="grid grid-cols-3 gap-8 mt-2">
       <div class="col-span-2 lg:col-span-3">
         <div class="grid grid-flow-col grid-cols-3 grid-rows-2 gap-4 sm:gap-2">
@@ -58,17 +61,19 @@
       </div>
     </div>
   </VContainer>
+  <VNotFound v-else />
 </template>
 
 <script>
 import VButtonColor from '@/components/base/VButtonColor.vue';
 import VButtonSize from '@/components/base/VButtonSize.vue';
 import VButton from '@/components/base/VButton.vue';
+import VNotFound from '@/components/base/VNotFound.vue';
 
 export default {
   name: 'Product',
   components: {
-    VButtonColor, VButtonSize, VButton,
+    VButtonColor, VButtonSize, VButton, VNotFound,
   },
   watch: {
     $route: 'fetchData',

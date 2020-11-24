@@ -34,6 +34,7 @@ const router = new VueRouter({
     },
     {
       path: '*',
+      meta: { layout: 'TheMainLayout' },
       component: () => import('@/views/NotFound.vue'),
     },
   ],

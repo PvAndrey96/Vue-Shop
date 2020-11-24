@@ -113,20 +113,23 @@ export default {
 
   getProductInfo(slug) {
     const product = JSONproducts.find((item) => item.slug === slug);
-    const productsModel = JSONproducts.filter((item) => item.model === product.model);
-    return {
-      slug: product.slug,
-      name: product.name,
-      description: product.description,
-      price: product.price,
-      images: product.images,
-      colors: productsModel.map((item) => ({
-        href: item.slug,
-        value: JSONcolors.find((color) => color.slug === item.color).value,
-      })),
-      sizes: product.sizes.map((slugSize) => JSONsizes.find((size) => size.slug === slugSize)),
-      selectedSize: '',
-    };
+    if (product) {
+      const productsModel = JSONproducts.filter((item) => item.model === product.model);
+      return {
+        slug: product.slug,
+        name: product.name,
+        description: product.description,
+        price: product.price,
+        images: product.images,
+        colors: productsModel.map((item) => ({
+          href: item.slug,
+          value: JSONcolors.find((color) => color.slug === item.color).value,
+        })),
+        sizes: product.sizes.map((slugSize) => JSONsizes.find((size) => size.slug === slugSize)),
+        selectedSize: '',
+      };
+    }
+    return {};
   },
 
   getDetailProductCart(slug) {
