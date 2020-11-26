@@ -6,6 +6,7 @@ import JSONinfoPages from './data/info_pages.json';
 import JSONcolors from './data/filters_color.json';
 import JSONsizes from './data/filters_size.json';
 
+// response delay simulate
 const sleep = (m) => new Promise((r) => setTimeout(r, m));
 
 const helpers = {
