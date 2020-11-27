@@ -15,7 +15,7 @@
       @blur="$store.commit('searchBlur')"
     />
     <div
-      v-if="$store.getters.searchPreviewResult.length && $store.getters.searchFocus"
+      v-if="$store.getters.searchPreviewResult.length && $store.getters.searchFocus && $route.path !== '/search'"
       class="absolute z-10 w-full pt-2 mt-18 min-w-xs"
       @mousedown.prevent
     >

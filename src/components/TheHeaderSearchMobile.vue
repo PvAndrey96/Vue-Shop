@@ -23,7 +23,7 @@
         @input="$store.dispatch('searchInput', $event)"
       />
       <div
-        v-if="$store.getters.searchPreviewResult.length"
+        v-if="$store.getters.searchPreviewResult.length && $route.path !== '/search'"
         class="mt-3"
       >
         <ul class="grid gap-3">
