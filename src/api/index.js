@@ -29,8 +29,7 @@ const helpers = {
 };
 
 export default {
-  async getNavCategories() {
-    await sleep(1000);
+  getNavCategories() {
     return JSONcategories.filter((item) => !item.parent).map((item) => ({
       name: item.name,
       slug: item.slug,
@@ -38,16 +37,14 @@ export default {
     }));
   },
 
-  async getNavInfoPages() {
-    await sleep(1000);
+  getNavInfoPages() {
     return JSONinfoPages.map((item) => ({
       name: item.title,
       slug: item.slug,
     }));
   },
 
-  async getInfoPage(slug) {
-    await sleep(1000);
+  getInfoPage(slug) {
     const page = JSONinfoPages.find((item) => item.slug === slug);
     if (page) {
       return {
@@ -59,8 +56,7 @@ export default {
     return {};
   },
 
-  async getCategoryInfo(slug) {
-    await sleep(1000);
+  getCategoryInfo(slug) {
     const category = JSONcategories.find((item) => item.slug === slug);
     if (category) {
       return {
@@ -72,8 +68,7 @@ export default {
     return {};
   },
 
-  async getSearchResult(searchString) {
-    await sleep(1000);
+  getSearchResult(searchString) {
     return JSONproducts.filter(
       (product) => new RegExp(searchString, 'i').test(product.name),
     ).map((product) => ({
@@ -84,9 +79,7 @@ export default {
     }));
   },
 
-  async getProducts({ category, size, color, sort, order, limit = Infinity, start = 0 }) {
-    await sleep(1000);
-
+  getProducts({ category, size, color, sort, order, limit = Infinity, start = 0 }) {
     let products = category ? helpers.productsCategory(category) : JSONproducts;
 
     products = products.filter((product) => {
@@ -114,22 +107,19 @@ export default {
     return products;
   },
 
-  async getFiltersColor(slugCategory) {
-    await sleep(1000);
+  getFiltersColor(slugCategory) {
     return JSONcolors.filter((color) => (
       helpers.productsCategory(slugCategory).find((product) => product.color === color.slug)
     ));
   },
 
-  async getFiltersSize(slugCategory) {
-    await sleep(1000);
+  getFiltersSize(slugCategory) {
     return JSONsizes.filter((size) => (
       helpers.productsCategory(slugCategory).find((product) => product.sizes.includes(size.slug))
     ));
   },
 
-  async getProductInfo(slug) {
-    await sleep(1000);
+  getProductInfo(slug) {
     const product = JSONproducts.find((item) => item.slug === slug);
     if (product) {
       const productsModel = JSONproducts.filter((item) => item.model === product.model);
@@ -150,8 +140,7 @@ export default {
     return {};
   },
 
-  async getDetailProductCart(slug) {
-    await sleep(1000);
+  getDetailProductCart(slug) {
     const product = JSONproducts.find((item) => item.slug === slug);
     return {
       name: product.name,
@@ -160,13 +149,12 @@ export default {
     };
   },
 
-  async getCities() {
-    await sleep(1000);
+  getCities() {
     return JSONcities;
   },
 
   async addOrder(city, address, email, phone, surname, name, patr, comment, products) {
-    await sleep(1000);
+    await sleep(100);
     console.log(city, address, email, phone, surname, name, patr, comment, products);
   },
 };
