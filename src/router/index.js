@@ -18,6 +18,11 @@ const router = new VueRouter({
       component: () => import('@/views/Product.vue'),
     },
     {
+      path: '/search',
+      meta: { layout: 'TheMainLayout' },
+      component: () => import('@/views/Search.vue'),
+    },
+    {
       path: '/cart',
       meta: { layout: 'TheMainLayout' },
       component: () => import('@/views/Cart.vue'),

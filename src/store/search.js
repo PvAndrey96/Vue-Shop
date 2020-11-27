@@ -3,6 +3,7 @@ import { debounce } from 'debounce';
 
 export default {
   state: {
+    searchPreviewLimit: 5,
     searchString: '',
     searchFocus: false,
     searchMobOpen: false,
@@ -49,5 +50,7 @@ export default {
     searchMobOpen: (state) => state.searchMobOpen,
     searchResult: (state) => state.searchResult,
     searchString: (state) => state.searchString,
+    searchPreviewResult: (state) => state.searchResult.filter((item, index) => index < state.searchPreviewLimit),
+    searchExcessPreviewLimit: (state, getters) => getters.searchResult.length > state.searchPreviewLimit,
   },
 };

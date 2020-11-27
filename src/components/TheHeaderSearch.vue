@@ -15,21 +15,31 @@
       @blur="$store.commit('searchBlur')"
     />
     <div
-      v-if="$store.getters.searchResult.length && $store.getters.searchFocus"
+      v-if="$store.getters.searchPreviewResult.length && $store.getters.searchFocus"
       class="absolute z-10 w-full pt-2 mt-18 min-w-xs"
       @mousedown.prevent
     >
-      <ul class='px-3 pt-3 bg-white border'>
-        <VSearchListItem
-          v-for="result in $store.getters.searchResult"
-          :key="result.slug"
-          :img="result.img"
-          :title="result.name"
-          :price="result.price"
-          class="mb-3"
-          :to="`/product/${result.slug}`"
-        />
-      </ul>
+      <div class='p-3 bg-white border'>
+        <ul class="grid gap-3">
+          <VSearchListItem
+            v-for="result in $store.getters.searchPreviewResult"
+            :key="result.slug"
+            :img="result.img"
+            :title="result.name"
+            :price="result.price"
+            :to="`/product/${result.slug}`"
+          />
+        </ul>
+        <VButton
+          v-if="$store.getters.searchExcessPreviewLimit"
+          class="mt-3"
+          to="/search"
+          small
+          full
+        >
+          Смотреть все ({{$store.getters.searchResult.length}})
+        </VButton>
+      </div>
     </div>
   </div>
 </template>
@@ -37,11 +47,12 @@
 <script>
 import VTextFieldA from '@/components/base/VTextFieldA.vue';
 import VSearchListItem from '@/components/base/VSearchListItem.vue';
+import VButton from '@/components/base/VButton.vue';
 
 export default {
   name: 'TheHeaderSearch',
   components: {
-    VTextFieldA, VSearchListItem,
+    VTextFieldA, VSearchListItem, VButton,
   },
   watch: {
     $route() {
