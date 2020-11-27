@@ -1,0 +1,45 @@
+[
+  {
+    "slug": "tovar-4-green",
+    "category": "shtanu",
+    "name": "Товар 4 (зеленый, s-m-l-xl)",
+    "description": "Апостериори, гравитационный парадокс амбивалентно понимает под собой интеллигибельный знак. Апостериори, гравитационный парадокс амбивалентно понимает под собой интеллигибельный знак. Надстройка нетривиальна. Дедуктивный метод решительно представляет собой бабувизм. Сомнение рефлектирует естественный закон исключённого третьего.. Сомнение р",
+    "price": 960,
+    "sales": 11,
+    "date": "2020-11-04",
+    "color": "green",
+    "sizes": [
+      "s",
+      "m",
+      "l",
+      "xl"
+    ],
+    "model": "tovar-4",
+    "images": [
+      "https://reebok.kiev.ua/files/product-photos/sku-eh1724_0.jpg",
+      "https://reebok.kiev.ua/files/product-photos/sku-eh1724_0.jpg",
+      "https://reebok.kiev.ua/files/product-photos/sku-eh1724_0.jpg"
+    ]
+  },
+  {
+    "slug": "tovar-5-black",
+    "category": "shtanu",
+    "name": "Товар 5 (черный, xs-s-m)",
+    "description": "Структурализм абстрактен. Наряду с этим ощущение мира решительно контролирует непредвиденный гравитационный парадокс. Апостериори, гравитационный парадокс амбивалентно понимает под собой интеллигибельный знак. Апостериори, гравитационный парадокс амбивалентно понимает под собой интеллигибельный знак. Наряду с этим ощущение мира решительно кон",
+    "price": 900,
+    "sales": 15,
+    "date": "2020-11-05",
+    "color": "black",
+    "sizes": [
+      "xs",
+      "s",
+      "m"
+    ],
+    "model": "tovar-5",
+    "images": [
+      "https://reebok.kiev.ua/files/product-photos/sku-eh1724_0.jpg",
+      "https://reebok.kiev.ua/files/product-photos/sku-eh1724_0.jpg",
+      "https://reebok.kiev.ua/files/product-photos/sku-eh1724_0.jpg"
+    ]
+  }
+]

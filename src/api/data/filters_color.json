@@ -22,5 +22,21 @@
   {
     "slug": "gray",
     "value": "#555555"
+  },
+  {
+    "slug": "yellow",
+    "value": "#D4DC3C"
+  },
+  {
+    "slug": "light-blue",
+    "value": "#1ABBC9"
+  },
+  {
+    "slug": "pink",
+    "value": "#DC3CDC"
+  },
+  {
+    "slug": "orange",
+    "value": "#DCB23C"
   }
 ]

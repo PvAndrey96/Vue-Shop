@@ -1,0 +1,87 @@
+[
+  {
+    "slug": "tovar-1-black",
+    "category": "futbolki",
+    "name": "Товар 1 (черный, xs-s-m)",
+    "description": "Структурализм абстрактен. Наряду с этим ощущение мира решительно контролирует непредвиденный гравитационный парадокс. Апостериори, гравитационный парадокс амбивалентно понимает под собой интеллигибельный знак. Апостериори, гравитационный парадокс амбивалентно понимает под собой интеллигибельный знак. Наряду с этим ощущение мира решительно кон",
+    "price": 2100,
+    "sales": 5,
+    "date": "2020-11-01",
+    "color": "black",
+    "sizes": [
+      "xs",
+      "s",
+      "m"
+    ],
+    "model": "tovar-1",
+    "images": [
+      "https://reebok.kiev.ua/files/product-photos/sku-eh1724_0.jpg",
+      "https://reebok.kiev.ua/files/product-photos/sku-eh1724_0.jpg",
+      "https://reebok.kiev.ua/files/product-photos/sku-eh1724_0.jpg"
+    ]
+  },
+  {
+    "slug": "tovar-1-white",
+    "category": "futbolki",
+    "name": "Товар 1 (белый, xs-s-m-l)",
+    "description": "Апостериори, гравитационный парадокс амбивалентно понимает под собой интеллигибельный знак. Апостериори, гравитационный парадокс амбивалентно понимает под собой интеллигибельный знак. Надстройка нетривиальна. Дедуктивный метод решительно представляет собой бабувизм. Сомнение рефлектирует естественный закон исключённого третьего.. Сомнение р",
+    "price": 2100,
+    "sales": 8,
+    "date": "2020-11-02",
+    "color": "white",
+    "sizes": [
+      "xs",
+      "s",
+      "m",
+      "l"
+    ],
+    "model": "tovar-1",
+    "images": [
+      "https://reebok.kiev.ua/files/product-photos/sku-eh1724_0.jpg",
+      "https://reebok.kiev.ua/files/product-photos/sku-eh1724_0.jpg",
+      "https://reebok.kiev.ua/files/product-photos/sku-eh1724_0.jpg"
+    ]
+  },
+  {
+    "slug": "tovar-3-blue",
+    "category": "futbolki",
+    "name": "Товар 3 (синий, xs-s-m)",
+    "description": "Структурализм абстрактен. Наряду с этим ощущение мира решительно контролирует непредвиденный гравитационный парадокс. Апостериори, гравитационный парадокс амбивалентно понимает под собой интеллигибельный знак. Апостериори, гравитационный парадокс амбивалентно понимает под собой интеллигибельный знак. Наряду с этим ощущение мира решительно кон",
+    "price": 780,
+    "sales": 3,
+    "date": "2020-11-03",
+    "color": "blue",
+    "sizes": [
+      "xs",
+      "s",
+      "m"
+    ],
+    "model": "tovar-3",
+    "images": [
+      "https://reebok.kiev.ua/files/product-photos/sku-eh1724_0.jpg",
+      "https://reebok.kiev.ua/files/product-photos/sku-eh1724_0.jpg",
+      "https://reebok.kiev.ua/files/product-photos/sku-eh1724_0.jpg"
+    ]
+  },
+  {
+    "slug": "tovar-1-red",
+    "category": "futbolki",
+    "name": "Товар 1 (красный, s-l-xl)",
+    "description": "Структурализм абстрактен. Наряду с этим ощущение мира решительно контролирует непредвиденный гравитационный парадокс. Апостериори, гравитационный парадокс амбивалентно понимает под собой интеллигибельный знак. Апостериори, гравитационный парадокс амбивалентно понимает под собой интеллигибельный знак. Наряду с этим ощущение мира решительно кон",
+    "price": 2100,
+    "sales": 12,
+    "date": "2020-11-18",
+    "color": "red",
+    "sizes": [
+      "s",
+      "l",
+      "xl"
+    ],
+    "model": "tovar-1",
+    "images": [
+      "https://reebok.kiev.ua/files/product-photos/sku-eh1724_0.jpg",
+      "https://reebok.kiev.ua/files/product-photos/sku-eh1724_0.jpg",
+      "https://reebok.kiev.ua/files/product-photos/sku-eh1724_0.jpg"
+    ]
+  }
+]

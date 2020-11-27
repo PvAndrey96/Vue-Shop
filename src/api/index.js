@@ -1,6 +1,6 @@
 import arraySort from 'array-sort';
 import JSONcategories from './data/categories.json';
-import JSONproducts from './data/products.json';
+import JSONproducts from './data/products';
 import JSONcities from './data/cities.json';
 import JSONinfoPages from './data/info_pages.json';
 import JSONcolors from './data/filters_color.json';
@@ -154,7 +154,7 @@ export default {
   },
 
   async addOrder(city, address, email, phone, surname, name, patr, comment, products) {
-    await sleep(100);
+    await sleep(500);
     console.log(city, address, email, phone, surname, name, patr, comment, products);
   },
 };

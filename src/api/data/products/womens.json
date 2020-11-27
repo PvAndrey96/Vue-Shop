@@ -1,0 +1,129 @@
+[
+  {
+    "slug": "tovar-9-white",
+    "category": "womens",
+    "name": "Товар 9 (белый, s-m)",
+    "description": "Структурализм абстрактен. Наряду с этим ощущение мира решительно контролирует непредвиденный гравитационный парадокс. Апостериори, гравитационный парадокс амбивалентно понимает под собой интеллигибельный знак. Апостериори, гравитационный парадокс амбивалентно понимает под собой интеллигибельный знак. Наряду с этим ощущение мира решительно кон",
+    "price": 1280,
+    "sales": 12,
+    "date": "2020-11-08",
+    "color": "white",
+    "sizes": [
+      "s",
+      "m"
+    ],
+    "model": "tovar-9",
+    "images": [
+      "https://reebok.kiev.ua/files/product-photos/sku-eh1724_0.jpg",
+      "https://reebok.kiev.ua/files/product-photos/sku-eh1724_0.jpg",
+      "https://reebok.kiev.ua/files/product-photos/sku-eh1724_0.jpg"
+    ]
+  },
+  {
+    "slug": "tovar-10-red",
+    "category": "womens",
+    "name": "Товар 10 (красный, xs-s-m)",
+    "description": "Структурализм абстрактен. Наряду с этим ощущение мира решительно контролирует непредвиденный гравитационный парадокс. Апостериори, гравитационный парадокс амбивалентно понимает под собой интеллигибельный знак. Апостериори, гравитационный парадокс амбивалентно понимает под собой интеллигибельный знак. Наряду с этим ощущение мира решительно кон",
+    "price": 1280,
+    "sales": 3,
+    "date": "2020-11-09",
+    "color": "red",
+    "sizes": [
+      "xs",
+      "s",
+      "m"
+    ],
+    "model": "tovar-10",
+    "images": [
+      "https://reebok.kiev.ua/files/product-photos/sku-eh1724_0.jpg",
+      "https://reebok.kiev.ua/files/product-photos/sku-eh1724_0.jpg",
+      "https://reebok.kiev.ua/files/product-photos/sku-eh1724_0.jpg"
+    ]
+  },
+  {
+    "slug": "tovar-13-yellow",
+    "category": "womens",
+    "name": "Товар 13 (желтый, l-m-xl)",
+    "description": "Структурализм абстрактен. Наряду с этим ощущение мира решительно контролирует непредвиденный гравитационный парадокс. Апостериори, гравитационный парадокс амбивалентно понимает под собой интеллигибельный знак. Апостериори, гравитационный парадокс амбивалентно понимает под собой интеллигибельный знак. Наряду с этим ощущение мира решительно кон",
+    "price": 900,
+    "sales": 15,
+    "date": "2020-11-15",
+    "color": "yellow",
+    "sizes": [
+      "l",
+      "m",
+      "xl"
+    ],
+    "model": "tovar-13",
+    "images": [
+      "https://reebok.kiev.ua/files/product-photos/sku-eh1724_0.jpg",
+      "https://reebok.kiev.ua/files/product-photos/sku-eh1724_0.jpg",
+      "https://reebok.kiev.ua/files/product-photos/sku-eh1724_0.jpg"
+    ]
+  },
+  {
+    "slug": "tovar-13-pink",
+    "category": "womens",
+    "name": "Товар 13 (розовый, s-l-m-xl)",
+    "description": "Структурализм абстрактен. Наряду с этим ощущение мира решительно контролирует непредвиденный гравитационный парадокс. Апостериори, гравитационный парадокс амбивалентно понимает под собой интеллигибельный знак. Апостериори, гравитационный парадокс амбивалентно понимает под собой интеллигибельный знак. Наряду с этим ощущение мира решительно кон",
+    "price": 900,
+    "sales": 9,
+    "date": "2020-11-15",
+    "color": "pink",
+    "sizes": [
+      "s",
+      "l",
+      "m",
+      "xl"
+    ],
+    "model": "tovar-13",
+    "images": [
+      "https://reebok.kiev.ua/files/product-photos/sku-eh1724_0.jpg",
+      "https://reebok.kiev.ua/files/product-photos/sku-eh1724_0.jpg",
+      "https://reebok.kiev.ua/files/product-photos/sku-eh1724_0.jpg"
+    ]
+  },
+  {
+    "slug": "tovar-13-orange",
+    "category": "womens",
+    "name": "Товар 13 (оранжевый, s-l-m)",
+    "description": "Структурализм абстрактен. Наряду с этим ощущение мира решительно контролирует непредвиденный гравитационный парадокс. Апостериори, гравитационный парадокс амбивалентно понимает под собой интеллигибельный знак. Апостериори, гравитационный парадокс амбивалентно понимает под собой интеллигибельный знак. Наряду с этим ощущение мира решительно кон",
+    "price": 1100,
+    "sales": 5,
+    "date": "2020-11-16",
+    "color": "orange",
+    "sizes": [
+      "s",
+      "l",
+      "m"
+    ],
+    "model": "tovar-13",
+    "images": [
+      "https://reebok.kiev.ua/files/product-photos/sku-eh1724_0.jpg",
+      "https://reebok.kiev.ua/files/product-photos/sku-eh1724_0.jpg",
+      "https://reebok.kiev.ua/files/product-photos/sku-eh1724_0.jpg"
+    ]
+  },
+  {
+    "slug": "tovar-13-light-blue",
+    "category": "womens",
+    "name": "Товар 13 (голубой, xxs-s-l-m)",
+    "description": "Структурализм абстрактен. Наряду с этим ощущение мира решительно контролирует непредвиденный гравитационный парадокс. Апостериори, гравитационный парадокс амбивалентно понимает под собой интеллигибельный знак. Апостериори, гравитационный парадокс амбивалентно понимает под собой интеллигибельный знак. Наряду с этим ощущение мира решительно кон",
+    "price": 1100,
+    "sales": 6,
+    "date": "2020-11-16",
+    "color": "light-blue",
+    "sizes": [
+      "xxs",
+      "s",
+      "l",
+      "m"
+    ],
+    "model": "tovar-13",
+    "images": [
+      "https://reebok.kiev.ua/files/product-photos/sku-eh1724_0.jpg",
+      "https://reebok.kiev.ua/files/product-photos/sku-eh1724_0.jpg",
+      "https://reebok.kiev.ua/files/product-photos/sku-eh1724_0.jpg"
+    ]
+  }
+]

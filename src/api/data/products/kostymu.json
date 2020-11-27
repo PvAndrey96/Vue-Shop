@@ -1,0 +1,67 @@
+[
+  {
+    "slug": "tovar-12-light-blue",
+    "category": "kostymu",
+    "name": "Товар 12 (голубой, s-l-m-xl)",
+    "description": "Структурализм абстрактен. Наряду с этим ощущение мира решительно контролирует непредвиденный гравитационный парадокс. Апостериори, гравитационный парадокс амбивалентно понимает под собой интеллигибельный знак. Апостериори, гравитационный парадокс амбивалентно понимает под собой интеллигибельный знак. Наряду с этим ощущение мира решительно кон",
+    "price": 800,
+    "sales": 12,
+    "date": "2020-11-14",
+    "color": "light-blue",
+    "sizes": [
+      "s",
+      "l",
+      "m",
+      "xl"
+    ],
+    "model": "tovar-12",
+    "images": [
+      "https://reebok.kiev.ua/files/product-photos/sku-eh1724_0.jpg",
+      "https://reebok.kiev.ua/files/product-photos/sku-eh1724_0.jpg",
+      "https://reebok.kiev.ua/files/product-photos/sku-eh1724_0.jpg"
+    ]
+  },
+  {
+    "slug": "tovar-12-yellow",
+    "category": "kostymu",
+    "name": "Товар 12 (желтый, l-m-xl)",
+    "description": "Структурализм абстрактен. Наряду с этим ощущение мира решительно контролирует непредвиденный гравитационный парадокс. Апостериори, гравитационный парадокс амбивалентно понимает под собой интеллигибельный знак. Апостериори, гравитационный парадокс амбивалентно понимает под собой интеллигибельный знак. Наряду с этим ощущение мира решительно кон",
+    "price": 800,
+    "sales": 10,
+    "date": "2020-11-14",
+    "color": "yellow",
+    "sizes": [
+      "l",
+      "m",
+      "xl"
+    ],
+    "model": "tovar-12",
+    "images": [
+      "https://reebok.kiev.ua/files/product-photos/sku-eh1724_0.jpg",
+      "https://reebok.kiev.ua/files/product-photos/sku-eh1724_0.jpg",
+      "https://reebok.kiev.ua/files/product-photos/sku-eh1724_0.jpg"
+    ]
+  },
+  {
+    "slug": "tovar-12-gray",
+    "category": "kostymu",
+    "name": "Товар 12 (серый, xxs-s-l-xl)",
+    "description": "Структурализм абстрактен. Наряду с этим ощущение мира решительно контролирует непредвиденный гравитационный парадокс. Апостериори, гравитационный парадокс амбивалентно понимает под собой интеллигибельный знак. Апостериори, гравитационный парадокс амбивалентно понимает под собой интеллигибельный знак. Наряду с этим ощущение мира решительно кон",
+    "price": 800,
+    "sales": 16,
+    "date": "2020-11-17",
+    "color": "gray",
+    "sizes": [
+      "xxs",
+      "s",
+      "l",
+      "xl"
+    ],
+    "model": "tovar-12",
+    "images": [
+      "https://reebok.kiev.ua/files/product-photos/sku-eh1724_0.jpg",
+      "https://reebok.kiev.ua/files/product-photos/sku-eh1724_0.jpg",
+      "https://reebok.kiev.ua/files/product-photos/sku-eh1724_0.jpg"
+    ]
+  }
+]
