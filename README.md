@@ -1,4 +1,13 @@
-# vue-shop
+## Core stack
+- Vue JS
+- Vue CLI
+- Vue Router
+- Vuex
+- Tailwind CSS (Utility-First)
+- Webpack
+- ESLint (style guide Airbnb)
+- Babel
+- HTML
 
 ## Project setup
 ```
