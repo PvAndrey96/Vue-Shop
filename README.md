@@ -1,3 +1,6 @@
+## Demo
+https://vue-shop-540f7.web.app/
+
 ## Core stack
 - Vue JS
 - Vue CLI
