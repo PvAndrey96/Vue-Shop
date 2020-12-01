@@ -14,9 +14,9 @@
     ],
     "model": "tovar-11",
     "images": [
-      "https://reebok.kiev.ua/files/product-photos/sku-eh1724_0.jpg",
-      "https://reebok.kiev.ua/files/product-photos/sku-eh1724_0.jpg",
-      "https://reebok.kiev.ua/files/product-photos/sku-eh1724_0.jpg"
+      "/product.jpg",
+      "/product.jpg",
+      "/product.jpg"
     ]
   },
   {
@@ -33,9 +33,9 @@
     ],
     "model": "tovar-11",
     "images": [
-      "https://reebok.kiev.ua/files/product-photos/sku-eh1724_0.jpg",
-      "https://reebok.kiev.ua/files/product-photos/sku-eh1724_0.jpg",
-      "https://reebok.kiev.ua/files/product-photos/sku-eh1724_0.jpg"
+      "/product.jpg",
+      "/product.jpg",
+      "/product.jpg"
     ]
   }
 ]

@@ -7,7 +7,7 @@ module.exports = {
     config
       .plugin('html')
       .tap((args) => {
-        args[0].title = 'TodoList';
+        args[0].title = 'Vue-Shop';
         return args;
       });
 

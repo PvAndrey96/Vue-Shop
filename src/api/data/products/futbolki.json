@@ -15,9 +15,9 @@
     ],
     "model": "tovar-1",
     "images": [
-      "https://reebok.kiev.ua/files/product-photos/sku-eh1724_0.jpg",
-      "https://reebok.kiev.ua/files/product-photos/sku-eh1724_0.jpg",
-      "https://reebok.kiev.ua/files/product-photos/sku-eh1724_0.jpg"
+      "/product.jpg",
+      "/product.jpg",
+      "/product.jpg"
     ]
   },
   {
@@ -37,9 +37,9 @@
     ],
     "model": "tovar-1",
     "images": [
-      "https://reebok.kiev.ua/files/product-photos/sku-eh1724_0.jpg",
-      "https://reebok.kiev.ua/files/product-photos/sku-eh1724_0.jpg",
-      "https://reebok.kiev.ua/files/product-photos/sku-eh1724_0.jpg"
+      "/product.jpg",
+      "/product.jpg",
+      "/product.jpg"
     ]
   },
   {
@@ -58,9 +58,9 @@
     ],
     "model": "tovar-3",
     "images": [
-      "https://reebok.kiev.ua/files/product-photos/sku-eh1724_0.jpg",
-      "https://reebok.kiev.ua/files/product-photos/sku-eh1724_0.jpg",
-      "https://reebok.kiev.ua/files/product-photos/sku-eh1724_0.jpg"
+      "/product.jpg",
+      "/product.jpg",
+      "/product.jpg"
     ]
   },
   {
@@ -79,9 +79,9 @@
     ],
     "model": "tovar-1",
     "images": [
-      "https://reebok.kiev.ua/files/product-photos/sku-eh1724_0.jpg",
-      "https://reebok.kiev.ua/files/product-photos/sku-eh1724_0.jpg",
-      "https://reebok.kiev.ua/files/product-photos/sku-eh1724_0.jpg"
+      "/product.jpg",
+      "/product.jpg",
+      "/product.jpg"
     ]
   }
 ]
