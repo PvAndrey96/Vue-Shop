@@ -6,6 +6,7 @@ module.exports = {
       lg: { max: '1024px' },
       md: { max: '768px' },
       sm: { max: '640px' },
+      xs: { max: '500px' },
     },
     colors: {
       transparent: 'transparent',

@@ -13,7 +13,7 @@
     >
       <img
         :src="slide"
-        class="object-cover w-full h-128 sm:h-64 lg:h-96"
+        class="object-cover w-full h-128 xs:h-48 sm:h-64 lg:h-96"
       />
     </Slide>
   </Carousel>
