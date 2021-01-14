@@ -36,7 +36,7 @@ export default {
     searchInput({ commit }, searchString) {
       commit('updateSearchString', searchString);
       debounce(async () => {
-        if (searchString.length > 2) {
+        if (searchString.length) {
           const result = await api.getSearchResult(searchString);
           commit('setSearchResult', result);
         } else {
