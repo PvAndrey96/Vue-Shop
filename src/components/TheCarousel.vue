@@ -12,7 +12,8 @@
       :key="id"
     >
       <img
-        class="object-cover w-full h-128 bg-black-50 lg:h-96"
+        :src="slide"
+        class="object-cover w-full h-128 lg:h-96"
       />
     </Slide>
   </Carousel>
