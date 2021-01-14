@@ -5,7 +5,6 @@ export default {
     carouselSlides: [
       'https://www.aquamir.kiev.ua/wa-data/public/shop/categories/1531/14.png',
       'https://hauteliving.com/wp-content/uploads/2015/07/NikeCourt-Flare_5_native_1600-1366x512.jpg',
-      'http://cdn.shopify.com/s/files/1/1182/3402/files/sept_03_harden_blog_a.jpg?v=1567501526',
     ],
     productsBestsellers: [],
     productsNew: [],
