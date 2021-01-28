@@ -10,7 +10,7 @@
             v-for="(img, id) in $store.getters.productImages"
             :key="id"
             :src="img"
-            :class="[id === $store.getters.productImages.length - 1 ? 'col-span-2 row-span-2' : 'h-full col-span-1 row-span-1']"
+            :class="[id === $store.getters.productImages.length - 1 ? 'col-span-2 row-span-2' : 'col-span-1 row-span-1']"
           />
         </div>
       </div>
