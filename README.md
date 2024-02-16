@@ -1,16 +1,23 @@
 ## Demo
 https://vue-shop-540f7.web.app/
 
+## Screenshots
+![](screenshots/1.png)
+![](screenshots/2.png)
+![](screenshots/3.png)
+![](screenshots/4.png)
+![](screenshots/5.png)
+
 ## Core stack
-- Vue JS
-- Vue CLI
-- Vue Router
+- Vue 2 (options API)
 - Vuex
-- Tailwind CSS (Utility-First)
+- Tailwind CSS
+- Vue Router
+- Vue CLI
+- HTML
 - Webpack
 - ESLint (style guide Airbnb)
 - Babel
-- HTML
 
 ## Project setup
 ```
